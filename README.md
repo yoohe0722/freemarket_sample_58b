@@ -24,55 +24,71 @@ Things you may want to cover:
 * ...
 
 
-## usersテーブル
+## Usersテーブル
 | Column         | Type        | option                       |
 |:---------------|:------------|:-----------------------------|
 | nick_name      | string      | null: false                  |
 | email          | string      | null: false, unique: true    |
 | password       | string      | null: false                  |
-| first_name     | string      | null: false                  |
 | family_name    | string      | null: false                  |
-| first_kana     | string      | null: false                  |
+| first_name     | string      | null: false                  |
 | family_kana    | string      | null: false                  |
+| first_kana     | string      | null: false                  |
 | birth_year     | int         | null: false                  |
 | birth_month    | int         | null: false                  |
 | birth_day      | int         | null: false                  |
 | prefecture     | string      | null: false                  |
 | phone_number   | string      | null: false, unique: true    |
-| municipalities | string      | null: false                  |
-| address        | string      | null: false                  |
+| city           | string      | null: false                  |
+| block          | string      | null: false                  |
 | building       | string      | null: false                  |
 | profile        | text        |                              |
+| payment_id     | reference   | foreign_key: true            |
+| image          | text        |                              |
 
 ### Association
 - has_many :items
-- has_many :messages
-- has_many :comments
-- has_many :likes
-- has_many :reviews
-<!-- phone_number int→stringに変更 -->
+- has_one: payment, foreign_key: true
 
 
-## itemsテーブル
-| Column         | Type        | option                       |
-|:---------------|:------------|:-----------------------------|
-| name           | string      | null: false                  |
-| image          | string      | null: false                  |
-| price          | int         | null: false                  |
-| seller-id      | int         | null: false                  |
-| buyer-id       | int         |                              |
+
+## Itemsテーブル
+| Column           | Type      | Options                        |
+|:-----------------|:----------|:-------------------------------|
+| name             | string    | null: false                    |
+| price            | string    | null: false                    |
+| description      | text      | null: false                    |
+| condition        | string    | null: false                    |
+| user_id          | reference | null: false, foreign_key: true |
+| buyer_id         | reference | foreign_key: true              |
+| size_id          | reference | foreign_key: true              |
+| image_id         | reference | null: false, foreign_key: true |
+| category_id      | reference | null: false, foreign_key: true |
+| brand_id         | reference | foreign_key: true              |
+| prefecture_id    | reference | null: false, foreign_key: true |
+| ship_fee         | string    | null: false                    |
+| ship_method      | integer   | null: false                    |
+| ship_date        | integer   | null: false                    |
+| trading_condition| string    | null: false                    |
 
 ### Association
 - belongs_to :user
-- has_many :messages
+- belongs_to :prefecture
+- belongs_to :size
+- belongs_to :brand
+- belongs_to :category
+- belongs_to :image :dependent => :destroy
+- has_one: buyer_id ,foreign_key: “user_id”
+- has_one: user_id, foreign_key: “buyer_id”
 
 
 ## Sizesテーブル
 | Column         | Type        | option                        |
 |:---------------|:------------|:------------------------------|
-| size           | strings     | null: false                   |
-| path           | strings     | null: false                   |
-| item-id        | refernces   | null: false foreign_key: true |
+| name           | string      | null: false                   |
+| path           | string      |                               |
+| item_id        | refernce    | null: false foreign_key: true |
+
 ## Association
 - has_many :items
 
@@ -80,9 +96,10 @@ Things you may want to cover:
 ## Categoriesテーブル
 | Column         | Type        | option                        |
 |:---------------|:------------|:------------------------------|
-| category       | strings     | null: false                   |
-| path           | strings     |                               |
-| item-id        | refernces   | null: false foreign_key: true |
+| name           | string      | null: false                   |
+| path           | string      |                               |
+| item_id        | refernce    | null: false foreign_key: true |
+
 ## Association
 - has_many :items
 
@@ -90,8 +107,9 @@ Things you may want to cover:
 ## Brandsテーブル
 | Column         | Type        | option                        |
 |:---------------|:------------|:------------------------------|
-| name           | strings     |                               |
-| item-id        | refernces   | null: false foreign_key: true |
+| name           | string      | null: false                   |
+| item_id        | refernce    | null: false foreign_key: true |
+
 ## Association
 - has_many :items
 
@@ -99,8 +117,9 @@ Things you may want to cover:
 ## Prefucturesテーブル
 | Column         | Type        | option                        |
 |:---------------|:------------|:------------------------------|
-| name           | strings     | null: false                   |
-| item-id        | refernces   | null: false foreign_key: true |
+| name           | string      | null: false                   |
+| item_id        | refernce    | null: false foreign_key: true |
+
 ## Association
 - has_many :items
 
@@ -108,12 +127,18 @@ Things you may want to cover:
 ## Imagesテーブル
 | Column         | Type        | option                        |
 |:---------------|:------------|:------------------------------|
-| image          | strings     | null: false                   |
-| item-id        | refernces   | null: false foreign_key: true |
+| image          | string      | null: false                   |
+| item_id        | refernce    | null: false foreign_key: true |
+
 ## Association
 - belongs_to :item
 
 
-<!-- ## Commentsテーブル -->
-<!-- ## Likesテーブル -->
-<!-- ## Reviewsテーブル -->
+## Paymentsテーブル
+| Column         | Type        | option                        |
+|:---------------|:------------|:------------------------------|
+| user_id        | reference   | null: false foreign_key: true |
+| customer_id    | reference   | null: false foreign_key: true |
+
+## Association
+- has_one :user, foreign_key: true

@@ -1,6 +1,6 @@
 .buy-wrapper
   .buy-header
-    = render 'share/subheader'
+    = render 'module/subheader'
 
   .buy-main
     .content
@@ -41,17 +41,6 @@
             %a{href: "https://www.mercari.com/jp/transaction/card/m54373149244/"}変更する >
 
   .buy-footer
-    .navi
-      %ul
-        %li
-          %a{href: "https://www.mercari.com/jp/privacy/"}プライバシーポリシー
-        %li
-          %a{href: "https://www.mercari.com/jp/tos/"}メルカリ利用規約
-        %li
-          %a{href: "https://www.mercari.com/jp/tokutei/"}特定商取引に関する表記
-    .footer-logo
-      %a{href: "https://www.mercari.com/jp/"}
-        = image_tag "footer-logo.svg"
-    %p © 2019 Mercari
+    = render 'module/subfooter'
 
 

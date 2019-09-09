@@ -1,0 +1,64 @@
+.item_box_contents
+  .item-box-container
+    .item_box_contents_center
+      %h1.item_name 商品名
+      .item_photo_box
+        = image_tag "m49030494893_1.jpg", size: "300x300", alt: "test"
+      .item_price_box
+        %span.item_price_box_text
+          ¥10,000
+        %span.item-tax
+          (税込)
+        %span.item-shipping-fee
+          送料込み
+      .item_box_text_center
+        .sales_point_message
+          残高1000円です
+      %a.item-buy-btn{:href => "https://www.mercari.com/jp/transaction/buy/m20952905050/"}
+        購入画面に進む
+      %p.item-description-inner
+        テストの文章です
+        即購入、大歓迎!!
+        現在、在庫ございます(^_^)
+        そしてなんと、、、色つきのくるりんぱ、入荷しました( 〃▽〃)
+        内容は、紫、青、ショッキングピンク、赤 、黒の5色です☆
+        淡いピンクは売り切れです。
+
+        もしコメントなしのご購入は写真の色での発送になりますので、他の色を希望される方はご購入前に必ずコメントをよろしくお願いします♪
+
+
+        メルカリ最安値で送料無料(*≧∀≦*)
+
+      .item-button-container
+        .item-button-left
+          %button.item-button.item-button-like{"data-toggle" => "like", :name => "like!", :type => "button"}
+            %i.icon-like-border
+            %span いいね!
+            %span.fade-in-down 0
+          %a.item-button-report{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
+            %i.icon-flag
+            %span 不適切な商品の報告
+        .item-button-right
+          %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
+          %i.icon-lock
+          %span あんしん・あんぜんへの取り組み
+
+  .item_message_content
+    .item_message_form
+      .item_message_form_warning
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+      %button.message-submit.btn-default.btn-gray{:type => "submit"}
+        %span コメントする
+  %ul.nav_item_link_prev_next
+    %li.nav_item_link_prev
+      %a{:href => "https://item.mercari.com/jp/m72616905145/"}
+      %i.icon-arrow-left>
+      【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計
+    %li.nav_item_link_next
+      %a{:href => "https://item.mercari.com/jp/m21980231717/"}
+        chanmi様専用
+      %i.icon-arrow-right
+
+
+

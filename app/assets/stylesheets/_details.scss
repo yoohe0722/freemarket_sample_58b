@@ -1,0 +1,143 @@
+.item_box_contents{
+  background:#F2F2F2;
+  margin: 40px auto 0;
+  padding: 24px 16px 55px 16px;
+}
+
+.item-box-container{
+  background-color:white;
+  width: 700px;
+  margin: 40px auto 0;
+}
+
+
+.item_box_contents_center{
+  padding: 24px 40px 40px;
+  }
+
+.item_name{
+  font-size: 24px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+
+  .item_photo_box{
+    height: 300px;
+    width: 300px;
+  }
+
+
+
+.item_price_box{
+  margin: 24px 0 0;
+  background-color:white;
+  text-align: center;
+}
+
+.item_price_box_text{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+
+.item_box_text_center{
+  text-align: center;
+}
+
+.sales_point_message{
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  color: #fff;
+  background: #05B0B4;
+  margin: 20px 0 0 0;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.item-buy-btn{
+  font-size: 24px;
+  line-height: 60px;
+  display: block;
+  margin-top: 16px;
+  background: #ea352d;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  transition: all ease-out .3s;
+  text-decoration: none;
+}
+
+.item-description-inner{
+  white-space: pre-wrap;
+  font-size: 18px;
+}
+
+.item-button-container{
+  margin: 16px 0 0;
+}
+
+.item-button-left{
+  float: left;
+}
+
+
+
+.item_message_content{
+  background-color:white;
+  width: 700px;
+  margin: 10px auto 0;
+}
+
+.item_message_form{
+  padding: 24px 40px 40px;
+}
+
+.item_message_form_warning{
+  background-color:#FFF6DE;
+  & p{
+    padding: 8px;
+    font-size: 14px;
+    }
+}
+
+.textarea-default{
+  margin: 8px 0 0;
+  width: 96%;
+  display: block;
+  max-width: 100%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.message-submit.btn-default.btn-gray{
+  width: 100%;
+  margin: 8px 0 0;
+  font-size: 0;
+  text-align: center;
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  display: block;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+}
+
+.nav_item_link_prev_next{
+  margin: 24px auto 0;
+  width: 700px;
+  position: relative;
+  word-wrap: break-word;
+  height: 30px;
+  display: flex;
+}
+
+
+

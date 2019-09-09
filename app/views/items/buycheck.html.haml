@@ -11,17 +11,24 @@
           %h3.item-image
             = image_tag "shoes.jpg"
           .item-name
-            %p ぴかぴかシューズ
+            %p ぴかぴかシューズ（新品だよー）
           .price-box
-            .buy-price
+            %p.buy-price
               ¥2,000
-            .ship-fee
-              送料込み
-            .payment
-              支払い金額
-            .price
-              ¥2,000
-            %button.btn.btn-gray.btn-red{:disabled => "disabled", :type => "submit"} 購入する
+              %span.ship-fee 送料込み
+            %ul.user-point
+              %li.have-point
+              %li.no-point
+                .point-info
+                  ポイントはありません
+            .payment-box
+              .payment
+                %p 支払い金額
+              .pay-price
+                %p ¥2,000
+            .error-text
+              %p 配送先と支払い方法の入力を完了してください。
+            %button.buy-btn.btn-gray.btn-red{:disabled => "disabled", :type => "submit"} 購入する
       .content__ship
         .ship-in
           %h3 配送先

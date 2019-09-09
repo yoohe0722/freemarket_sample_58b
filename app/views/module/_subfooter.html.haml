@@ -3,12 +3,11 @@
     .navi
       %ul
         %li
-          %a{href: "https://www.mercari.com/jp/privacy/"}プライバシーポリシー
+          = link_to "プライバシーポリシー",("#")
         %li
-          %a{href: "https://www.mercari.com/jp/tos/"}メルカリ利用規約
+          = link_to "メルカリ利用規約",("#")
         %li
-          %a{href: "https://www.mercari.com/jp/tokutei/"}特定商取引に関する表記
+          = link_to "特定商取引に関する表記",("#")
     .footer-logo
-      %a{href: "/items"}
-        = image_tag "footer-logo.svg"
+      = link_to image_tag("footer-logo.svg"),("/items")
     %p © 2019 Mercari

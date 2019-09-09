@@ -7,35 +7,8 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
+
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
   %body
-    .header
-      .header__container
-        .container__top
-          %a{href:"/"}
-            = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
-          %form.header__form{:action => "https://www.mercari.com/jp/search/"}
-            %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
-            %i.fa.fa-search.icon-search
-
-        .container__bottom
-          .container__bottom-left
-            %ul
-              %li.fa.fa-list-ul.icon
-                カテゴリーから探す
-              %li.fa.fa-tag.icon
-                ブランドから探す
-          .container__bottom-right.icon
-            %ul
-              %li.fa.fa-heart.icon
-                いいね！一覧
-              %li.fa.fa-bell.icon
-                お知らせ
-              %li.fa.fa-check.icon
-                やることリスト
-              %li.fa.fa-user-circle.icon
-                %a{href:"items/show"}
-                  マイページ
-      .header__bred-crumbs
-        %p メルカリ > カテゴリー一覧
     = yield

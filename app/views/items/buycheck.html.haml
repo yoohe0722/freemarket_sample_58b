@@ -1,0 +1,45 @@
+.buy-wrapper
+  .buy-header
+    %h1
+      %a{href: "https://www.mercari.com/jp/"}
+        = image_tag "logo.svg", class: "mercari-logo"
+
+  .buy-main
+    .content
+      .content__head
+        %h2 購入内容の確認
+      .content__block
+        .item-box
+          %h3.item-image
+            = image_tag "shoes.jpg"
+          .item-name
+            %p ぴかぴかシューズ
+        .price-box
+          .buy-price
+            ¥2,000
+          .ship-fee
+            送料込み
+          .payment
+            支払い金額
+          .price
+            ¥2,000
+      .content__block
+        %h3 配送先
+      .content__block
+        %h3 お支払い方法
+
+  .buy-footer
+    .navi
+      %ul
+        %li
+          %a{href: "https://www.mercari.com/jp/privacy/"}プライバシーポリシー
+        %li
+          %a{href: "https://www.mercari.com/jp/tos/"}メルカリ利用規約
+        %li
+          %a{href: "https://www.mercari.com/jp/tokutei/"}特定商取引に関する表記
+    .footer-logo
+      %a{href: "https://www.mercari.com/jp/"}
+        = image_tag "footer-logo.svg"
+    %p © 2019 Mercari
+
+

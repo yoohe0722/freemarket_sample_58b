@@ -1,0 +1,31 @@
+.header
+  .header__container
+    .container__top
+      %a{href:"/"}
+        = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
+      %form.header__form{:action => "https://www.mercari.com/jp/search/"}
+        %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+        %i.fa.fa-search.icon-search
+
+    .container__bottom
+      .container__bottom-left
+        %ul
+          %li.fa.fa-list-ul.icon
+            カテゴリーから探す
+          %li.far.fa-tag.icon
+            ブランドから探す
+      .container__bottom-right.icon
+        %ul
+          %li.far.fa-heart.icon
+            いいね！一覧
+          -# %li.far.fa-bell.icon
+          %li
+            %i.far.fa-bell
+              お知らせ
+          %li.fa.fa-check.icon
+            やることリスト
+          %li.far.fa-user-circle.icon
+            %a{href:"items/show"}
+              マイページ
+  .header__bred-crumbs
+    %p メルカリ > カテゴリー一覧

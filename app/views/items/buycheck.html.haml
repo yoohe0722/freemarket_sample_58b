@@ -8,25 +8,39 @@
     .content
       .content__head
         %h2 購入内容の確認
-      .content__block
+      .content__item
         .item-box
           %h3.item-image
             = image_tag "shoes.jpg"
           .item-name
             %p ぴかぴかシューズ
-        .price-box
-          .buy-price
-            ¥2,000
-          .ship-fee
-            送料込み
-          .payment
-            支払い金額
-          .price
-            ¥2,000
-      .content__block
-        %h3 配送先
-      .content__block
-        %h3 お支払い方法
+          .price-box
+            .buy-price
+              ¥2,000
+            .ship-fee
+              送料込み
+            .payment
+              支払い金額
+            .price
+              ¥2,000
+            %button.btn.btn-gray.btn-red{:disabled => "disabled", :type => "submit"} 購入する
+      .content__ship
+        .ship-in
+          %h3 配送先
+          .ship-adress
+            %p 〒123-4567
+            %p 京都府京都市上京区二条東入ル
+            %p エキスパ太郎
+          .ship-adress-edit
+            %a{href: "https://www.mercari.com/jp/transaction/card/m54373149244/"}変更する >
+      .content__pay
+        .pay-in
+          %h3 支払い方法
+          .pay-plan
+            %p
+              %br ********/********
+          .pay-plan-edit
+            %a{href: "https://www.mercari.com/jp/transaction/card/m54373149244/"}変更する >
 
   .buy-footer
     .navi

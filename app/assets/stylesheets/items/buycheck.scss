@@ -89,7 +89,7 @@ img {
         margin:0;
       }
     }
-    &__block {
+    &__item {
       margin: 0;
       // margin: 40px 0 0;
       padding: 24px 12.5% 0;
@@ -121,9 +121,95 @@ img {
           font-size: 16px;
           line-height: 1.5;
         }
+        .price-box {
+          width: 100%;
+        }
+        .btn {
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+        .btn-gray {
+          border: 1px solid #888;
+          background: #888;
+          color: #fff;
+        }
+        .btn-red {
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+        }
       }
-      .price-box {
-        width: 100%;
+    }
+    &__ship {
+      margin: 0;
+      margin: 40px 0 0;
+      padding: 24px 12.5% 0;
+      border-top: 1px solid #f5f5f5;
+      text-align: center;
+      .ship-in{
+        max-width: 320px;
+        margin: 0 auto;
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          text-align: left;
+        }
+        .ship-adress {
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+          text-align: left;
+        }
+        .ship-adress-edit {
+          display: block;
+          text-align: right;
+          a {
+            color: #0099e8;
+            text-decoration: none;
+            &:hover {
+              opacity: 0.7;
+              border-bottom: 1px solid #0099e8;
+            }
+          }
+        }
+      }
+    }
+    &__pay {
+      margin: 0;
+      margin: 40px 0 0;
+      padding: 24px 12.5% 40px;
+      border-top: 1px solid #f5f5f5;
+      text-align: center;
+      .pay-in{
+        max-width: 320px;
+        margin: 0 auto;
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          text-align: left;
+        }
+        .pay-plan {
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+        .pay-plan-edit {
+          display: block;
+          text-align: right;
+          a {
+            color: #0099e8;
+            text-decoration: none;
+            &:hover {
+              opacity: 0.7;
+              border-bottom: 1px solid #0099e8;
+            }
+          }
+        }
       }
     }
   }
@@ -143,7 +229,7 @@ img {
     list-style: none;
   }
   li {
-    margin: 0 5px;
+    margin: 0 6px;
     display: inline-block;
     font-size: 12px;
   }
@@ -154,6 +240,7 @@ img {
   }
   p {
     margin: 8px 0 0;
+    font-size: 12px;
   }
   .footer-logo {
     width: 80px;

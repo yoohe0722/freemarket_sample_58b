@@ -1,0 +1,207 @@
+.buy-wrapper {
+  padding: 0 0 220px;
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  * {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
+
+.buy-main {
+  display: block;
+  .content {
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    &__head {
+      padding: 16px;
+      line-height: 1.5;
+      text-align: center;
+      h2 {
+        padding: 0;
+        margin:0;
+        font-size: 22px;
+        display: block;
+        font-weight: bold;
+      }
+    }
+    &__item {
+      margin: 0;
+      padding: 24px 12.5% 0;
+      border-top: 1px solid #f5f5f5;
+      text-align: center;
+      .item-box {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 320px;
+        margin: 0 auto;
+        h3 {
+          img {
+            width: 64px;
+          }
+        }
+        .item-name {
+          width: calc(100% - 80px);
+          margin: 0 0 0 16px;
+          text-align: left;
+          font-size: 16px;
+          line-height: 1.5;
+          font-weight: bold;
+        }
+        p {
+        }
+        .price-box {
+          width: 100%;
+          .buy-price {
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 20px;
+            .ship-fee {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+          .user-point {
+            .no-point {
+              background: #ccc;
+              .point-info {
+                cursor: default;
+                padding: 16px;
+                margin: 16px 0 0;
+                border: 1px solid #ccc;
+              }
+            }
+          }
+          .payment-box{
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            .payment {
+              font-size: 18px;
+              text-align: left;
+              display: table-cell;
+              padding: 16px 0;
+              font-weight: bold;
+            }
+            .pay-price {
+              font-size: 26px;
+              display: table-cell;
+              padding: 16px 0;
+              text-align: right;
+              font-weight: 400;
+            }
+          }
+          .error-text {
+            margin: 8px 0 0;
+            line-height: 1.5;
+            color: #ea352d;
+            font-size: 14px;
+          }
+          .buy-btn {
+            margin: 8px 0 0;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+          }
+          .btn-gray {
+            border: 1px solid #888;
+            background: #888;
+            color: #fff;
+          }
+          .btn-red {
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+          }
+        }
+      }
+    }
+    &__ship {
+      margin: 0;
+      margin: 40px 0 0;
+      padding: 24px 12.5% 0;
+      border-top: 1px solid #f5f5f5;
+      text-align: center;
+      .ship-in{
+        max-width: 320px;
+        margin: 0 auto;
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          text-align: left;
+          display: block;
+          font-weight: bold;
+        }
+        .ship-adress {
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+          text-align: left;
+        }
+        .ship-adress-edit {
+          display: block;
+          text-align: right;
+          a {
+            color: #0099e8;
+            text-decoration: none;
+            &:hover {
+              opacity: 0.7;
+              border-bottom: 1px solid #0099e8;
+            }
+          }
+        }
+      }
+    }
+    &__pay {
+      margin: 0;
+      margin: 40px 0 0;
+      padding: 24px 12.5% 40px;
+      border-top: 1px solid #f5f5f5;
+      text-align: center;
+      .pay-in{
+        max-width: 320px;
+        margin: 0 auto;
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          text-align: left;
+          display: block;
+          font-weight: bold;
+        }
+        .pay-plan {
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+          text-align: left;
+        }
+        .pay-plan-edit {
+          display: block;
+          text-align: right;
+          a {
+            color: #0099e8;
+            text-decoration: none;
+            &:hover {
+              opacity: 0.7;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

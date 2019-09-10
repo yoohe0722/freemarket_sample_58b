@@ -11,21 +11,20 @@
       .container__bottom-left
         %ul
           %li.fa.fa-list-ul.icon
-            カテゴリーから探す
+            = link_to 'カテゴリーから探す','#', class:'search-method'
           %li.far.fa-tag.icon
-            ブランドから探す
+            = link_to 'ブランドから探す一覧','#', class:'search-method'
       .container__bottom-right.icon
         %ul
           %li.far.fa-heart.icon
-            いいね！一覧
-          -# %li.far.fa-bell.icon
+            = link_to 'いいね一覧','#'
           %li
-            %i.far.fa-bell
-              お知らせ
-          %li.fa.fa-check.icon
-            やることリスト
+            %i.far.fa-bell.icon
+              = link_to 'お知らせ','#'
+          %li
+            %i.fa.fa-check.icon
+              = link_to 'やることリスト','#'
           %li.far.fa-user-circle.icon
-            %a{href:"items/show"}
-              マイページ
+            = link_to 'マイページ','items/show'
   .header__bred-crumbs
     %p メルカリ > カテゴリー一覧

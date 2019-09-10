@@ -9,6 +9,15 @@
             = image_tag 'member_photo.png'
           %h2.mypage__box__content__user-icon__user-name
             ユーザー
+          .mypage__box__content__user-icon__number
+            .div
+              評価
+              .mypage__box__content__user-icon__mypage-number__rate-number
+                0
+            .div
+              出品数
+              .mypage__box__content__user-icon__mypage-number__number-of-exhibits
+                0
       %section.mypage__box__content__notification-todo
         %ul.mypage__box__content__notification-todo__tabs
           %li.mypage__box__content__notification-todo__tabs__notification
@@ -19,7 +28,77 @@
             %a{ :href => "#" }
               %h3
                 やることリスト
-      .mypage__box__content__notification-todo__tab-content
+        .mypage__box__content__notification-todo__tab-content
+          %ul#mypage__box__content__notification-todo__tab-content__notification
+            %li
+              %a.notification_list{ :href => "#" }
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    《招待コード「HAJIKIN」を入力してメルペイをはじめるとP1,000が必ずもらえる！》今だけの特別企画！
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          ６時間前 
+                %i.fa.fa-chevron-right.notification-chevron-right             
+            %li
+              %a.notification_list{ :href => "#" }
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    【実は高く売れる！】遊び終わったゲームもバーコードで10秒出品♪
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          ８時間前
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              %a.notification_list{ :href => "#" }
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    事務局から個別メッセージ「ログイン通知」
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          １日前 
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              %a.notification_list{ :href => "#" }
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    事務局から個別メッセージ「ログイン通知」
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          １日前 
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              %a.notification_list{ :href => "#" }
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    《CM放送中》参加したら10円分ポイント必ずもらえる！秋フェス開催中♪
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          １日前 
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              .mypage-go-list
+                %a{ :href => "#" }
+                  一覧を見る
       %section.mypage__box__content__contaier
         %h2.mypage__box__content__contaier__tab-head
           購入した商品
@@ -33,6 +112,9 @@
               %h3
                 過去の取引
         .mypage__box__content__contaier__tab-content
+          .mypage__box__content__contaier__tab-content__trading
+            %li
+              取引中の商品がありません
     .maypage__box__side
       %nav.maypage__box__side__sidebar
         %ul.maypage__box__side__sidebar__list

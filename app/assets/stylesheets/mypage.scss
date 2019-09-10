@@ -5,8 +5,8 @@
   font-family: "游ゴシック体", YuGothic;
   font-size: 14px;
   color: #333;
-  line-height: 1;
   overflow:auto;
+  box-sizing: border-box;
 }
   
 .mypage__box {
@@ -23,8 +23,6 @@
 }
   
 .mypage__box__content__notification-todo {
-  width: 700px;
-  height: 578px;
   margin: 0;
   background: #fff;
 }
@@ -50,16 +48,17 @@
 }
 
 .maypage__box__side__sidebar__list__item {
+    height: 16px;
     position: relative;
     display: block;
     padding: 16px;
     background: #fff;
     font-size: 14px;
     color: #333;
-    border-bottom: 0.5px solid #f5f5f5;
+    border-bottom: 1.2px solid #eee;
+    line-height: 1;
     &:hover{
-      background-color: #eee;
-      font-weight: 600;
+      background-color: #fafafa;
       cursor: pointer;
     }
   }
@@ -73,6 +72,11 @@
   transform: translate(0, -50%);
   -webkit-transition: all ease-out .2s;
   transition: all ease-out .2s;
+}
+
+.notification-chevron-right {
+  font-size: 1.1em;
+  color: #333;
 }
 
 .maypage__box__side__sidebar__list__icon:before {
@@ -105,6 +109,11 @@
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   color: #333;
+  text-decoration: none;
+  &:hover{
+    opacity: 0.5 ;
+    text-decoration: underline;
+    }
 }
 
 .mypage__box__content__user-icon__figure {
@@ -113,19 +122,39 @@
   height: 60px;
   margin: 0 auto;
   border-radius: 50%;
-  display: block;
-  top: 50%;
-  left: 0;
-  right: 0;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  color: #333;
 }
 
 .mypage__box__content__user-icon__user-name {
-
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
 }
 
+.mypage__box__content__user-icon__number {
+  margin: 8px 0 0;
+  font-size: 0;
+}
+
+.mypage__box__content__user-icon__number div {
+  display: inline-block;
+  font-size: 14px;
+}
+.mypage__box__content__user-icon__number div + div {
+  margin: 0 0 0 16px;
+}
+
+.mypage__box__content__user-icon__mypage-number__rate-number {
+  margin: 0 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mypage__box__content__user-icon__mypage-number__number-of-exhibits {
+  margin: 0 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
 
 .mypage__box__content__user-icon__figure img{
   width: 60px;
@@ -149,7 +178,7 @@
   font-weight: bold;
 }
 
-a {
+.mypage__box__content__notification-todo__tabs a {
   text-decoration: none;
   display: block;
   position: relative;
@@ -158,6 +187,90 @@ a {
   line-height: 72px;
   text-decoration: none;
   font-weight: bold;
+}
+
+// 仮置き
+.mypage__box__content__notification-todo__tabs__notification {
+  background: #fff;
+  border-top: 2px solid #ea352d;
+}
+
+.mercari-logo {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 48px;
+  height: 48px;
+}
+
+.notification_list {
+  display: block;
+  min-height: 80px;
+  padding: 16px;
+  color: #333;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-bottom: 1.2px solid #eee;
+  position: relative;
+  &:hover{
+    background-color: #fafafa;
+    cursor: pointer;
+  }
+}
+
+.mercari-logo img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.mypage-item-body{
+  margin: 0 40px 0 68px;
+}
+
+.mypage-item-text{
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  max-height: 4.4em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.time {
+  color: #888;
+}
+
+.mypage-item-time .fa {
+  font-weight: 100;
+  font-size: 1.2em;
+}
+
+.time-number{
+  font-size: 0.9em;
+}
+
+.mypage-go-list {
+  border: 0;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.mypage-go-list a {
+  display: block;
+  height: 56px;
+  margin: 0 auto;
+  background: #eee;
+  color: #333;
+  line-height: 56px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .mypage__box__content__contaier__tab-head{
@@ -172,6 +285,17 @@ a {
   background-color: #fff;
   width: 700px;
   height: 74px;
+}
+
+.mypage__box__content__contaier__tabs a{
+  text-decoration: none;
+  display: block;
+  position: relative;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .mypage__box__content__contaier__tabs {
@@ -191,8 +315,26 @@ a {
   font-weight: bold;
 }
 
+// 仮置き
+.mypage__box__content__contaier__tabs__trading {
+  border-top: 2px solid #ea352d;
+  background: #fff;
+}
+
+.mypage__box__content__contaier__tab-content__trading li {
+    padding: 160px 0 60px;
+    background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?45085161);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 78px 85px;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    list-style: none;
+    font-weight: bold;
+}
+
+
 .mypage__box__content__contaier__tab-content {
   background-color: #fff;
-  width: 700px;
-  height: 236px;
 }

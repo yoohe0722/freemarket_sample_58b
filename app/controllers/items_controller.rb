@@ -10,4 +10,7 @@ class ItemsController < ApplicationController
 
   def buycheck
   end
+
+  def shipping
+  end
 end

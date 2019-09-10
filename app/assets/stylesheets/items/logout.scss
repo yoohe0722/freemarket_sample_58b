@@ -1,0 +1,25 @@
+.mypage-content {
+  width: 700px;
+  float: right;
+  border-top: 1px solid #f5f5f5;
+  padding: 64px;
+  box-sizing: border-box;
+  background: #fff;
+  &__logoutbox {
+    max-width: 320px;
+    margin: 0 auto;
+    height: 50px;
+    .logoutbutton {
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}

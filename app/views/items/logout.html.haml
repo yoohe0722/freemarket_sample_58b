@@ -1,0 +1,11 @@
+%header
+  = render 'module/header.html.haml'
+.mypage
+  %main.mypage__box
+    .maypage-sidebar
+      = render 'module/mypage-sidebar'
+    .mypage-content
+      .mypage-content__logoutbox
+        .mypage-content__logoutbox__logout
+          = button_to "ログアウト",{controller: 'items', action: 'mypage'}, {method: :get, class: "logoutbutton"}
+              

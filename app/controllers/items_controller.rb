@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   def index
   end
 
-  def show
+  def mypage
   end
 
   def buy

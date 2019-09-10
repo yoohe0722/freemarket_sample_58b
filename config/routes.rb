@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'buycheck'
       get 'shipping'
       get 'mypage'
+      get 'credit'
     end
   end
 end

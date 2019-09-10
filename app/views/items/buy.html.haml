@@ -2,8 +2,65 @@
   .item-box-container
     .item_box_contents_center
       %h1.item_name 商品名
-      .item_photo_box
-        = image_tag "m49030494893_1.jpg", size: "300x300", alt: "test"
+      .item_box_contents_center_left_right
+        .item_photo_box
+          = image_tag "m49030494893_1.jpg", size: "300x300", alt: "test"
+          .item_photo_small
+            .item_photo_small_box
+              = image_tag "m49030494893_1.jpg", size: "60x60", alt: "test"
+            .item_photo_small_box
+              = image_tag "m49030494893_1.jpg", size: "60x60", alt: "test"
+        .item_details.box
+          %table.item-detail-table
+            %tbody
+              %tr
+                %th 出品者
+                %td
+                  = link_to "チェルシー","https://www.mercari.com/jp/u/348028699/"
+                  .item-user-icon
+                    .item-user-ratings
+                      %i @
+                      %span 4085
+                    .item-user-ratings
+                      %i B
+                      %span 64
+                    .item-user-ratings
+                      %i C
+                      %span 7
+              %tr
+                %th カテゴリー
+                %td
+                  %div
+                    = link_to "レディース","https://www.mercari.com/jp/category/1/"
+                  %div
+                    = link_to ">ヘアアクセサリー","https://www.mercari.com/jp/category/22/"
+                  %div
+                    = link_to ">その他","https://www.mercari.com/jp/category/240/"
+              %tr
+                %th ブランド
+                %td
+              %tr
+                %th 商品の状態
+                %td 新品、未使用
+              %tr
+                %th 配送料の負担
+                %td 送料込み(出品者負担)
+              %tr
+                %th 配送の方法
+                %td 普通郵便(定形、定形外)
+              %tr
+                %th 配送元地域
+                %td
+                  = link_to ""
+                  %a{:href => "https://www.mercari.com/jp/area/27/"} 大阪府
+              %tr
+                %th 発送日の目安
+                %td 1~2日で発送
+
+
+
+
+
       .item_price_box
         %span.item_price_box_text
           ¥10,000
@@ -13,7 +70,7 @@
           送料込み
       .item_box_text_center
         .sales_point_message
-          残高1000円です
+          残高 ¥3,250 をお持ちです
       %a.item-buy-btn{:href => "https://www.mercari.com/jp/transaction/buy/m20952905050/"}
         購入画面に進む
       %p.item-description-inner
@@ -29,19 +86,21 @@
 
         メルカリ最安値で送料無料(*≧∀≦*)
 
+
+
       .item-button-container
         .item-button-left
           %button.item-button.item-button-like{"data-toggle" => "like", :name => "like!", :type => "button"}
             %i.icon-like-border
-            %span いいね!
+            %span ♡ いいね!
             %span.fade-in-down 0
-          %a.item-button-report{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
+          %a.item-button.item-button-report{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
             %i.icon-flag
-            %span 不適切な商品の報告
+            %span 🏳 不適切な商品の報告
         .item-button-right
           %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
           %i.icon-lock
-          %span あんしん・あんぜんへの取り組み
+          %span 🔒 あんしん・あんぜんへの取り組み
 
   .item_message_content
     .item_message_form
@@ -50,15 +109,103 @@
       %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
       %button.message-submit.btn-default.btn-gray{:type => "submit"}
         %span コメントする
-  %ul.nav_item_link_prev_next
-    %li.nav_item_link_prev
-      %a{:href => "https://item.mercari.com/jp/m72616905145/"}
-      %i.icon-arrow-left>
-      【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計
-    %li.nav_item_link_next
-      %a{:href => "https://item.mercari.com/jp/m21980231717/"}
-        chanmi様専用
-      %i.icon-arrow-right
+    %ul.nav-item-link-prev-next.clearfix
+      .nav-item-link-prev_leftbox
+        %li.nav-item-link-prev
+          = link_to "<【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計","https://item.mercari.com/jp/m72616905145/"
+      .nav-item-link-prev_rightbox
+        %li.nav-item-link-next
+          = link_to "chanmi様専用>","https://item.mercari.com/jp/m21980231717/"
+    .item-social-media-box
+      .item-social-media-box-in
+        .icon_facebook_etc
+          = image_tag "スクリーンショット 2019-09-10 15.10.56.png", size: "154x49", alt: "test"
+
+    %h2.items-box-head
+      = link_to "ユーザーさんのその他の出品", "https://www.mercari.com/jp/u/711116191/"
+
+
+    .items-box-content.clearfix
+      .items-box-content_tag
+        .items-box-content_tag_photo
+          = image_tag "m49030494893_1.jpg", size: "220x220", alt: "test"
+        .items-box-body
+          .items-box-body_text_box
+            %h3.items-box-name.font-2
+              emmu.12 チーク ピンク系
+            .items-box-num
+              .items-box-price.font-5
+                ¥450
+              .items-box-price.font-2
+                ♡3
+
+      .items-box-content_tag
+        .items-box-content_tag_photo
+          = image_tag "m49030494893_1.jpg", size: "220x220", alt: "test"
+        .items-box-body
+          .items-box-body_text_box
+            %h3.items-box-name.font-2
+              emmu.12 チーク ピンク系
+            .items-box-num
+              .items-box-price.font-5
+                ¥450
+              .items-box-price.font-2
+                ♡3
+
+      .items-box-content_tag
+        .items-box-content_tag_photo
+          = image_tag "m49030494893_1.jpg", size: "220x220", alt: "test"
+        .items-box-body
+          .items-box-body_text_box
+            %h3.items-box-name.font-2
+              emmu.12 チーク ピンク系
+            .items-box-num
+              .items-box-price.font-5
+                ¥450
+              .items-box-price.font-2
+                ♡3
+      
+    .items-box-content.clearfix
+      .items-box-content_tag
+        .items-box-content_tag_photo
+          = image_tag "m49030494893_1.jpg", size: "220x220", alt: "test"
+        .items-box-body
+          .items-box-body_text_box
+            %h3.items-box-name.font-2
+              emmu.12 チーク ピンク系
+            .items-box-num
+              .items-box-price.font-5
+                ¥450
+              .items-box-price.font-2
+                ♡3
+
+      .items-box-content_tag
+        .items-box-content_tag_photo
+          = image_tag "m49030494893_1.jpg", size: "220x220", alt: "test"
+        .items-box-body
+          .items-box-body_text_box
+            %h3.items-box-name.font-2
+              emmu.12 チーク ピンク系
+            .items-box-num
+              .items-box-price.font-5
+                ¥450
+              .items-box-price.font-2
+                ♡3
+
+      .items-box-content_tag
+        .items-box-content_tag_photo
+          = image_tag "m49030494893_1.jpg", size: "220x220", alt: "test"
+        .items-box-body
+          .items-box-body_text_box
+            %h3.items-box-name.font-2
+              emmu.12 チーク ピンク系
+            .items-box-num
+              .items-box-price.font-5
+                ¥450
+              .items-box-price.font-2
+                ♡3
+
+
 
 
 

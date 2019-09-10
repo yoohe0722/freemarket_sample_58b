@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'shipping'
       get 'mypage'
       get 'logout'
+      get 'user_edit'
     end
   end
 end

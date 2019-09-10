@@ -1,0 +1,72 @@
+.mypage__box__editbox {
+  background: #fff;
+  width: 700px;
+  float: right;
+  &__head {
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    line-height: 1.4;
+    font-weight:bold;
+  }
+  &__form__edit-icon {
+    padding: 72px 16px 24px;
+    background-image: url(user-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: 0;
+    & img {
+      display: inline-block;
+      overflow: hidden;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      vertical-align: middle;  
+    }
+    .input-user-edit-nickname {
+      width: 220px;
+      margin: 0 0 0 8px;
+      vertical-align: middle;
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+  }
+  &__form__edit-profilebox {
+    padding: 40px 16px;
+    .input-user-edit-profile {
+      display: block;
+      min-height: 216px;
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.5;
+      box-sizing: border-box;
+    }
+    .mypage__box__editbox__form__btn {
+      margin: 16px 0 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}

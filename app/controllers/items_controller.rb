@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
   def mypage
   end
 
+  def logout
+  end
+
   def buy
   end
 

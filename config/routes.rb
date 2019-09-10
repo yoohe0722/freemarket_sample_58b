@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'buy'
       get 'buycheck'
+      get 'shipping'
     end
   end
 end

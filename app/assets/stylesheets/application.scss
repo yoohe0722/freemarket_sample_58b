@@ -1,12 +1,12 @@
 @import "font-awesome";
 @import "reset";
-// @import "footer";
-@import "header";
-@import "subheader";
-@import "subfooter";
+@import "module/footer";
+@import "module/header";
+@import "module/subheader";
+@import "module/subfooter";
+@import "module/mypage-sidebar";
 @import "items/buycheck";
 @import "items/mypage";
-@import "mypage-sidebar";
 @import "shipping";
 @import "details";
 @import "items/logout";

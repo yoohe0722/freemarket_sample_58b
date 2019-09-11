@@ -8,6 +8,9 @@ class ItemsController < ApplicationController
   def logout
   end
 
+  def user_edit
+  end
+
   def buy
   end
 

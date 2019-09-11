@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'mypage'
       get 'logout'
       get 'user_edit'
+      get 'identification'
     end
   end
 end

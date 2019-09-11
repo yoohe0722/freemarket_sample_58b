@@ -12,4 +12,59 @@
           %div
           %p
             お客さまの本人情報をご登録ください。
-        
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            %p.right-text
+              = link_to("#", class: 'right-text-link') do
+                本人確認書類のアップロードについて
+                %i.fa.fa-chevron-right
+          .form-block
+            %label
+              お名前
+            %p.identification.text
+              エキスパ 太郎
+          .form-block
+            %label
+              お名前カナ
+            %p
+              エキスパ タロウ
+          .form-block
+            %label
+              生年月日
+            %p
+              1986/08/28
+          .form-block
+            %label{for: "zip"} 郵便番号
+            %span.arbitrary-mark
+              任意
+            %input.input-identification-zip_code{name: "zip_code", placeholder: "例)1234567", type: "text", value: ""}
+          .form-block
+            .select-box
+              %i.fa.fa-chevron-right
+              %select
+            -# %label{for: "zip"} 都道府県
+            -# %span.arbitrary-mark
+            -#   任意
+            -# %input.input-identification-zip_code{name: "zip_code", placeholder: "例)1234567", type: "text", value: "大阪府"}
+          .form-block
+            %label{for: "zip"} 市区町村
+            %span.arbitrary-mark
+              任意
+            %input.input-identification-zip_code{name: "city", placeholder: "例) 横浜市緑区", type: "text", value: ""}
+          .form-block
+            %label{for: "zip"} 番地
+            %span.arbitrary-mark
+              任意
+            %input.input-identification-zip_code{name: "block"", placeholder: "例) 青山1−1−1", type: "text", value: ""}
+          .form-block
+            %label{for: "zip"} 建物名
+            %span.arbitrary-mark
+              任意
+            %input.input-identification-zip_code{name: "zip_code", placeholder: "例) 柳ビル103", type: "text", value: ""}
+            = button_to "登録する",{controller: 'items', action: 'mypage'}, {method: :get, class: "input-identification-registration_btn"}
+            %p.right-text.form-block
+              = link_to("#", class: 'right-text-link') do
+                本人情報の登録について
+                %i.fa.fa-chevron-right
+= render 'module/footer'
+= render 'module/sell-btn'

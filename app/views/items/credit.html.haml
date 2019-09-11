@@ -1,0 +1,25 @@
+%header
+  = render 'module/header.html.haml'
+.mypage
+  %main.mypage__box
+    .maypage-sidebar
+      = render 'module/mypage-sidebar'
+    .credit-box
+      .credit-box-in
+        .credit-box-in__top
+          %h2 支払い方法
+        .credit-box-in__main
+          .credit-info
+            %h3 クレジットカード一覧
+          .credit-btn
+            .credit-btn-in
+              .btn-btn
+                %i.material-icons payment
+                .btn-text
+                  = link_to "クレジットカードを追加する",("#")
+          .credit-help
+            .help-in
+              = link_to "支払い方法について",("#")
+              %i.material-icons chevron_right
+%footer
+  = render 'module/footer.html.haml'

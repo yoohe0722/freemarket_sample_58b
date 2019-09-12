@@ -11,6 +11,9 @@ class ItemsController < ApplicationController
   def user_edit
   end
 
+  def identification
+  end
+
   def buy
   end
 

@@ -45,28 +45,28 @@
                 商品の詳細
               .sell-form-box
                 .form-group_first
-                  %label
-                    カテゴリー
-                  %span.form-require
-                    必須
-                  .select-wrap-box
-                    .select-wrap
+                  = form_with(model: @items, local: true) do |f|
+                    %label
+                      カテゴリー
+                    %span.form-require 必須
+                    .select-wrap-box
                       %i.fas.fa-angle-down
                         %pseudo:before
-                        %pseudo:before
-                      %select.select-default
+                      .select-wrap-box_prefecture
+                        .select-wrap
+                          = f.collection_select :categoryactive_id, Categoryactive.all, :id, :name
 
                 .form-group
-                  %label
-                    商品の状態
-                  %span.form-require
-                    必須
-                  .select-wrap-box
-                    .select-wrap
+                  = form_with(model: @items, local: true) do |f|
+                    %label
+                      商品の状態
+                    %span.form-require 必須
+                    .select-wrap-box
                       %i.fas.fa-angle-down
                         %pseudo:before
-                        %pseudo:before
-                      %select.select-default
+                      .select-wrap-box_prefecture
+                        .select-wrap
+                          = f.collection_select :conditionactive_id, Conditionactive.all, :id, :name
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -74,36 +74,41 @@
                 %i.fas.fa-question-circle
               .sell-form-box
                 .form-group_first
-                  %label
-                    配送料の負担
-                  %span.form-require
-                    必須
-                  .select-wrap-box
-                    .select-wrap
+                  = form_with(model: @items, local: true) do |f|
+                    %label
+                      配送量の負担
+                    %span.form-require 必須
+                    .select-wrap-box
                       %i.fas.fa-angle-down
                         %pseudo:before
-                        %pseudo:before
-                      %select.select-default
+                      .select-wrap-box_prefecture
+                        .select-wrap
+                          = f.collection_select :deliveryactive_id, Deliveryactive.all, :id, :name
+                
                 .form-group
-                  %label
-                    発送元の地域
-                  %span.form-require 必須
-                  .select-wrap-box
-                    .select-wrap
+                  = form_with(model: @user, local: true) do |f|
+                    %label
+                      発送元の地域
+                    %span.form-require 必須
+                    .select-wrap-box
                       %i.fas.fa-angle-down
                         %pseudo:before
-                        %pseudo:before
-                      %select.select-default
+                      .select-wrap-box_prefecture
+                        .select-wrap
+                          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+
+
                 .form-group
-                  %label
-                    発送までの日数
-                  %span.form-require 必須
-                  .select-wrap-box
-                    .select-wrap
+                  = form_with(model: @items, local: true) do |f|
+                    %label
+                      発送までの日数
+                    %span.form-require 必須
+                    .select-wrap-box
                       %i.fas.fa-angle-down
                         %pseudo:before
-                        %pseudo:before
-                      %select.select-default
+                      .select-wrap-box_prefecture
+                        .select-wrap
+                          = f.collection_select :daysbeforeshipment_id, Daysbeforeshipment.all, :id, :name
 
             .sell-content_secoud_under
               %h3.sell-sub-head_under
@@ -139,15 +144,12 @@
             またブランド品でシリアルナンバー等がある場合はご記載ください。
             = link_to "偽ブランドの販売", "/jp/help_center/getting_started/counterfeit_goods/" ,target: "_blank"
             は犯罪であり処罰される可能性があります。
+          %p
+            また、出品をもちまして
+            = link_to "加盟店規約", "/jp/seller_terms/"
+            に同意したことになります。
         %button.btn-default.btn-red{:type => "submit"}
           出品する
         %a.btn-default.btn-gray
           もどる
 = render 'module/subfooter'
-
-
-
-
-
-
-

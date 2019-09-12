@@ -1,3 +1,7 @@
+* {
+  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  box-sizing: border-box;
+}
 .footer__banner {
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   background-image: url(download_app_bg.jpg) ;
@@ -7,19 +11,23 @@
   height: 260px;
 
   .footer__banner-contents {
-    width: 750px;
+    width: 770px;
     margin: 0 auto;
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
+    position:relative;
     .footer__banner-contents--left{
       margin: auto;
       h2 {
         font-size: 24px;
         font-weight: 600;
         margin-bottom: 15px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        line-height: 1.4;
       }
       p {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
         font-size: 35px;
         margin-bottom: 20px;
         width: 420px;
@@ -30,13 +38,14 @@
     }
     .app-banner-icon {
       display: flex;
-      justify-content: left;
+      // justify-content: left;
       align-items: center;
       .mercari_icon {
-        padding-right:20px;
+        // padding-right:20px;
       }
       a {
-        padding-right: 8px;
+        padding-left: 20px;
+        // padding-right: 8px;
       }
     }
   }
@@ -62,7 +71,7 @@
 
   .footer__link-container {
     margin: 0 auto;
-    width: 71%;
+    width: 1020px;
     .footer-cell {
       display: block;
       width: 20%;
@@ -118,7 +127,7 @@
   }
 
   .footer__bottom {
-    width: 71%;
+    width: 1020px;
     margin: 30px auto 20px;
     // align-items: center;
     & a {

@@ -8,7 +8,7 @@
       .mypage__box__editbox__head
         プロフィール
       %form.mypage__box__editbox__form
-        .mypage__box__editbox__form__edit-icon
+        .mypage__box__editbox__form__edit-icon{style: "background-image:url(#{asset_path "user-bg.jpg"})"}
           .mypage__box__editbox__form__edit-icon__figure
             = image_tag 'member_photo.png'
             %input.input-user-edit-nickname{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "ユーザー"}

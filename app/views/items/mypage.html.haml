@@ -5,7 +5,7 @@
     .maypage-sidebar
       = render 'module/mypage-sidebar'
     .mypage__box__content
-      %section.mypage-user
+      %section.mypage-user{style: "background-image:url(#{asset_path "user-bg.jpg"})"}
         = link_to ("#") do
           .mypage-figure
             = image_tag 'member_photo.png'
@@ -114,7 +114,7 @@
               %h3
                 過去の取引
         .mypage-contaier__tab-content
-          .mypage-contaier__tab-content__trading
+          .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
             %li
               取引中の商品がありません
 = render 'module/footer'

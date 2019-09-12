@@ -8,9 +8,9 @@
       .mypage__box__editbox__head
         プロフィール
       %form.mypage__box__editbox__form
-        .mypage__box__editbox__form__edit-icon
+        .mypage__box__editbox__form__edit-icon{style: "background-image:url(#{asset_path "user-bg.jpg"})"}
           .mypage__box__editbox__form__edit-icon__figure
-            -# = image_tag 'member_photo.png'
+            = image_tag 'member_photo.png'
             %input.input-user-edit-nickname{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "ユーザー"}
         .mypage__box__editbox__form__edit-profilebox
           %textarea.input-user-edit-profile{name: "nickname", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}

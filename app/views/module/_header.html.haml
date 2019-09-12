@@ -2,7 +2,7 @@
   .header__container
     .container__top
       %a{href:"/"}
-        = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
+        -# = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
       %form.header__form{:action => "https://www.mercari.com/jp/search/"}
         %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
         %i.fa.fa-search.icon-search

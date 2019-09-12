@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'credit'
       get 'logout'
       get 'user_edit'
+      get 'identification'
     end
   end
 end

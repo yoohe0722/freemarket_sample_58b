@@ -303,21 +303,21 @@ li.form-group_under_first{
   font-weight: bold;
 }
 
-.sell-btn-box{
+.btn-container{
   padding: 40px;
   border-top: 1px solid #eee;
-  height:250px;
+  // height:250px;
   background-color: white;
 }
 
-.sell-btn-box_text{
+.btn-container_text{
   a {
     text-decoration: none;
     color: #0099e8;
   }
 }
 
-.sell-btn-box .btn-red {
+.btn-container .btn-red {
   margin: 40px 0 0;
   background: #ea352d;
   border: 1px solid #ea352d;

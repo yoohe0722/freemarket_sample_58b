@@ -1,12 +1,25 @@
+// config
 @import "font-awesome";
-@import "reset";
-@import "module/footer";
+@import "config/reset";
+
+
+// module
 @import "module/header";
+@import "module/footer";
 @import "module/subheader";
 @import "module/subfooter";
 @import "module/mypage-sidebar";
 @import "module/sell-btn";
+
+
+// path__items
+@import "items/index";
+@import "items/details";
 @import "items/buycheck";
+@import "items/shipping";
+
+
+// path__users
 @import "items/mypage";
 @import "shipping";
 @import "details";
@@ -14,3 +27,5 @@
 @import "items/identification";
 @import "items/credit";
 @import "items/user_edit";
+@import "items/logout";
+

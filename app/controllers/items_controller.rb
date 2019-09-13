@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_action :login_check, only: [:buy]
+
   def index
   end
 
@@ -21,5 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def shipping
+  end
+
+  def login_check
+    redirect_to "/users/sign_in" unless user_signed_in?
   end
 end

@@ -174,19 +174,6 @@
   margin: 8px 0 0;
   position: relative;
   background: #fff;
-  & select {
-    width: 100%;
-    position: relative;
-    z-index: 2;
-    height: 48px;
-    padding: 0 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: 0;
-    font-size: 16px;
-    line-height: 1.5;
-    cursor: pointer;
-  }
 }
 
 .select-default {
@@ -201,29 +188,24 @@
   font-size: 16px;
   line-height: 1.5;
   cursor: pointer;
-    & select {
-      width: 100%;
-    }
+  & select {
+    width: 100%;
   }
+}
 
-  .select-wrap-box{
-    position: relative;
-    .fas.fa-angle-down {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      z-index: 2;
-      color: #888;
-      font-size: 20px;
-      transform: translate(0, -50%);
-      & :before {
-        border-style: solid;
-        border-width: 0;
-      }
-    }
+.fas.fa-angle-down {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 20px;
+  transform: translate(0, -50%);
+  & :before {
+    border-style: solid;
+    border-width: 0;
   }
-
-
+}
 
 .sell-content_secoud{
   padding: 40px;
@@ -277,7 +259,9 @@ li.form-group_under_first{
   float: right;
 }
 
+.sell-price-input{
 
+}
 .input-default_box{
   display: inline-block;
   width: 80%;
@@ -303,21 +287,20 @@ li.form-group_under_first{
   font-weight: bold;
 }
 
-.btn-container{
+.sell-btn-box{
   padding: 40px;
   border-top: 1px solid #eee;
-  // height:250px;
+  height:250px;
   background-color: white;
 }
 
-.btn-container_text{
+.sell-btn-box_text{
   a {
     text-decoration: none;
-    color: #0099e8;
   }
 }
 
-.btn-container .btn-red {
+.sell-btn-box .btn-red {
   margin: 40px 0 0;
   background: #ea352d;
   border: 1px solid #ea352d;
@@ -366,4 +349,3 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
-

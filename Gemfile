@@ -44,6 +44,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'better_errors'     # 開発中のエラー画面をリッチにする
+  gem 'binding_of_caller' # 開発中のエラー画面にさらに変数の値を表示する
 end
 
 group :development do
@@ -75,5 +77,4 @@ gem 'erb2haml'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'active_hash'
-gem 'devise'
 gem 'devise'

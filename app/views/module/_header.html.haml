@@ -1,30 +1,53 @@
 .header
   .header__container
-    .container__top
-      %a{href:"/"}
-        = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
-      %form.header__form{:action => "https://www.mercari.com/jp/search/"}
-        %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
-        %i.fa.fa-search.icon-search
+    .header__container__top
+      %h1
+        = link_to("/") do
+          = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
+      .header__form
+        = form_with(model: @item, local: true) do |f|
+          %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+          %i.fa.fa-search.icon-search
 
-    .container__bottom
+    .header__container__bottom.clearfix
       .container__bottom-left
-        %ul
-          %li.fa.fa-list-ul.icon
-            = link_to 'カテゴリーから探す','#', class:'search-method'
-          %li.far.fa-tag.icon
-            = link_to 'ブランドから探す一覧','#', class:'search-method'
-      .container__bottom-right.icon
-        %ul
-          %li.far.fa-heart.icon
-            = link_to 'いいね一覧','#'
+        %ul.header-nav
           %li
-            %i.far.fa-bell.icon
-              = link_to 'お知らせ','#'
+            %h2
+              = link_to('#', class:'search-method') do
+                %i.fa.fa-list-ul
+                %span カテゴリーから探す
           %li
-            %i.fa.fa-check.icon
-              = link_to 'やることリスト','#'
-          %li.far.fa-user-circle.icon
-            = link_to 'マイページ','/items/mypage'
-  .header__bred-crumbs
-    %p メルカリ > カテゴリー一覧
+            %h2
+              = link_to('#', class:'search-method') do
+                %i.fa.fa-tag.icon
+                %span ブランドから探す
+      .container__bottom-right
+        %ul.header-user-nav
+          %li
+            = link_to('#', class: 'link') do
+              %i.icon.fa.fa-heart-o
+              %span いいね!一覧
+          %li
+            = link_to('#', class: 'link') do
+              %i.icon.fa.fa-bell-o
+                .nav-count 4
+              %span お知らせ
+          %li
+            = link_to('#', class: 'link') do
+              %i.icon.fa.fa-check
+              %span やることリスト
+          %li.list-mypage
+            = link_to('/items/mypage', class:'link') do
+              = image_tag "member_photo.png" ,width: "32", alt: "", class: "member_photo"
+              %span マイページ
+  -# .header__bred-crumbs
+  -#   %ul
+  -#     %li
+  -#       = link_to('/', class: 'bred-crumbs__link') do
+  -#         %span メルカリ
+  -#     %li
+  -#       %i.fa.fa-chevron-right
+  -#     %li
+  -#       = link_to('#', class: 'bred-crumbs__link') do
+  -#         %span ブランド一覧

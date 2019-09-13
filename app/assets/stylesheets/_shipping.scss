@@ -30,7 +30,7 @@
 }
 
 .sell-upload-box {
-  width: 620px;
+  width: 700px;
   padding: 40px;
   & .clearfix:after {
     display: block;
@@ -121,6 +121,18 @@
 
 .form-group {
   margin: 40px 0 0;
+  .textarea-default{
+    margin: 8px 0 0;
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    min-height: 104px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+  }
   & label {
     font-weight: 600;
     display: inline-block;
@@ -138,7 +150,7 @@
 }
 
 .input-default_shipping {
-  width: 94%;
+  width: 100%;
   margin: 8px 0 0 0 ;
   height: 48px;
   padding: 10px 16px 8px;
@@ -208,7 +220,7 @@
 
   .select-wrap-box{
     position: relative;
-    .fas.fa-angle-down {
+    .fa.fa-angle-down {
       position: absolute;
       right: 16px;
       top: 50%;
@@ -345,7 +357,7 @@ li.form-group_under_first{
 }
 
 .input-default_price {
-  width: 91%;
+  width: 111%;
   margin: 8px 0 0 0 ;
   height: 40px;
   padding: 10px 16px 8px;

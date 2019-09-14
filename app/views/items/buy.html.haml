@@ -20,13 +20,13 @@
                   = link_to "チェルシー","https://www.mercari.com/jp/u/348028699/"
                   .item-user-icon
                     .item-user-ratings
-                      %i @
-                      %span 4085
+                      = image_tag "20080830175621.gif", alt: "test"
+                      %span 32
                     .item-user-ratings
-                      %i B
+                      = image_tag "20080830175618.gif", alt: "test"
                       %span 64
                     .item-user-ratings
-                      %i C
+                      = image_tag "20080830175622.gif", alt: "test"
                       %span 7
               %tr
                 %th カテゴリー
@@ -100,8 +100,8 @@
             %span 🏳 不適切な商品の報告
         .item-button-right
           %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
-          %i.icon-lock
-          %span 🔒 あんしん・あんぜんへの取り組み
+          %i.material-icons lock
+          %span あんしん・あんぜんへの取り組み
 
   .item_message_content
     .item_message_form
@@ -112,11 +112,13 @@
         %span コメントする
     %ul.nav-item-link-prev-next.clearfix
       .nav-item-link-prev_leftbox
-        %li.nav-item-link-prev
-          = link_to "<【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計","https://item.mercari.com/jp/m72616905145/"
+        %i.material-icons navigate_before
+        %li.nav-item-link-prev_left
+          = link_to "【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計","https://item.mercari.com/jp/m72616905145/"
       .nav-item-link-prev_rightbox
         %li.nav-item-link-next
-          = link_to "chanmi様専用>","https://item.mercari.com/jp/m21980231717/"
+          = link_to "chanmi様専用","https://item.mercari.com/jp/m21980231717/"
+          %i.material-icons navigate_next
     .item-social-media-box
       .item-social-media-box-in
         .icon_facebook_etc

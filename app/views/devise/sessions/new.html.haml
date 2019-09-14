@@ -16,9 +16,13 @@
           = f.password_field :password, autocomplete: "current-password"
         - if devise_mapping.rememberable?
           .field
-            = f.check_box :remember_me
-            = f.label :remember_me
-        .actions
-          = f.submit "Log in"
-    = render "devise/shared/links"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: 'メールアドレス'
+          .field
+            = f.password_field :password, autocomplete: "current-password", class: 'input', placeholder: 'パスワード'
+          .field
+            .field-robbot
+              = image_tag 'robbot.png', size: "300x80"
+          .actions
+            = f.submit "ログイン", class: 'actions-btn'
+            = link_to "パスワードをお忘れの方","#", class: 'actions-pass'
 = render 'module/subfooter'

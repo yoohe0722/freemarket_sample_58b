@@ -1,7 +1,20 @@
-.sessions-main-in {
-  max-width: none;
-  width: 456px;
-  h2 {
-        padding: 40px 64px;
+.sessions-main {
+  display: block;
+  .sessions-main-in {
+    max-width: none;
+    max-width: 456px;
+    margin: 0 auto;
+    background: #fff;
+    .session-top {
+      padding: 40px 64px;
+      text-align: center;
+      p {
+        font-size: 14px;
+      }
+    }
+    h2 {
+          padding: 40px 64px;
+    }
   }
+
 }

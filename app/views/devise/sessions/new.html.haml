@@ -1,0 +1,25 @@
+= render 'module/subheader'
+.sessions-main
+  .sessions-main-in
+    .session-top
+      %p アカウントをお持ちでない方はこちら
+      = link_to '新規会員登録', '/users/sign_up'
+    .session-form
+      .session-form__facebook
+        = button_to 'Facebookでログイン', '#',class: 'session-form__facebook'
+        %i.fa.fa-facebook-square
+      .session-form__google
+        = button_to 'Googleでログイン', '#',class: 'session-form__google-in'
+    .session-bottom
+      .session-bottom__form
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: 'メールアドレス'
+          .field
+            = f.password_field :password, autocomplete: "current-password", class: 'input', placeholder: 'パスワード'
+          .field
+            = image_tag 'robbot.png', size: "300x80"
+          .actions
+            = f.submit "ログイン", class: 'actions-btn'
+            = link_to "パスワードをお忘れの方","#", class: 'actions-pass'
+= render 'module/subfooter'

@@ -6,11 +6,11 @@ CSV.foreach('db/brands.csv') do |row|
 end
 
 #brand_group
-# CSV.foreach('db/brand_group.csv') do |row|
-#   BrandGroup.create(name: row[0])
-# end
+CSV.foreach('db/brand_group.csv') do |row|
+  BrandGroup.create(name: row[0])
+end
 
 #size
-# CSV.foreach('db/size.csv') do |row|
-#   Size.create(name: row[0])
-# end
+CSV.foreach('db/size.csv') do |row|
+  Size.create(name: row[0])
+end

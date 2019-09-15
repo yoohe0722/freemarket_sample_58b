@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :login_check, only: [:buy]
+  before_action :login_check, only: [:buy, :shipping]
 
   def index
   end

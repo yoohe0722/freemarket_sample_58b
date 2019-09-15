@@ -39,6 +39,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  gem 'better_errors'     # 開発中のエラー画面をリッチにする
+  gem 'binding_of_caller' # 開発中のエラー画面にさらに変数の値を表示する
 end
 
 group :development do
@@ -69,3 +76,6 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
+gem 'active_hash'
+gem 'devise'
+gem 'ancestry'

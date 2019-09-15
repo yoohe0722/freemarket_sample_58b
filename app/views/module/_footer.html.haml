@@ -1,5 +1,5 @@
 .footer
-  .footer__banner
+  .footer__banner{:style => "background-image:url(#{asset_path "download_app_bg.jpg"})"}
     .footer__banner-contents
       .footer__banner-contents--left
         %h2 スマホでかんたんフリマアプリ
@@ -25,14 +25,12 @@
             = link_to '公式ブログ','#'
           %li
             = link_to 'メルカリロゴ利用ガイドライン', '#'
-          %li.footer-social-link
-            -# =link_to '','https://twitter.com/mercari_jp',target: :_blank
-            %a{:href => "https://twitter.com/mercari_jp", :target => "_blank"}
-              %i.fab.fa-twitter
-          %li.footer-social-link
-            -# =link_to '','https://www.facebook.com/mercarijp',target: :_blank
-            %a{:href => "https://www.facebook.com/mercarijp", :target => "_blank"}
-              %i.fab.fa-facebook-square
+          .footer-social-link
+            = link_to("https://twitter.com/mercari_jp", target: "_blank") do
+              %i.fa.fa-twitter
+          .footer-social-link
+            = link_to("https://www.facebook.com/mercarijp", target: "_blank") do
+              %i.fa.fa-facebook-square
       .footer-cell
         %h2.footer-head ヘルプ＆ガイド
         %ul
@@ -47,8 +45,7 @@
           %li
             = link_to '車体取引ガイド', '#'
           %li
-            = link_to 'メルカリあんしん・あんぜん宣言！', '#', target: :_blank
-            -# %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"} メルカリあんしん・あんぜん宣言！
+            = link_to'メルカリあんしん・あんぜん宣言！', '#', target: :_blank
           %li
             = link_to '偽ブランド品撲滅への取り組み', '#'
           %li
@@ -79,14 +76,11 @@
         %h2.footer-head 国
         %ul
           %li
-            =link_to '日本', '#'
-            -# %a.active{:href => "https://www.mercari.com/jp/"} 日本
+            =link_to '日本', '#', class: "active"
           %li
             =link_to 'United States', '#'
     .footer__bottom
-      = link_to image_tag("logo-white.svg"),("/items")
-      -# %a.footer-logo{:href => "https://www.mercari.com/jp/"}
-      -#   = image_tag "logo-white.svg", size: "124x33", alt: "mercari"
+      = link_to image_tag("logo-white.svg"),("/items"), class: "footer-logo", size: "124x33", alt:"mercari"
       %span
         %small.footer-copyright © 2019 Mercari
 

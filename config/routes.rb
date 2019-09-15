@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'items#index'
   resources :items, only: [:index, :show] do
     collection do
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
       get 'credit'
       get 'logout'
       get 'user_edit'
+      get 'identification'
     end
   end
 end

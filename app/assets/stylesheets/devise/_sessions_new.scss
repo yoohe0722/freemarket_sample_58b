@@ -1,15 +1,73 @@
 .sessions-main {
   display: block;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: rgb(51, 51, 51);
+  background: #f5f5f5;
   .sessions-main-in {
     max-width: none;
     max-width: 456px;
     margin: 0 auto;
     background: #fff;
     .session-top {
-      padding: 40px 64px;
+      padding: 38px 64px;
       text-align: center;
       p {
         font-size: 14px;
+      }
+      a {
+        display: block;
+        margin: 6px 0 0;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        color: #fff;
+        line-height: 40px;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+    .session-form {
+      padding: 32px 64px;
+      border-top: 1px solid #eee;
+      &__facebook {
+        position: relative;
+        margin: 0;
+        background: #385185;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        .fa-facebook-square {
+          display: inline-block;
+          font-size: 30px;
+          position: absolute;
+          top: 50%;
+          left: 16px;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+        }
+      }
+      &__google {
+        position: relative;
+        margin: 16px 0 0;
+        .session-form__google-in {
+        background: #fff url('google.svg') 3px;
+        background-repeat: no-repeat;
+        border: #979797 solid 1px;
+        color: #333;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        }
       }
     }
     .session-bottom {
@@ -61,5 +119,4 @@
       }
     }
   }
-
 }

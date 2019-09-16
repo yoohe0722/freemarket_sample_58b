@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do
+    collection do
+      get 'complete'
+    end
   end
 end

@@ -33,5 +33,8 @@
 // devise
 @import "devise/sessions_new";
 @import "devise/registrations_new";
-@import "devise/users_new";
+
+// users
+@import "users/new";
+@import "users/complete";
 

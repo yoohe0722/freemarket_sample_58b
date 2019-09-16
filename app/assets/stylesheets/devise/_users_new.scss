@@ -3,63 +3,89 @@
   max-width: 700px;
   margin: 0 auto;
   background: #fff;
-}
-.session-new-form{
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 40px 40px 64px;
-  &__mail {
-  }
-  &__facebook {
-    border-radius: 5px;
-    position: relative;
-    background: #385185;
-    color: #fff;
-    display: block;
-    width: 100%;
-    line-height: 48px;
-    font-size: 14px;
-    border: 1px solid transparent;
-    -webkit-transition: all ease-out .3s;
-    transition: all ease-out .3s;
-    cursor: pointer;
-    .session-new-form__facebook-icon {
-      display: inline-block;
-      font-size: 30px;
-      position: absolute;
-      top: 50%;
-      left: 16px;
-      -webkit-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-    }
-  }
-  &__google {
-    margin-top: 15px;
-    position: relative;
-    .session-new-form__google-in {
-    background: #fff url('google.svg') 3px;
-    background-repeat: no-repeat;
-    border: #979797 solid 1px;
-    color: #333;
-    display: block;
-    width: 100%;
-    line-height: 48px;
-    font-size: 14px;
-    -webkit-transition: all ease-out .3s;
-    transition: all ease-out .3s;
-    cursor: pointer;
+  .session-new-top {
+    font-size: 22px;
+    padding: 32px;
+    line-height: 1.5;
     text-align: center;
-    border-radius: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+  }
+  .session-new-form{
+    max-width: 423px;
+    margin: 0 auto;
+    padding: 40px 40px 64px;
+    &__mail {
+      margin: 3px 0px 15px;
+      position: relative;
+      .session-new-form__mail-in{
+        color: #fff;
+        background-color: #ea352d;
+        border-radius: 4px;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+      }
+      .session-new-form__mail-icon {
+        display: inline-block;
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        font-size: 20px;
+        color: #fff;
+      }
+    }
+    &__facebook {
+      border-radius: 4px;
+      position: relative;
+      background: #385185;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      .session-new-form__facebook-icon {
+        display: inline-block;
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+      }
+    }
+    &__google {
+      margin-top: 15px;
+      position: relative;
+      .session-new-form__google-in {
+      background: #fff url('google.svg') 3px;
+      background-repeat: no-repeat;
+      border: #979797 solid 1px;
+      color: #333;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 4px;
+      }
     }
   }
 }
-// .fa-facebook-square {
-//   color: #fff;
-//   font-size: 30px;
-//   position: absolute;
-//   top: 275px;
-//   left: 410px;
-//   -webkit-transform: translate(0, -50%);
-//   transform: translate(0, -50%);
-//   z-index: 1;
-// }

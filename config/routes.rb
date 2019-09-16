@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index, :show, :new, :edit] do
     collection do
+      get 'credit'
       get 'complete'
     end
   end

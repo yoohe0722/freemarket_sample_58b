@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get 'user_edit'
       get 'identification'
       get 'signup_registration'
+      get 'phone_authentication'
+
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do

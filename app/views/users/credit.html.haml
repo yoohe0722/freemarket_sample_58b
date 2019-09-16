@@ -20,7 +20,7 @@
               %label.payment_card_expire 有効期限
               %span.form-require 必須
               .select-wrap_box.half
-                .select-default
+                = f.collection_select(:birth_month_id, Birth_month.all, :id, :name,{selected: 0}, {class: "select-default"})
                 %span 月
                 = f.collection_select(:yearactive_id, Yearactive.all, :id, :name,{selected: 0}, {class: "select-default"})
                 %span 年

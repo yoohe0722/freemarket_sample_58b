@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/new'
   devise_for :users
   root 'items#index'
   resources :items, only: [:index, :show] do
@@ -14,5 +13,7 @@ Rails.application.routes.draw do
       get 'identification'
       get 'signup_registration'
     end
+  end
+  resources :users, only: [:index, :show, :new, :edit] do
   end
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/new'
   devise_for :users
   root 'items#index'
   resources :items, only: [:index, :show] do

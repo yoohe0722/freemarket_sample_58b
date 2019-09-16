@@ -1,3 +1,45 @@
+.credit_single_header{
+  #fourth.progress-list{
+    color: red;
+    .progress-statusbar-left{
+      background: red;
+    }
+    .progress-status{
+      background-color: red;
+    }
+  }
+  #third.progress-list{
+    .progress-statusbar-left{
+      background: red;
+    }
+    .progress-statusbar-right{
+      background: red;
+    }
+    .progress-status{
+      background-color: red;
+    }
+  }
+  #second.progress-list{
+    .progress-statusbar-left{
+      background: red;
+    }
+    .progress-statusbar-right{
+      background: red;
+    }
+    .progress-status{
+      background-color: red;
+    }
+  }
+  #first.progress-list{
+    .progress-statusbar-right{
+      background: red;
+    }
+    .progress-status{
+      background-color: red;
+    }
+  }
+}
+
 .credit_single-main{
   background: #f5f5f5;
 }

@@ -12,14 +12,14 @@ Rails.application.routes.draw do
       get 'user_edit'
       get 'identification'
       get 'signup_registration'
-      get 'phone_authentication'
-
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do
     collection do
       get 'credit'
       get 'complete'
+      get 'phone_authentication'
+      get 'address_input'
     end
   end
 end

@@ -187,6 +187,7 @@
   margin: 8px 0 0;
   position: relative;
   background: #fff;
+  cursor: pointer;
 }
 
 .birthday-select-box-block i {
@@ -199,7 +200,8 @@
   transform: translate(0, -50%);
 }
 
-.signup-registration-from-input select {
+
+.signup-registration-from-input {
   padding: 0 10px;
   width: 100%;
   position: relative;

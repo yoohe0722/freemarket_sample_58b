@@ -7,7 +7,8 @@
     .session-form
       .session-form__facebook
         = button_to 'Facebookでログイン', '#',class: 'session-form__facebook'
-        %i.fa.fa-facebook-square
+        .session-form__facebook-icon
+          %i.fa.fa-facebook-square
       .session-form__google
         = button_to 'Googleでログイン', '#',class: 'session-form__google-in'
     .session-bottom

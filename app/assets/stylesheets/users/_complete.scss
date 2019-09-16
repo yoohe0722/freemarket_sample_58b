@@ -1,0 +1,95 @@
+.header-complete {
+  .progress-list#first {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+  .progress-list#second {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+  .progress-list#third {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+  .progress-list#fourth {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+  .progress-list#last {
+    color: red;
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+  }
+}
+
+.user-complete {
+  background: #f5f5f5;
+  padding-bottom: 50px;
+  &__contents {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    text-align: center;
+    background: #fff;
+    &__top {
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 25px;
+        border-bottom: 1px solid #eee;
+      }
+    }
+    &__main {
+      letter-spacing: 1px;
+      padding: 40px;
+    }
+    &__bottom {
+      .complete-btn {
+        margin: 0 auto;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 50%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+}

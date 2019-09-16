@@ -1,0 +1,11 @@
+.footer__banner{:style => "background-image:url(#{asset_path "download_app_bg.jpg"})"}
+  .footer__banner-contents
+    .footer__banner-contents--left
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .app-banner-icon.clearfix
+        = image_tag "mercari_icon.png", size: "68x68", alt: "", class: "mercari_icon"
+        = link_to image_tag("app-store.svg"),("https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"), target: :_blank,class: 'store-icon'
+        = link_to image_tag("google-play.svg"),("https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"), target: :_blank,class: 'store-icon'
+    %figure.footer__banner-contents--right
+      = image_tag "download_content_pc.png", size: "300x260", alt: ""

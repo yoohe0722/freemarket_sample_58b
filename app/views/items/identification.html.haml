@@ -35,12 +35,12 @@
               %p
                 1986/08/28
             .form-block
-              %label{for: "zip"} 郵便番号
+              = f.label :zip_code, "郵便番号"
               %span.arbitrary-mark
                 任意
-              %input.input-identification-form{name: "zip_code", placeholder: "例)1234567", type: "text", value: ""}
+              = f.text_field :zip_code, placeholder: "例)1234567", type: "text", value: "", class: "input-identification-form"
             .form-block
-              %label{for: "prefecture"} 都道府県
+              = f.label :prefecture_id, "都道府県"
               %span.arbitrary-mark
                 任意
               .select-box
@@ -48,20 +48,20 @@
                 .select-box__prefecture
                   = f.collection_select :prefecture_id, Prefecture.all, :id, :name
             .form-block
-              %label{for: "city"} 市区町村
+              = f.label :city, "市区町村"
               %span.arbitrary-mark
                 任意
-              %input.input-identification-form{name: "city", placeholder: "例) 横浜市緑区", type: "text", value: ""}
+              = f.text_field :city, placeholder: "例) 横浜市緑区", type: "text", value: "", class: "input-identification-form"
             .form-block
-              %label{for: "block"} 番地
+              = f.label :block, "番地"
               %span.arbitrary-mark
                 任意
-              %input.input-identification-form{name: "block", placeholder: "例) 青山1−1−1", type: "text", value: ""}
+              = f.text_field :block, placeholder: "例) 青山1−1−1", type: "text", value: "", class: "input-identification-form"
             .form-block
-              %label{for: "building"} 建物名
+              = f.label :building, "建物名"
               %span.arbitrary-mark
                 任意
-              %input.input-identification-form{name: "building", placeholder: "例) 柳ビル103", type: "text", value: ""}
+              = f.text_field :building, placeholder: "例) 柳ビル103", type: "text", value: "", class: "input-identification-form"
               = f.submit "登録する" , class: "input-identification-registration_btn"
               %p.right-text.form-block
                 = link_to("#", class: 'right-text-link') do

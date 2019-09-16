@@ -28,7 +28,15 @@
 @import "items/credit";
 @import "items/user_edit";
 @import "items/logout";
+@import "credit_users";
+@import "items/phone_authentication";
 
 // devise
 @import "devise/sessions_new";
+@import "devise/registrations_new";
+
+
+// users
+@import "users/new";
+@import "users/complete";
 

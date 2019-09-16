@@ -7,6 +7,6 @@
     .mypage-content
       .mypage-content__logoutbox
         .mypage-content__logoutbox__logout
-          = button_to "ログアウト",{controller: 'items', action: 'index'}, {method: :get, class: "logoutbutton"}
+          = link_to "ログアウト", destroy_user_session_path, {method: :delete, class: "logoutbutton"}
 = render 'module/footer'
 = render 'module/sell-btn'

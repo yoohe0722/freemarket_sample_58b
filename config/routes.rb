@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'logout'
       get 'user_edit'
       get 'identification'
+      get 'signup_registration'
     end
   end
 end

@@ -1,0 +1,146 @@
+.header-address_input {
+  .progress-list#first {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+
+  .progress-list#second {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+
+  .progress-list#third {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+
+  .progress-list#fourth {
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+
+  .progress-list#last {
+    color: red;
+    .progress-status {
+      background: red;
+    }
+    .progress-statusbar-left {
+      background: red;
+    }
+    .progress-statusbar-right {
+      background: red;
+    }
+  }
+}
+
+.form-block {
+  margin: 40px 0 0;
+  label {
+    font-weight: bold;
+  }
+  .identification-text {
+    margin: 4px 0 0;
+    line-height: 1.5;
+  }
+  .arbitrary-mark-red {
+    background: red;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .arbitrary-mark-gray {
+    background: #ccc;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .input-identification-form{
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  .input-identification-registration_btn {
+    margin: 40px 0 0 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+  .select-box {
+    margin: 8px 0 0;
+    position: relative;
+    .fa-chevron-down {
+      position: absolute;
+      right: 16px;
+      top: 30%;
+      z-index: 2;
+      color: #888;
+      font-size: 20px;
+    }
+    &__prefecture {
+      select {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        ::-ms-expand {
+          display: none;
+        }
+      }
+    }
+  }
+}

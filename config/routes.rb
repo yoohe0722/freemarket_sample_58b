@@ -14,4 +14,6 @@ Rails.application.routes.draw do
       get 'signup_registration'
     end
   end
+  resources :users, only: [:index, :show, :new, :edit] do
+  end
 end

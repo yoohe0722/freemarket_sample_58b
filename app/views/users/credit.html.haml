@@ -32,6 +32,5 @@
                 .signup-seqcode-text
                   %span.form-question ?
                   カード裏面の番号とは?
-
-            %button#submit-button.btn-default.btn-red{:type => "button"} 次へ進む
+            = link_to("次へ進む", complete_users_path, class: "btn-red btn-default", id: "submit-button") 
 = render 'module/subfooter'

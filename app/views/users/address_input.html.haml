@@ -53,6 +53,6 @@
             %span.arbitrary-mark-gray
               任意
             = f.text_field :phone_number, placeholder: "例) 09012345678", type: "text", value: "", class: "input-identification-form"
-            = f.submit "登録する" , class: "input-identification-registration_btn"
+            = link_to("登録する", credit_users_path, class: "input-identification-registration_btn")
 
 = render 'module/subfooter'

@@ -21,38 +21,11 @@
   }
 
   .progress-list#third {
-    .progress-status {
-      background: red;
-    }
-    .progress-statusbar-left {
-      background: red;
-    }
-    .progress-statusbar-right {
-      background: red;
-    }
-  }
-
-  .progress-list#fourth {
-    .progress-status {
-      background: red;
-    }
-    .progress-statusbar-left {
-      background: red;
-    }
-    .progress-statusbar-right {
-      background: red;
-    }
-  }
-
-  .progress-list#last {
     color: red;
     .progress-status {
       background: red;
     }
     .progress-statusbar-left {
-      background: red;
-    }
-    .progress-statusbar-right {
       background: red;
     }
   }

@@ -1,10 +1,15 @@
-= render 'devise/shared/user-sign_up-header'
+.header-complete
+  = render 'devise/shared/user-sign_up-header'
 
-%div 登録完了
-
-%div ありがとうございます
-
-%div めるかりをはじめる
+.user-complete
+  .user-complete__contents
+    .user-complete__contents__top
+      %h2 会員登録完了
+    .user-complete__contents__main
+      %div ありがとうございます。
+      %div 会員登録が完了しました。
+    .user-complete__contents__bottom
+      = link_to 'メルカリをはじめる', root_path, class: 'complete-btn'
 
 = render 'module/footer_banner'
 = render 'module/subfooter'

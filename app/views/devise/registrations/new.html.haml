@@ -36,14 +36,14 @@
                 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
             .signup-registration-from-group
               .div
-                = f.label :name, 'お名前(全角)', class: 'signup-registration-label'
+                = f.label :family_name, 'お名前(全角)', class: 'signup-registration-label'
                 %span.signup-registration-form-require
                   必須
               = f.text_field :family_name, placeholder: "例) 山田", class: 'signup-registration-from-input half1'
               = f.text_field :first_name, placeholder: "例) 彩", class: 'signup-registration-from-input half2'
             .signup-registration-from-group
               .div
-                = f.label :kana, 'お名前(全角)', class: 'signup-registration-label'
+                = f.label :family_kana, 'お名前(全角)', class: 'signup-registration-label'
                 %span.signup-registration-form-require
                   必須
               = f.text_field :family_kana, placeholder: "例) ヤマダ", class: 'signup-registration-from-input half1'

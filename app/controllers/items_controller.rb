@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
+    binding.pry
   end
 
   def index
@@ -36,8 +37,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.permit(:name, :description, images:[])
-    binding.pry
-
+    params.permit(:name, :description, :price, :condition, :category_id, :ship_fee, :prefecture, :ship_date, images:[])
   end
 end

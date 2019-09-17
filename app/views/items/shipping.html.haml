@@ -41,7 +41,6 @@
                   %span.form-require
                     必須
                 = f.text_field :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value: "", class: 'textarea-default'
-                -# %textarea.textarea-default{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -56,7 +55,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :categoryactive_id, Categoryactive.all, :id, :name
+                        = f.collection_select :category_id, Category.all, :id, :name
 
 
 
@@ -69,8 +68,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :conditionactive_id, Conditionactive.all, :id, :name
-                        -# = f.text_field :condition
+                        = f.collection_select :condition, Condition.all, :id, :name
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -86,7 +84,8 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :deliveryactive_id, Deliveryactive.all, :id, :name
+                        = f.collection_select :ship_fee, Deliveryactive.all, :id, :name
+
 
                 .form-group
                   %label
@@ -97,7 +96,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                        = f.collection_select :prefecture, Prefecture.all, :id, :name
 
                 .form-group
                   %label
@@ -108,7 +107,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :daysbeforeshipment_id, Daysbeforeshipment.all, :id, :name
+                        = f.collection_select :ship_date, Daysbeforeshipment.all, :id, :name
 
             .sell-content_secoud_under
               %h3.sell-sub-head_under
@@ -126,8 +125,7 @@
                       .l-right.sell-price-input
                         ¥
                         .input-default_box
-                          = f.text_field placeholder: "例）300", value: "", class: 'input-default_price'
-                          -# %input.input-default_price{:placeholder => "例）300", :value => ""}/
+                          = f.text_field :price, placeholder: "例）300", value: "", class: 'input-default_price'
 
               .sell-form-box_under_second
                 %p

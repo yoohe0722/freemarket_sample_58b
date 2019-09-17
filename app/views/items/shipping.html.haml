@@ -20,7 +20,7 @@
                   .sell-upload-items
                     %ul
               .sell-upload-drop-box
-                = f.file_field :images
+                = f.file_field :images, multiple: true
                 %input
                 %pre.visible-pc
                   ドラッグアンドドロップ
@@ -40,7 +40,8 @@
                   商品の説明
                   %span.form-require
                     必須
-                %textarea.textarea-default{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
+                = f.text_field :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value: "", class: 'textarea-default'
+                -# %textarea.textarea-default{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -57,6 +58,8 @@
                       .select-wrap
                         = f.collection_select :categoryactive_id, Categoryactive.all, :id, :name
 
+
+
                 .form-group
                   %label
                     商品の状態
@@ -67,6 +70,7 @@
                     .select-wrap-box_prefecture
                       .select-wrap
                         = f.collection_select :conditionactive_id, Conditionactive.all, :id, :name
+                        -# = f.text_field :condition
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -83,7 +87,7 @@
                     .select-wrap-box_prefecture
                       .select-wrap
                         = f.collection_select :deliveryactive_id, Deliveryactive.all, :id, :name
-                
+
                 .form-group
                   %label
                     発送元の地域
@@ -122,7 +126,8 @@
                       .l-right.sell-price-input
                         ¥
                         .input-default_box
-                          %input.input-default_price{:placeholder => "例）300", :value => ""}/
+                          = f.text_field placeholder: "例）300", value: "", class: 'input-default_price'
+                          -# %input.input-default_price{:placeholder => "例）300", :value => ""}/
 
               .sell-form-box_under_second
                 %p

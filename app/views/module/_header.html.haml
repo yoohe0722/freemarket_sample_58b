@@ -24,29 +24,29 @@
                 %span ブランドから探す
       .container__bottom-right
         %ul.header-user-nav
-          -# - if user_signed_in? && current_user.id == @user.id
-          %li
-            = link_to('#', class: 'link') do
-              %i.icon.fa.fa-heart-o
-              %span いいね!一覧
-          %li
-            = link_to('#', class: 'link') do
-              %i.icon.fa.fa-bell-o
-                .nav-count 4
-              %span お知らせ
-          %li
-            = link_to('#', class: 'link') do
-              %i.icon.fa.fa-check
-              %span やることリスト
-          %li.list-mypage
-            = link_to('/items/mypage', class:'link') do
-              = image_tag "member_photo.png" ,width: "32", alt: "", class: "member_photo"
-              %span マイページ
-          -# - else
-          -#   .new-registration-btn
-          -#     = link_to '新規会員登録', new_user_path
-          -#   .log-in-btn
-          -#     = link_to 'ログイン', new_user_session_path
+          - if user_signed_in?
+            %li
+              = link_to('#', class: 'link') do
+                %i.icon.fa.fa-heart-o
+                %span いいね!一覧
+            %li
+              = link_to('#', class: 'link') do
+                %i.icon.fa.fa-bell-o
+                  .nav-count 4
+                %span お知らせ
+            %li
+              = link_to('#', class: 'link') do
+                %i.icon.fa.fa-check
+                %span やることリスト
+            %li.list-mypage
+              = link_to('/items/mypage', class:'link') do
+                = image_tag "member_photo.png" ,width: "32", alt: "", class: "member_photo"
+                %span マイページ
+          - else
+            .new-registration-btn
+              = link_to '新規会員登録', new_user_path
+            .log-in-btn
+              = link_to 'ログイン', new_user_session_path
 
 
   -# .header__bred-crumbs

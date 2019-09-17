@@ -1,7 +1,7 @@
 .shipping_contents
   = render 'module/subheader'
   .single-main
-  = form_with(model: @item, local: true) do |f|
+  = form_with(model: @item, url: items_path, local: true) do |f|
     %section.shipping-single-container
       .sell_container
         .sell-container-inner
@@ -20,7 +20,7 @@
                   .sell-upload-items
                     %ul
               .sell-upload-drop-box
-                = f.file_field :image
+                = f.file_field :images
                 %input
                 %pre.visible-pc
                   ドラッグアンドドロップ
@@ -34,7 +34,7 @@
                   %span.form-require
                     必須
                 .item_subumit_form
-                  %input.input-default_shipping{:placeholder => "商品名（必須 40文字まで)", :value => ""}/
+                  = f.text_field :name, placeholder: "商品名（必須 40文字まで)", value: "", class: 'input-default_shipping'
               .form-group
                 %label
                   商品の説明

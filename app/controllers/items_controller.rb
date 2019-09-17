@@ -36,8 +36,8 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, images:[])
+    params.permit(:name, :description, images:[])
+    binding.pry
+
   end
-
-
 end

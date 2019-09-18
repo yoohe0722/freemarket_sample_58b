@@ -1,0 +1,11 @@
+.item
+  = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+    %figure.style_card
+      %figcaption
+        %span.item-name
+          = item.name
+          -# 感情を失った男
+      .style_thumbnail
+      %span{"aria-label" => "Price"}
+        = item.price
+      = image_tag 'https://spread-sports.jp/wp/wp-content/uploads/2018/07/GettyImages-989062952-e1530851784921.jpg', alt: 'Thumbnail of \"ワンピース\"'

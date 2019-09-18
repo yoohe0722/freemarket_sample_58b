@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def index
+    @item = Item.order('id ASC').limit(5)
   end
 
   def mypage

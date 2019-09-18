@@ -151,6 +151,41 @@
           display: inline-block;
           margin-left: 10px;
         }
+        ul > li{
+          display: inline-block;
+        }
+        ul > li > a{
+          padding: 5px 5px;
+          display: block;
+          text-transform: uppercase;
+        }
+        ul > li:hover > a{
+          color:  rgb(0, 149, 238);
+        }
+        ul li ul{
+          position: absolute;
+        }
+        ul li ul li{
+          display: block;
+        }
+        ul li ul li a{
+          background-color: #fff;
+          color: #444;
+          height: 100px;
+          width: 200px;
+        }
+        ul li ul li a:hover{
+          background-color: #eee;
+        }
+        ul li ul{
+          display: none;
+        }
+        ul li:hover ul{
+          display: block;
+        }
+        .sublink {
+          border-bottom: solid 0.5px #ddd;
+        }
         .nav-count{
           position: absolute;
           top: -7px;

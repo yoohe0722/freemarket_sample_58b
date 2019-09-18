@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    binding.pry
   end
 
   def index
@@ -37,6 +36,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.permit(:name, :description, :price, :condition, :category_id, :ship_fee, :prefecture, :ship_date, images:[])
+    params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition, :category_id, :ship_fee, :ship_method, :prefecture, :ship_date, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
 end

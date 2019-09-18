@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_030842) do
+ActiveRecord::Schema.define(version: 2019_09_18_031500) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -68,13 +68,6 @@ ActiveRecord::Schema.define(version: 2019_09_17_030842) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.integer "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "price", null: false
@@ -83,7 +76,6 @@ ActiveRecord::Schema.define(version: 2019_09_17_030842) do
     t.integer "user_id", null: false
     t.integer "buyer_id"
     t.integer "size_id"
-    t.text "image_id", null: false
     t.integer "category_id", null: false
     t.integer "brand_id"
     t.integer "prefecture", null: false

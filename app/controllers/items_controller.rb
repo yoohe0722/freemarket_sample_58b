@@ -2,6 +2,10 @@ class ItemsController < ApplicationController
 
   before_action :login_check, only: [:buy, :shipping]
 
+  def create
+    @item = Item.create(item_params)
+  end
+
   def index
   end
 
@@ -30,4 +34,8 @@ class ItemsController < ApplicationController
     redirect_to "/users/sign_in" unless user_signed_in?
   end
 
+  private
+  def item_params
+    params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition, :category_id, :ship_fee, :ship_method, :prefecture, :ship_date, :trading_condition, images:[]).merge(user_id: current_user.id)
+  end
 end

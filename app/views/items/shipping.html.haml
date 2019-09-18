@@ -1,12 +1,13 @@
 .shipping_contents
   = render 'module/subheader'
   .single-main
+  = form_with(model: @item, url: items_path, local: true) do |f|
     %section.shipping-single-container
       .sell_container
         .sell-container-inner
           %h2.l-single-head
             商品の情報を入力
-          %form.sell-form
+          .sell-form
             .sell-upload-box
               %h3.sell-upload-head
                 出品画像
@@ -19,6 +20,7 @@
                   .sell-upload-items
                     %ul
               .sell-upload-drop-box
+                = f.file_field :images, multiple: true
                 %input
                 %pre.visible-pc
                   ドラッグアンドドロップ
@@ -32,41 +34,41 @@
                   %span.form-require
                     必須
                 .item_subumit_form
-                  %input.input-default_shipping{:placeholder => "商品名（必須 40文字まで)", :value => ""}/
+                  = f.text_field :name, placeholder: "商品名（必須 40文字まで)", value: "", class: 'input-default_shipping'
               .form-group
                 %label
                   商品の説明
                   %span.form-require
                     必須
-                %textarea.textarea-default{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
+                = f.text_field :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", value: "", class: 'textarea-default'
 
             .sell-content_secoud
               %h3.sell-sub-head
                 商品の詳細
               .sell-form-box
                 .form-group_first
-                  = form_with(model: @items, local: true) do |f|
-                    %label
-                      カテゴリー
-                    %span.form-require 必須
-                    .select-wrap-box
-                      %i.fa.fa-angle-down
-                        %pseudo:before
-                      .select-wrap-box_prefecture
-                        .select-wrap
-                          = f.collection_select :categoryactive_id, Categoryactive.all, :id, :name
+                  %label
+                    カテゴリー
+                  %span.form-require 必須
+                  .select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :category_id, Category.all, :id, :name
+
+
 
                 .form-group
-                  = form_with(model: @items, local: true) do |f|
-                    %label
-                      商品の状態
-                    %span.form-require 必須
-                    .select-wrap-box
-                      %i.fa.fa-angle-down
-                        %pseudo:before
-                      .select-wrap-box_prefecture
-                        .select-wrap
-                          = f.collection_select :conditionactive_id, Conditionactive.all, :id, :name
+                  %label
+                    商品の状態
+                  %span.form-require 必須
+                  .select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :condition, Condition.all, :id, :name
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -74,41 +76,50 @@
                 %i.fa.fa-question-circle
               .sell-form-box
                 .form-group_first
-                  = form_with(model: @items, local: true) do |f|
-                    %label
-                      配送量の負担
-                    %span.form-require 必須
-                    .select-wrap-box
-                      %i.fa.fa-angle-down
-                        %pseudo:before
-                      .select-wrap-box_prefecture
-                        .select-wrap
-                          = f.collection_select :deliveryactive_id, Deliveryactive.all, :id, :name
-                
+                  %label
+                    配送料金の負担
+                  %span.form-require 必須
+                  .select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :ship_fee, Deliveryactive.all, :id, :name
+
+                -# - if 
                 .form-group
-                  = form_with(model: @user, local: true) do |f|
-                    %label
-                      発送元の地域
-                    %span.form-require 必須
-                    .select-wrap-box
-                      %i.fa.fa-angle-down
-                        %pseudo:before
-                      .select-wrap-box_prefecture
-                        .select-wrap
-                          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                  %label
+                    配送の方法
+                  %span.form-require 必須
+                  .select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :ship_method, Shipmethod.all, :id, :name
 
 
                 .form-group
-                  = form_with(model: @items, local: true) do |f|
-                    %label
-                      発送までの日数
-                    %span.form-require 必須
-                    .select-wrap-box
-                      %i.fa.fa-angle-down
-                        %pseudo:before
-                      .select-wrap-box_prefecture
-                        .select-wrap
-                          = f.collection_select :daysbeforeshipment_id, Daysbeforeshipment.all, :id, :name
+                  %label
+                    発送元の地域
+                  %span.form-require 必須
+                  .select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :prefecture, Prefecture.all, :id, :name
+
+                .form-group
+                  %label
+                    発送までの日数
+                  %span.form-require 必須
+                  .select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :ship_date, Daysbeforeshipment.all, :id, :name
 
             .sell-content_secoud_under
               %h3.sell-sub-head_under
@@ -126,7 +137,7 @@
                       .l-right.sell-price-input
                         ¥
                         .input-default_box
-                          %input.input-default_price{:placeholder => "例）300", :value => ""}/
+                          = f.text_field :price, placeholder: "例）300", value: "", class: 'input-default_price'
 
               .sell-form-box_under_second
                 %p
@@ -148,7 +159,7 @@
             また、出品をもちまして
             = link_to "加盟店規約", "/jp/seller_terms/"
             に同意したことになります。
-        %button.btn-default.btn-red{:type => "submit"}
+        = f.submit '出品する', class: 'btn-default btn-red' do
           出品する
         %a.btn-default.btn-gray
           もどる

@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'better_errors'     # 開発中のエラー画面をリッチにする
   gem 'binding_of_caller' # 開発中のエラー画面にさらに変数の値を表示する
+  gem 'pry-rails'
 end
 
 group :development do
@@ -79,3 +80,4 @@ gem 'font-awesome-rails'
 gem 'active_hash'
 gem 'devise'
 gem 'ancestry'
+gem "aws-sdk-s3", require: false

@@ -36,14 +36,40 @@
                 %span お知らせ
               %ul
                 %li
-                  = link_to('#',class: 'sublink') do
-                    %span てすと1
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 3日後、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                      %i.fa.fa-chevron-right
                 %li
-                  = link_to('#',class: 'sublink') do
-                    %span てすと2
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 【あと2日】参加ボタンを押すだけでポイントがもらえる！総額1億円相当還元！詳しくはこちら
+                      %i.fa.fa-chevron-right
                 %li
-                  = link_to('#',class: 'sublink') do
-                    %span てすと3
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 事務局から個別メッセージ「ログイン通知」
+                      %i.fa.fa-chevron-right
+                %li
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 《ご登録記念》¥1,000の商品を「実質1円」でご購入いただけます！
+                      %i.fa.fa-chevron-right
+                %li
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 【スマホを売ろう！】メルカリなら下取りよりも高く売れる♪いますぐ相場チェック！
+                      %i.fa.fa-chevron-right
             %li
               = link_to('#', class: 'link') do
                 %i.icon.fa.fa-check

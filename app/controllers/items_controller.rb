@@ -4,10 +4,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
+    redirect_to root_path
   end
 
   def index
-    @item = Item.order('id ASC').limit(5)
+    @item = Item.all.order('id ASC').limit(5)
   end
 
   def mypage

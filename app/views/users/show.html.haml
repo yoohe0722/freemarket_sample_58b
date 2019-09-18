@@ -8,9 +8,9 @@
       %section.mypage-user{style: "background-image:url(#{asset_path "user-bg.jpg"})"}
         = link_to ("#") do
           .mypage-figure
-            = image_tag 'member_photo.png'
+            = image_tag @user.image
           %h2.mypage-user-name
-            ユーザー
+            = @user.nick_name
           .mypage-user-number
             .div
               評価

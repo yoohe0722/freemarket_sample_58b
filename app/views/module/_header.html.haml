@@ -39,8 +39,8 @@
                 %i.icon.fa.fa-check
                 %span やることリスト
             %li.list-mypage
-              = link_to('/items/mypage', class:'link') do
-                = image_tag "member_photo.png" ,width: "32", alt: "", class: "member_photo"
+              = link_to user_path(current_user.id) do
+                = image_tag current_user.image ,size: "32x32", alt: "", class: "member_photo"
                 %span マイページ
           - else
             .new-registration-btn

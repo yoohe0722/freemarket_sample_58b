@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_031500) do
     t.integer "user_id", null: false
     t.text "profile"
     t.integer "payment_id"
-    t.text "image"
+    t.string "image", default: "default.jpg"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

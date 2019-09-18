@@ -6,16 +6,17 @@ Rails.application.routes.draw do
       get 'buy'
       get 'buycheck'
       get 'shipping'
-      get 'mypage'
+      # get 'mypage'
       get 'credit'
-      get 'logout'
       get 'user_edit'
       get 'identification'
       get 'signup_registration'
     end
   end
-  resources :users, only: [:index, :show, :new, :edit] do
+  resources :users, only: [:show, :index, :show, :new, :edit] do
     collection do
+      get 'profile'
+      get 'logout'
       get 'credit'
       get 'complete'
       get 'phone_authentication'

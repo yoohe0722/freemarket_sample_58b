@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items, only: [:create, :index, :show] do
+  resources :items, only: [:index, :show, :create] do
     collection do
       get 'buy'
       get 'buycheck'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'signup_registration'
     end
   end
-  resources :users, only: [:show, :index, :new, :edit] do
+  resources :users, only: [:index, :show, :new, :edit] do
     collection do
       get 'profile'
       get 'logout'

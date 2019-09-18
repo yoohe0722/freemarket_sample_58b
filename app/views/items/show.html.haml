@@ -2,7 +2,8 @@
 .item_box_contents
   .item-box-container
     .item_box_contents_center
-      %h1.item_name 商品名
+      %h1.item_name 
+        = @item.name
       .item_box_contents_center_left_right
         .item_photo_box
           = image_tag "m49030494893_1.jpg", size: "300x300", alt: "test"
@@ -17,7 +18,8 @@
               %tr
                 %th 出品者
                 %td
-                  = link_to "チェルシー","https://www.mercari.com/jp/u/348028699/"
+                  = link_to "https://www.mercari.com/jp/u/348028699/" do
+                    = @item.user.nick_name
                   .item-user-icon
                     .item-user-ratings
                       = image_tag "20080830175621.gif", alt: "test"
@@ -42,21 +44,25 @@
                 %td
               %tr
                 %th 商品の状態
-                %td 新品、未使用
+                %td
+                  = @item.condition
               %tr
                 %th 配送料の負担
                 %td 送料込み(出品者負担)
               %tr
                 %th 配送の方法
-                %td 普通郵便(定形、定形外)
+                %td
+                  = @item.ship_method
               %tr
                 %th 配送元地域
                 %td
                   = link_to ""
-                  %a{:href => "https://www.mercari.com/jp/area/27/"} 大阪府
+                  %a{:href => "https://www.mercari.com/jp/area/27/"}
+                    = @item.prefecture.name
               %tr
                 %th 発送日の目安
-                %td 1~2日で発送
+                %td
+                  = @item.ship_date
 
 
 
@@ -64,7 +70,7 @@
 
       .item_price_box
         %span.item_price_box_text
-          ¥10,000
+          = @item.price
         %span.item-tax
           (税込)
         %span.item-shipping-fee
@@ -75,17 +81,18 @@
       %a.item-buy-btn{:href => "/items/buycheck"}
         購入画面に進む
       %p.item-description-inner
-        テストの文章です
-        即購入、大歓迎!!
-        現在、在庫ございます(^_^)
-        そしてなんと、、、色つきのくるりんぱ、入荷しました( 〃▽〃)
-        内容は、紫、青、ショッキングピンク、赤 、黒の5色です☆
-        淡いピンクは売り切れです。
+        = @item.description
+        -# テストの文章です
+        -# 即購入、大歓迎!!
+        -# 現在、在庫ございます(^_^)
+        -# そしてなんと、、、色つきのくるりんぱ、入荷しました( 〃▽〃)
+        -# 内容は、紫、青、ショッキングピンク、赤 、黒の5色です☆
+        -# 淡いピンクは売り切れです。
 
-        もしコメントなしのご購入は写真の色での発送になりますので、他の色を希望される方はご購入前に必ずコメントをよろしくお願いします♪
+        -# もしコメントなしのご購入は写真の色での発送になりますので、他の色を希望される方はご購入前に必ずコメントをよろしくお願いします♪
 
 
-        メルカリ最安値で送料無料(*≧∀≦*)
+        -# メルカリ最安値で送料無料(*≧∀≦*)
 
 
 

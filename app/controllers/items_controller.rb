@@ -21,7 +21,8 @@ class ItemsController < ApplicationController
   def identification
   end
 
-  def buy
+  def show
+    @item = Item.find(params[:id])
   end
 
   def buycheck

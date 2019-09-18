@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'buy'
       get 'buycheck'
       get 'shipping'
-      get 'mypage'
+      # get 'mypage'
       get 'credit'
       get 'logout'
       get 'user_edit'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get 'signup_registration'
     end
   end
-  resources :users, only: [:index, :show, :new, :edit] do
+  resources :users, only: [:show, :index, :show, :new, :edit] do
     collection do
       get 'credit'
       get 'complete'

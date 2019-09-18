@@ -40,7 +40,7 @@
                 %span やることリスト
             %li.list-mypage
               = link_to('/items/mypage', class:'link') do
-                = image_tag "member_photo.png" ,width: "32", alt: "", class: "member_photo"
+                = image_tag @user.image ,width: "32", alt: "", class: "member_photo"
                 %span マイページ
           - else
             .new-registration-btn

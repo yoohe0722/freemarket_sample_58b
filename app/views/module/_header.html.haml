@@ -5,7 +5,7 @@
         = link_to("/") do
           = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
       .header__form
-        = form_with(model: @item, local: true) do |f|
+        -# = form_with(model: @item, local: true) do |f|
           %input.header__input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
           %i.fa.fa-search.icon-search
 

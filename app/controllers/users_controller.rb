@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 
   def phone_authentication
   end
+
+  def profile
+  end
   
   def show
     @user = User.find(params[:id])

@@ -5,8 +5,8 @@
         = link_to("/") do
           = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
       .header__form
-        = form_with(model: @item, local: true) do |f|
-          %input.header__input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+        = form_with(model: @items, local: true) do |f|
+          = f.text_field :keyword, placeholder: "何かお探しですか？", type: "search", value: "", class: "header__input-default"
           %i.fa.fa-search.icon-search
 
     .header__container__bottom.clearfix
@@ -74,10 +74,35 @@
               = link_to('#', class: 'link') do
                 %i.icon.fa.fa-check
                 %span やることリスト
+              %ul
+                %li
+                  = link_to (''),class: "sublink-todo" do
+                    .sublink-content-todo
+                      .sublink-content-todo-logo
+                        = image_tag "logo-gray-icon.svg" ,size: "80x80"
+                      .sublink-content-todo-text
+                        %span 現在、やることリストはありません
             %li.list-mypage
               = link_to user_path(current_user.id) do
                 = image_tag current_user.image ,size: "32x32", alt: "", class: "member_photo"
                 %span マイページ
+              %ul
+                .sublink-mypage
+                  %li
+                    = image_tag "user-bg.jpg", size: "350x90",class: 'sublink-maypage-img'
+                  %li
+                    = image_tag current_user.image ,size: "75x75", alt: "", class: "sublink-maypagemember_photo"
+                  %li.sublink-maypage__name
+                    %span にっくねーむ
+                  %li
+                    = link_to user_path(current_user.id),class: "sublink-maypage-link" do
+                      %span いいね！一覧
+                  %li
+                    = link_to user_path(current_user.id),class: "sublink-maypage-link" do
+                      %span 出品した商品
+                  %li
+                    = link_to user_path(current_user.id),class: "sublink-maypage-link" do
+                      %span 購入した商品
           - else
             .new-registration-btn
               = link_to '新規会員登録', new_user_path

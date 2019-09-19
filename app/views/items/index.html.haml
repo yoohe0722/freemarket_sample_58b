@@ -1,7 +1,7 @@
 = render 'module/header'
 .wrapper__top-page
-  .top-page__banner
-    -# = image_tag "top-banner-autumn-fes.jpg",class: "img"
+  .top-page__banners
+
 
   .section__popular-categories
     .categories__header
@@ -23,107 +23,109 @@
         %h3 レディース新着アイテム
         = link_to('もっと見る','#', class: 'view_more')
       .container__item-box
-        .item__grid.clearfix
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    感情を失った男
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'https://spread-sports.jp/wp/wp-content/uploads/2018/07/GettyImages-989062952-e1530851784921.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    最初はグー、じゃんけん....
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'https://afpbb.ismcdn.jp/mwimgs/9/0/-/img_90beb3fd64fe3bca86be16427be4a1df104603.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    命！（TIM）
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'http://www.soccerdigestweb.com/files/topics/32325_ext_04_0_L.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    手ブラ
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'https://perspective.wp-x.jp/wp-content/uploads/2018/07/762.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    皿
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'https://img.qoly.jp/media/a8850162-83bf-a409-bbdb-2db77846080e', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    向かい風を体で感じる人
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'https://amd.c.yimg.jp/im_siggq6k2VPI5ZfKSp2Gsn7eDZw---x400-y400-q90-exp3h-pril/amd/20190726-00000014-tospoweb-000-3-view.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    鳴り物入りで移籍したのに活躍できてない人
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'https://afpbb.ismcdn.jp/mwimgs/a/2/-/img_a260fdf2c43f105cd03842b12a7bcaef126948.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    ホーム・アローン
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥300
-                  = image_tag 'https://spread-sports.jp/wp/wp-content/uploads/2018/07/GettyImages-979400772-e1545718599581.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    老け顔
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    26歳
-                  = image_tag 'https://img.footballchannel.jp/wordpress/assets/2018/01/201801251_kane_getty.jpg', alt: 'Thumbnail of \"ワンピース\"'
-          .item
-            = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
-              %figure.style_card
-                %figcaption
-                  %span.item-name
-                    ダイエットに成功したアントニー
-                .style_thumbnail
-                  %span{"aria-label" => "Price"}
-                    ¥50000
-                  = image_tag 'https://img.footballchannel.jp/wordpress/assets/2018/07/180715_kante_getty.jpg', alt: 'Thumbnail of \"ワンピース\"'
+        - @item.each do |item|
+          .item__grid.clearfix
+            = render partial: "index", locals: { item: item }
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           感情を失った男
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'https://spread-sports.jp/wp/wp-content/uploads/2018/07/GettyImages-989062952-e1530851784921.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           最初はグー、じゃんけん....
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'https://afpbb.ismcdn.jp/mwimgs/9/0/-/img_90beb3fd64fe3bca86be16427be4a1df104603.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           命！（TIM）
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'http://www.soccerdigestweb.com/files/topics/32325_ext_04_0_L.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           手ブラ
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'https://perspective.wp-x.jp/wp-content/uploads/2018/07/762.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           皿
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'https://img.qoly.jp/media/a8850162-83bf-a409-bbdb-2db77846080e', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           向かい風を体で感じる人
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'https://amd.c.yimg.jp/im_siggq6k2VPI5ZfKSp2Gsn7eDZw---x400-y400-q90-exp3h-pril/amd/20190726-00000014-tospoweb-000-3-view.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           鳴り物入りで移籍したのに活躍できてない人
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'https://afpbb.ismcdn.jp/mwimgs/a/2/-/img_a260fdf2c43f105cd03842b12a7bcaef126948.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           ホーム・アローン
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥300
+          -#         = image_tag 'https://spread-sports.jp/wp/wp-content/uploads/2018/07/GettyImages-979400772-e1545718599581.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           老け顔
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           26歳
+          -#         = image_tag 'https://img.footballchannel.jp/wordpress/assets/2018/01/201801251_kane_getty.jpg', alt: 'Thumbnail of \"ワンピース\"'
+          -# .item
+          -#   = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+          -#     %figure.style_card
+          -#       %figcaption
+          -#         %span.item-name
+          -#           ダイエットに成功したアントニー
+          -#       .style_thumbnail
+          -#         %span{"aria-label" => "Price"}
+          -#           ¥50000
+          -#         = image_tag 'https://img.footballchannel.jp/wordpress/assets/2018/07/180715_kante_getty.jpg', alt: 'Thumbnail of \"ワンピース\"'
 
 = render 'module/footer'
 = render 'module/sell-btn'

@@ -104,6 +104,11 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+  & .image_file_select {
+    height: 162px;
+    width: 100%;
+    opacity: 0;
+  }
 }
 
 .sell-content {

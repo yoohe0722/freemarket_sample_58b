@@ -32,7 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def shipping
-    @item = Item.all.order('id ASC').limit(5)
   end
 
   def login_check

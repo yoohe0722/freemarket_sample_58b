@@ -68,7 +68,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :condition, Condition.all, :id, :name
+                        = f.collection_select :condition_id, Condition.all, :id, :name
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -84,7 +84,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :ship_fee, Deliveryactive.all, :id, :name
+                        = f.collection_select :shipfee_id, Shipfee.all, :id, :name
 
                 -# - if 
                 .form-group
@@ -96,7 +96,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :ship_method, Shipmethod.all, :id, :name
+                        = f.collection_select :shipmethod_id, Shipmethod.all, :id, :name
 
 
                 .form-group
@@ -108,7 +108,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :prefecture, Prefecture.all, :id, :name
+                        = f.collection_select :prefecture_id, Prefecture.all, :id, :name
 
                 .form-group
                   %label
@@ -119,7 +119,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :ship_date, Daysbeforeshipment.all, :id, :name
+                        = f.collection_select :shipdate_id, Shipdate.all, :id, :name
 
             .sell-content_secoud_under
               %h3.sell-sub-head_under

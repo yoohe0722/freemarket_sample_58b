@@ -6,12 +6,14 @@
         = @item.name
       .item_box_contents_center_left_right
         .item_photo_box
-          = image_tag "m49030494893_1.jpg", size: "300x300", alt: "test"
-          .item_photo_small
-            .item_photo_small_box
-              = image_tag "m49030494893_1.jpg", size: "60x60", alt: "test"
-            .item_photo_small_box
-              = image_tag "m49030494893_1.jpg", size: "60x60", alt: "test"
+          - if @item.images.attached?
+            - @item.images.each_with_index do |image, index|
+              - if index == 0
+                = image_tag image, size: "300x300"
+              - if index >= 0
+                .item_photo_small
+                  .item_photo_small_box
+                    = image_tag image, size: "60x60"
         .item_details.box
           %table.item-detail-table
             %tbody
@@ -34,25 +36,33 @@
                 %th カテゴリー
                 %td
                   %div
-                    = link_to "レディース","https://www.mercari.com/jp/category/1/"
+                    = link_to "https://www.mercari.com/jp/category/1/" do
+                      = @item.category.parent.parent.name
                   %div
-                    = link_to ">ヘアアクセサリー","https://www.mercari.com/jp/category/22/"
+                    = link_to "https://www.mercari.com/jp/category/22/" do
+                      = @item.category.parent.name
                   %div
-                    = link_to ">その他","https://www.mercari.com/jp/category/240/"
+                    = link_to "https://www.mercari.com/jp/category/240/" do
+                      = @item.category.name
               %tr
                 %th ブランド
-                %td
+                - if @item.brand.present?
+                  %td
+                    = @item.brand.name
+                - else
+                  %td
               %tr
                 %th 商品の状態
                 %td
-                  = @item.condition
+                  = @item.condition.name
               %tr
                 %th 配送料の負担
-                %td 送料込み(出品者負担)
+                %td
+                  = @item.shipfee.name
               %tr
                 %th 配送の方法
                 %td
-                  = @item.ship_method
+                  = @item.shipmethod.name
               %tr
                 %th 配送元地域
                 %td
@@ -62,7 +72,7 @@
               %tr
                 %th 発送日の目安
                 %td
-                  = @item.ship_date
+                  = @item.shipdate.name
 
 
 
@@ -82,20 +92,6 @@
         購入画面に進む
       %p.item-description-inner
         = @item.description
-        -# テストの文章です
-        -# 即購入、大歓迎!!
-        -# 現在、在庫ございます(^_^)
-        -# そしてなんと、、、色つきのくるりんぱ、入荷しました( 〃▽〃)
-        -# 内容は、紫、青、ショッキングピンク、赤 、黒の5色です☆
-        -# 淡いピンクは売り切れです。
-
-        -# もしコメントなしのご購入は写真の色での発送になりますので、他の色を希望される方はご購入前に必ずコメントをよろしくお願いします♪
-
-
-        -# メルカリ最安値で送料無料(*≧∀≦*)
-
-
-
       .item-button-container
         .item-button-left
           %button.item-button.item-button-like{"data-toggle" => "like", :name => "like!", :type => "button"}

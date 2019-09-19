@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def index
+
     @item = Item.all.order('id ASC').limit(5)
   end
 
@@ -24,12 +25,14 @@ class ItemsController < ApplicationController
   end
 
   def buy
+
   end
 
   def buycheck
   end
 
   def shipping
+    @item = Item.all.order('id ASC').limit(5)
   end
 
   def login_check

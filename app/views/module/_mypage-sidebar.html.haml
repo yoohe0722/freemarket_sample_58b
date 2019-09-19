@@ -2,7 +2,7 @@
   %nav.maypage__box__side__sidebar
     %ul.maypage__box__side__sidebar__list
       %li
-        = link_to("mypage", class: 'maypage__box__side__sidebar__list__item') do
+        = link_to(user_path(current_user.id), class: 'maypage__box__side__sidebar__list__item') do
           マイページ
           %i.fa.fa-chevron-right
       %li
@@ -18,7 +18,7 @@
           いいね！一覧
           %i.fa.fa-chevron-right
       %li
-        = link_to("shipping", class: 'maypage__box__side__sidebar__list__item') do
+        = link_to("/items/shipping", class: 'maypage__box__side__sidebar__list__item') do
           出品する
           %i.fa.fa-chevron-right
       %li
@@ -72,7 +72,7 @@
       設定
     %ul.maypage__box__side__sidebar__list
       %li
-        = link_to("user_edit", class: 'maypage__box__side__sidebar__list__item') do
+        = link_to("/users/profile", class: 'maypage__box__side__sidebar__list__item') do
           プロフィール
           %i.fa.fa-chevron-right
       %li
@@ -80,7 +80,7 @@
           発送元・お届け先住所変更
           %i.fa.fa-chevron-right
       %li
-        = link_to("credit", class: 'maypage__box__side__sidebar__list__item') do
+        = link_to("/items/credit", class: 'maypage__box__side__sidebar__list__item') do
           支払い方法
           %i.fa.fa-chevron-right
       %li
@@ -88,7 +88,7 @@
           メール/パスワード
           %i.fa.fa-chevron-right
       %li
-        = link_to("identification", class: 'maypage__box__side__sidebar__list__item') do
+        = link_to("/items/identification", class: 'maypage__box__side__sidebar__list__item') do
           本人情報
           %i.fa.fa-chevron-right
       %li
@@ -100,6 +100,6 @@
           電話番号の確認
           %i.fa.fa-chevron-right
       %li
-        = link_to("logout", class: 'maypage__box__side__sidebar__list__item') do
+        = link_to("/users/logout", class: 'maypage__box__side__sidebar__list__item') do
           ログアウト
           %i.fa.fa-chevron-right

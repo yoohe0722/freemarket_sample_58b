@@ -8,114 +8,114 @@
     max-width: 456px;
     margin: 0 auto;
     background: #fff;
-    .session-top {
-      padding: 38px 64px;
-      text-align: center;
-      p {
-        font-size: 14px;
-      }
-      a {
-        display: block;
-        margin: 6px 0 0;
-        border: 1px solid #0099e8;
-        background: #0099e8;
-        color: #fff;
-        line-height: 40px;
-        font-size: 14px;
-        text-decoration: none;
-      }
+  }
+}
+.session-top {
+  padding: 38px 64px;
+  text-align: center;
+  p {
+    font-size: 14px;
+  }
+  a {
+    display: block;
+    margin: 6px 0 0;
+    border: 1px solid #0099e8;
+    background: #0099e8;
+    color: #fff;
+    line-height: 40px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
+.session-form {
+  padding: 32px 64px;
+  border-top: 1px solid #eee;
+  &__facebook {
+    position: relative;
+    margin: 0;
+    background: #385185;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    .session-form__facebook-icon {
+      display: inline-block;
+      font-size: 30px;
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
     }
-    .session-form {
-      padding: 32px 64px;
-      border-top: 1px solid #eee;
-      &__facebook {
-        position: relative;
+  }
+  &__google {
+    position: relative;
+    margin: 16px 0 0;
+    .session-form__google-in {
+    background: #fff url('google.svg') 3px;
+    background-repeat: no-repeat;
+    border: #979797 solid 1px;
+    color: #333;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+    }
+  }
+}
+.session-bottom {
+  &__form {
+    padding: 24px 64px 32px;
+    .field:first-child{
+      margin: 0;
+    }
+    .field {
+      margin: 24px 0 0;
+      .input {
         margin: 0;
-        background: #385185;
-        color: #fff;
-        display: block;
         width: 100%;
-        line-height: 48px;
-        font-size: 14px;
-        border: 1px solid transparent;
-        -webkit-transition: all ease-out .3s;
-        transition: all ease-out .3s;
-        cursor: pointer;
-        .fa-facebook-square {
-          display: inline-block;
-          font-size: 30px;
-          position: absolute;
-          top: 50%;
-          left: 16px;
-          -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-        }
-      }
-      &__google {
-        position: relative;
-        margin: 16px 0 0;
-        .session-form__google-in {
-        background: #fff url('google.svg') 3px;
-        background-repeat: no-repeat;
-        border: #979797 solid 1px;
-        color: #333;
-        display: block;
-        width: 100%;
-        line-height: 48px;
-        font-size: 14px;
-        -webkit-transition: all ease-out .3s;
-        transition: all ease-out .3s;
-        cursor: pointer;
-        text-align: center;
-        }
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
       }
     }
-    .session-bottom {
-      &__form {
-        padding: 24px 64px 32px;
-        .field:first-child{
-          margin: 0;
-        }
-        .field {
-          margin: 24px 0 0;
-          .input {
-            margin: 0;
-            width: 100%;
-            height: 48px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-          }
-        }
-        .actions-btn {
-          margin: 24px 0 0;
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          border: 1px solid transparent;
-          -webkit-transition: all ease-out .3s;
-          transition: all ease-out .3s;
-          cursor: pointer;
-          text-align: center;
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
-          text-shadow: none;
-        }
-        .actions-pass {
-          display: block;
-          margin: 40px 0 0;
-          color: #0099e8;
-          text-decoration: none;
-          font-size: 14px;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
+    .actions-btn {
+      margin: 24px 0 0;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      text-shadow: none;
+    }
+    .actions-pass {
+      display: block;
+      margin: 40px 0 0;
+      color: #0099e8;
+      text-decoration: none;
+      font-size: 14px;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

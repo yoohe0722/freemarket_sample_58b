@@ -39,7 +39,7 @@
         position: relative;
         margin-left: 45px;
         width: 100%;
-        .input-default {
+        .header__input-default {
           background: #f5f5f5;
           border-radius: 4px;
           padding: 0 42px 0 10px;
@@ -96,7 +96,7 @@
           color: #333;
           position: relative;
           height: 44px;
-          line-height: 32px;
+          line-height: 38px;
           text-decoration: none;
         }
         &a {
@@ -139,7 +139,7 @@
         i {
           color: #ccc;
         }
-        img {
+        .member_photo {
           // overflow: hidden;
           border-radius: 50%;
         }
@@ -150,6 +150,121 @@
           color: #333;
           display: inline-block;
           margin-left: 10px;
+        }
+        ul > li{
+          display: inline-block;
+        }
+        ul > li > a{
+          padding: 5px 5px;
+          display: block;
+          text-transform: uppercase;
+        }
+        ul > li:hover > a{
+          color:  rgb(0, 149, 238);
+        }
+        ul li ul{
+          position: absolute;
+        }
+        ul li ul li{
+          display: block;
+        }
+        ul li ul li a{
+          background-color: #fff;
+          color: #444;
+          height: 120px;
+          width: 300px;
+          overflow: hidden;
+        }
+        ul li ul li a:hover{
+          background-color: #f5f5f5;
+        }
+        ul li ul{
+          display: none;
+        }
+        ul li:hover ul{
+          display: block;
+        }
+        .sublink {
+          position: relative;
+          border-bottom: solid 0.5px #eee;
+          display: flex;
+          top: 7px;
+          right: 30px;
+          box-shadow: 0px 0px 2px 0px #ddd;
+          img {
+            position: relative;
+            top: 10px;
+            left: 10px;
+          }
+          .sublink-content-text {
+            padding-left: 15px;
+            padding-top: 5px;
+            width: 200px;
+          }
+          .fa-chevron-right{
+            position: absolute;
+            right: 10px;
+            top: 45px;
+          }
+        }
+        .sublink-todo {
+          position: relative;
+          top: 7px;
+          right: 155px;
+          width: 300px;
+          height: 250px;
+          box-shadow: 0px 0px 3px 0px #ddd;
+          &:hover{
+            background-color: #fff;
+            cursor: default;
+          }
+          .sublink-content-todo-logo {
+            width: 300px;
+            text-align: center;
+            padding-top: 40px;
+          }
+          .sublink-content-todo-text {
+            padding-top: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            span {
+              color: #ccc;
+            }
+          }
+        }
+        .sublink-mypage {
+          position: relative;
+          right: 180px;
+          width: 350px;
+          height: 250px;
+          background: #fff;
+          box-shadow: 0px 0px 3px 0px #ddd;
+          .sublink-maypage-img {
+            position: absolute;
+            right: 0px;
+          }
+          .sublink-maypagemember_photo {
+            position: absolute;
+            top: 30px;
+            left: 140px;
+            border-radius: 50%;
+          }
+          &__name {
+            position: relative;
+            span {
+              position: relative;
+              top: 150px;
+            }
+          }
+          .sublink-maypage-link {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 70px;
+            width: 350px;
+            border-bottom: solid 0.5px #eee;
+          }
         }
         .nav-count{
           position: absolute;
@@ -236,4 +351,45 @@
   background-color: #b3d4fc;
   color: #fff;
   text-shadow: none;
+}
+.new-registration-btn {
+  box-sizing:border-box;
+  background-color: rgb(234, 53, 45);
+  color: rgb(255, 255, 255);
+  display: block;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(234, 53, 45);
+  border-image: initial;
+  border-radius: 4px;
+  padding: 6px 10px;
+  text-align: center;
+  height: 32px;
+  a {
+    color: white;
+    vertical-align: 50%;
+  }
+}
+
+.log-in-btn {
+  box-sizing:border-box;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 149, 238);
+  display: block;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(0, 149, 238);
+  border-image: initial;
+  border-radius: 4px;
+  padding: 6px 10px;
+  transition: all 0.3s ease-out 0s;
+  text-align: center;
+  margin-left: 11px;
+  height: 32px;
+  a {
+    color: rgb(0, 149, 238);
+    vertical-align: 50%;
+  }
 }

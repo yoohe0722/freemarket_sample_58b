@@ -1,0 +1,36 @@
+.credit_single_header
+  = render 'devise/shared/user-sign_up-header'
+.credit_single-main
+  %section.l-single-container
+    %h2.l-single-head.registration
+      支払い方法
+    .l-single-inner.registration-form
+      = form_with(model: @user, local: true) do |f|
+        %input{:name => "__csrf_value", :type => "hidden", :value => "#"}/
+        .l-single-content
+          .credit_form-group
+            %label{:for => "payment_card_no"} カード番号
+            %span.form-require 必須
+            %input#payment_card_no.input-default{"data-input-type" => "card", :maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => ""}/
+            %ul#card-no-error-wrapper.has-error-text
+            .signup-card-list
+              = image_tag "card.png", alt: "test"
+          .credit_form-group.signup-form-expire
+            .credit_form-group_box1
+              %label.payment_card_expire 有効期限
+              %span.form-require 必須
+              .select-wrap_box.half
+                = f.collection_select(:birth_month_id, Birth_month.all, :id, :name,{selected: 0}, {class: "select-default"})
+                %span 月
+                = f.collection_select(:yearactive_id, Yearactive.all, :id, :name,{selected: 0}, {class: "select-default"})
+                %span 年
+            .credit_form-group_box1
+              %label{:for => "payment_card_security_code"} セキュリティコード
+              %span.form-require 必須
+              %input#payment_card_security_code.input-default{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
+              .signup-seqcode
+                .signup-seqcode-text
+                  %span.form-question ?
+                  カード裏面の番号とは?
+            = link_to("次へ進む", complete_users_path, class: "btn-red btn-default", id: "submit-button") 
+= render 'module/subfooter'

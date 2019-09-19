@@ -57,6 +57,17 @@
                       .select-wrap
                         = f.collection_select :category_id, Categoryhash.all, :id, :name
 
+                .form-group
+                  %label
+                    サイズ
+                  %span.form-require 必須
+                  .select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :size_id, Size.all, :id, :name
+
 
 
                 .form-group

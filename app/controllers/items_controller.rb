@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @firstimage = @item.images[0]
   end
 
   def buycheck

@@ -14,14 +14,5 @@ class Item < ApplicationRecord
   validates :name, presence: true, length: { maximum: 40}
   validates :description, presence: true, length: { maximum: 100} #テストしやすいよう本家とは異なる設定
   validates :price, presence: true, :numericality => { :greater_than_or_equal_to => 300, :less_than_or_equal_to => 99999999 }
-  with_options presence: true do
-    # validates :image
-    validates :category_id
-    validates :prefecture_id
-    validates :shipdate_id
-    validates :shipfee_id
-    validates :shipmethod_id
-    validates :condition_id
-    validates :user_id
-  end
+  validates :category_id, :prefecture_id, :shipdate_id, :shipfee_id, :shipmethod_id, :condition_id, :user_id, presence: true
 end

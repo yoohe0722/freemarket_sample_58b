@@ -26,7 +26,7 @@
             %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
-            - @item.each do |item|
+            - @item_category_1.each do |item|
               = render partial: "index", locals: { item: item }
 
     #category_2
@@ -38,7 +38,7 @@
             %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
-            - @item.each do |item|
+            - @item_category_2.each do |item|
               = render partial: "index", locals: { item: item }
 
     #category_3
@@ -50,7 +50,7 @@
             %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
-            - @item.each do |item|
+            - @item_category_3.each do |item|
               = render partial: "index", locals: { item: item }
 
     #category_4
@@ -62,7 +62,7 @@
             %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
-            - @item.each do |item|
+            - @item_category_4.each do |item|
               = render partial: "index", locals: { item: item }
 
 = render 'module/footer'

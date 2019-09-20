@@ -14,7 +14,6 @@
 
 .sell_container{
   background-color:white;
-  height: 1800px
 }
 
 .l-single-head {
@@ -353,4 +352,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.btn-container{
+  clear: both;
 }

@@ -7,13 +7,10 @@
       .item_box_contents_center_left_right
         .item_photo_box
           - if @item.images.attached?
-            - @item.images.each_with_index do |image, index|
-              - if index == 0
-                = image_tag image, size: "300x300"
-              - if index >= 0
-                .item_photo_small
-                  .item_photo_small_box
-                    = image_tag image, size: "60x60"
+            = image_tag @firstimage, size: "300x300"
+          .item_photo_box_2
+            - @item.images.each do |image|
+              = image_tag image, size: "56x56", class: 'item_photo_box_images'
         .item_details.box
           %table.item-detail-table
             %tbody
@@ -73,11 +70,6 @@
                 %th 発送日の目安
                 %td
                   = @item.shipdate.name
-
-
-
-
-
       .item_price_box
         %span.item_price_box_text
           = @item.price
@@ -88,7 +80,7 @@
       .item_box_text_center
         .sales_point_message
           残高 ¥3,250 をお持ちです
-      %a.item-buy-btn{:href => "/items/buycheck"}
+      %a.item-buy-btn{href: "/items/buycheck"}
         購入画面に進む
       %p.item-description-inner
         = @item.description
@@ -128,8 +120,8 @@
           = image_tag "スクリーンショット 2019-09-10 15.10.56.png", size: "154x49", alt: "test"
 
     %h2.items-box-head
-      = link_to "ユーザーさんのその他の出品", "https://www.mercari.com/jp/u/711116191/"
-
+      = link_to "https://www.mercari.com/jp/u/711116191/" do
+        = "#{@item.user.nick_name}さんのその他の出品"
     = render 'module/buy_image_box'
     = render 'module/buy_image_box'
     = render 'module/buy_image_box'

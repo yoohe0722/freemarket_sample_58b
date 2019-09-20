@@ -10,7 +10,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipfee
   belongs_to_active_hash :shipmethod
   belongs_to_active_hash :condition
-
   validates :name, presence: true, length: { maximum: 40}
   validates :description, presence: true, length: { maximum: 100} #テストしやすいよう本家とは異なる設定
   validates :price, presence: true, :numericality => { :greater_than_or_equal_to => 300, :less_than_or_equal_to => 99999999 }

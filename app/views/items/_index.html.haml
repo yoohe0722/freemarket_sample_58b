@@ -1,5 +1,5 @@
 .item
-  = link_to("https://item.mercari.com/jp/m52733410327/", class: "style_link") do
+  = link_to(item_path(item.id), class: "style_link") do
     %figure.style_card
       %figcaption
         %span.item-name

@@ -4,10 +4,9 @@
       %figcaption
         %span.item-name
           = item.name
-          -# 感情を失った男
       .style_thumbnail
         %span{"aria-label" => "Price"}
-          .en ￥
+          .p￥
           = item.price
         - if item.images.attached?
           - item.images.each do |image|

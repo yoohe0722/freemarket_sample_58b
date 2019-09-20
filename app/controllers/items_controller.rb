@@ -4,11 +4,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    redirect_to root_path
+    if @item.save
+      redirect_to root_path, notice: '商品を出品しました'
+    else
+      redirect_to ({action: 'shipping'}), alert: '商品出品に失敗しました'
+    end
   end
 
   def index
-
     @item = Item.all.order('id ASC').limit(10)
   end
 

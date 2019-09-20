@@ -84,10 +84,17 @@
     .view_more {
       font-size: 14px;
       padding: 5px 16px 5px 5px;
-      color: rgb(0, 149, 238);
       display: block;
       font-weight: 600;
-      padding: 5px 14px 5px 5px;
+      vertical-align: center;
+      a {
+        text-decoration: none;
+        color: rgb(0, 149, 238);
+      }
+      span {
+        text-decoration: none;
+        color: rgb(0, 149, 238);
+      }
     }
   }
 

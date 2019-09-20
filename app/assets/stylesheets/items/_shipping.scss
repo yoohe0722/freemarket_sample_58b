@@ -14,7 +14,6 @@
 
 .sell_container{
   background-color:white;
-  height: 1800px
 }
 
 .l-single-head {
@@ -103,6 +102,11 @@
     pointer-events: none;
     white-space: pre-wrap;
     word-wrap: break-word;
+  }
+  & .image_file_select {
+    height: 162px;
+    width: 100%;
+    opacity: 0;
   }
 }
 
@@ -348,4 +352,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.btn-container{
+  clear: both;
 }

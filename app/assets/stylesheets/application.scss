@@ -41,3 +41,16 @@
 @import "users/complete";
 @import "users/phone_authentication";
 @import "users/address_input";
+
+.notifications {
+  color: white;
+  text-align: center;
+
+  .notice {
+    background-color: #2C7CFF;
+  }
+
+  .alert {
+    background-color: #FF3300;
+  }
+}

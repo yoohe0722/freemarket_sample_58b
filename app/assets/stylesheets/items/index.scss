@@ -22,7 +22,7 @@
   min-height: 100vh;
 }
 
-.categories__header{
+.section__header{
   padding: 56px 0px 30px;
   background-color: rgb(255, 255, 255);
   width: 100vw;
@@ -39,7 +39,7 @@
     text-align: center;
   }
 
-  .categories__link {
+  .section__links {
     display: flex;
     & ul {
       display: flex;
@@ -56,6 +56,11 @@
       font-weight: 600;
       border-radius: 15px;
       padding: 8px 16px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }
@@ -87,11 +92,8 @@
   }
 
   .container__item-box {
-    display: flex;
-    justify-content: space-around;
-
     .item__grid {
-      // grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px 20px;
       display: grid;
     }

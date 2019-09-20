@@ -21,8 +21,9 @@
       .categories__container
         .container__title
           %h3 レディース新着アイテム
-          = link_to('もっと見る','#', class: 'view_more')
-          %i.material-icons navigate_next
+          .view_more
+            = link_to('もっと見る ','#', )
+            %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
             - @item.each do |item|
@@ -32,8 +33,9 @@
       .categories__container
         .container__title
           %h3 メンズ新着アイテム
-          = link_to('もっと見る','#', class: 'view_more')
-          %i.material-icons navigate_next
+          .view_more
+            = link_to('もっと見る ','#', )
+            %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
             - @item.each do |item|
@@ -43,8 +45,9 @@
       .categories__container
         .container__title
           %h3 家電・スマホ・カメラ
-          = link_to('もっと見る','#', class: 'view_more')
-          %i.material-icons navigate_next
+          .view_more
+            = link_to('もっと見る ','#', )
+            %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
             - @item.each do |item|
@@ -55,8 +58,8 @@
         .container__title
           %h3 おもちゃ・ホビー・グッズ
           .view_more
-            = link_to('もっと見る','#', )
-            %i.material-icons navigate_next
+            = link_to('もっと見る ','#', )
+            %i.fa.fa-chevron-right
         .container__item-box
           .item__grid.clearfix
             - @item.each do |item|

@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   def index
 
-    @item = Item.all.order('id ASC').limit(5)
+    @item = Item.all.order('id ASC').limit(10)
   end
 
   def mypage

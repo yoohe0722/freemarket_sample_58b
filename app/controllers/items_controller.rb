@@ -9,7 +9,11 @@ class ItemsController < ApplicationController
 
   def index
 
-    @item = Item.all.order('id ASC').limit(10)
+    # @item = Item.all.order('id ASC').limit(10)
+    @item_category_1 = Item.where(category_id: "1").order('created_at DESC').limit(10)
+    @item_category_2 = Item.where(category_id: "2").order('created_at DESC').limit(10)
+    @item_category_3 = Item.where(category_id: "8").order('created_at DESC').limit(10)
+    @item_category_4 = Item.where(category_id: "6").order('created_at DESC').limit(10)
   end
 
   def mypage

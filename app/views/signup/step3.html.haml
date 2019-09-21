@@ -4,7 +4,7 @@
 %main.single-main
   .l-single-container
     %h2.l-chapter-head.registration 住所入力
-    = form_with(model: @user ,url: step4_signup_index_path, local: true, class: "l-single-inner registration-form") do |f|
+    = form_with(model: @user ,url: step4_signup_index_path,method: :get, local: true, class: "l-single-inner registration-form") do |f|
       .l-single-content
         .form-group2
           .form-block

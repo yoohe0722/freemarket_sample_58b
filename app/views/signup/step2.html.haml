@@ -10,7 +10,7 @@
           = form.label :phone_number, '携帯電話の番号'
           = form.text_field :phone_number, placeholder: "携帯電話の番号を入力", type: "tel", value: "", class: "input-default"
         %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-        = link_to 'SMSを送信する', address_input_users_path, class: "btn-default btn-red"
+        = link_to 'SMSを送信する', address_input_users_path,method: :get, class: "btn-default btn-red"
         %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .form-group2.text-right
           = link_to('https://www.mercari.com/jp/help_center/article/244/', target: "_blank") do

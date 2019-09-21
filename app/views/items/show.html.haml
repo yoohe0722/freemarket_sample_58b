@@ -34,10 +34,10 @@
                 %td
                   %div
                     = link_to "https://www.mercari.com/jp/category/1/" do
-                      = @item.category.parent.parent.name
+                      -# = @item.category.parent.parent.name
                   %div
                     = link_to "https://www.mercari.com/jp/category/22/" do
-                      = @item.category.parent.name
+                      -# = @item.category.parent.name
                   %div
                     = link_to "https://www.mercari.com/jp/category/240/" do
                       = @item.category.name
@@ -72,7 +72,7 @@
                   = @item.shipdate.name
       .item_price_box
         %span.item_price_box_text
-          = @item.price
+          = "￥#{@item.price}"
         %span.item-tax
           (税込)
         %span.item-shipping-fee

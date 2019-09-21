@@ -1,6 +1,8 @@
-// config
+// config & others
 @import "font-awesome";
 @import "config/reset";
+@import "devise/sessions_new";
+@import "devise/registrations_new";
 
 
 // module
@@ -17,30 +19,25 @@
 @import "items/details";
 @import "items/buycheck";
 @import "items/shipping";
+@import "details";
 
 
 // path__users
 @import "items/mypage";
 @import "shipping";
-@import "details";
 @import "items/logout";
-@import "items/identification";
 @import "items/credit";
 @import "items/user_edit";
 @import "items/logout";
-@import "credit_users";
-
-
-// devise
-@import "devise/sessions_new";
-@import "devise/registrations_new";
-
-
-// users
 @import "users/new";
-@import "users/complete";
-@import "users/phone_authentication";
-@import "users/address_input";
+
+// path__signup
+@import "signup/step1";
+@import "signup/step2";
+@import "signup/step3";
+@import "signup/step4";
+@import "signup/complete";
+
 
 .notifications {
   color: white;

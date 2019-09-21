@@ -1,14 +1,12 @@
-# Root crumb
+# ルートページ
 crumb :root do
   link "メルカリ", root_path
 end
-
 # マイページ
 crumb :mypage do
   link 'マイページ', user_path(current_user.id)
   parent :root
 end
-
 # マイページ-プロフィール
 crumb :profile do
   link 'プロフィール'
@@ -19,7 +17,6 @@ crumb :identification do
   link '本人情報'
   parent :mypage
 end
-
 # マイページ-クレジット
 crumb :credit do
   link 'クレジット'

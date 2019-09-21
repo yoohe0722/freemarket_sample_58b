@@ -7,7 +7,7 @@
       %h2.signup-registration__main__container__head
         会員情報入力
       .signup-registration__main__container__form
-        = form_with(model: @user, local: true) do |f|
+        = form_with(model: @user, url: step2_signup_index_path, local: true) do |f|
           .signup-registration__main__container__form__box
             .signup-registration-from-group-head
               = f.label :nick_name, 'ニックネーム', class: 'signup-registration-label'
@@ -81,8 +81,7 @@
                     利用規約
                   に同意したものとみなします
               .signup-registration-from-group
-                -# = link_to("次へ進む", phone_authentication_users_path, class: "signup-registration-btn")
-                = f.submit '次へ進む', class: 'signup-registration-btn'
+                = f.submit("次へ進む", step2_signup_index_path, class: "signup-registration-btn")
               .signup-registration-from-group-last
                 = link_to("#", class: 'right-text-link') do
                   本人情報の登録について

@@ -5,8 +5,30 @@ end
 
 # マイページ
 crumb :mypage do
-  link 'マイページ', root_path
+  link 'マイページ', user_path(current_user.id)
   parent :root
+end
+
+# マイページ-プロフィール
+crumb :profile do
+  link 'プロフィール'
+  parent :mypage
+end
+# マイページ-本人情報
+crumb :identification do
+  link '本人情報'
+  parent :mypage
+end
+
+# マイページ-クレジット
+crumb :credit do
+  link 'クレジット'
+  parent :mypage
+end
+# マイページ-ログアウト
+crumb :logout do
+  link 'ログアウト'
+  parent :mypage
 end
 
 

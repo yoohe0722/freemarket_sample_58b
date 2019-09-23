@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'user_edit'
       get 'identification'
       get 'signup_registration'
+      get 'show_edit_delete/:id' => 'items#show_edit_delete'
     end
   end
   resources :users, only: [:show, :index, :new, :edit] do

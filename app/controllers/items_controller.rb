@@ -23,6 +23,15 @@ class ItemsController < ApplicationController
     redirect_to "/payments" if card.present?
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item. update(item_params)
+    redirect_to root_path, notice: '商品を編集しました'
+  end
+
   def mypage
   end
 
@@ -32,8 +41,6 @@ class ItemsController < ApplicationController
   def user_edit
   end
 
-  def identification
-  end
 
   def show
     @item = Item.find(params[:id])

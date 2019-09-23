@@ -1,6 +1,8 @@
-// config
+// config & others
 @import "font-awesome";
 @import "config/reset";
+@import "devise/sessions_new";
+@import "devise/registrations_new";
 
 
 // module
@@ -10,6 +12,7 @@
 @import "module/subfooter";
 @import "module/mypage-sidebar";
 @import "module/sell-btn";
+@import "module/breadcrumbs";
 
 
 // path__items
@@ -17,32 +20,27 @@
 @import "items/details";
 @import "items/buycheck";
 @import "items/shipping";
+@import "items/edit";
+@import "details";
+@import "shipping";
 
 
 // path__users
-@import "items/mypage";
-@import "shipping";
-@import "details";
-@import "items/logout";
-@import "items/identification";
-@import "items/credit";
-@import "items/user_edit";
-@import "items/logout";
-@import "credit_users";
-
-
-// devise
-@import "devise/sessions_new";
-@import "devise/registrations_new";
-
-
-// users
+@import "users/mypage";
 @import "users/new";
-@import "users/complete";
-@import "users/phone_authentication";
-@import "users/address_input";
+@import "users/logout";
+@import "items/credit";
+@import "users/user_edit";
 @import "users/mypage_ship";
-@import 'module/breadcrumbs';
+
+
+// path__signup
+@import "signup/step1";
+@import "signup/step2";
+@import "signup/step3";
+@import "signup/step4";
+@import "signup/complete";
+
 
 // payments
 @import "payments/new";

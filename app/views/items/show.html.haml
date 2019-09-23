@@ -2,7 +2,7 @@
 .item_box_contents
   .item-box-container
     .item_box_contents_center
-      %h1.item_name 
+      %h1.item_name
         = @item.name
       .item_box_contents_center_left_right
         .item_photo_box
@@ -40,7 +40,7 @@
                       -# = @item.category.parent.name
                   %div
                     = link_to "https://www.mercari.com/jp/category/240/" do
-                      = @item.category.name
+                      -# = @item.category.name
               %tr
                 %th ブランド
                 - if @item.brand.present?

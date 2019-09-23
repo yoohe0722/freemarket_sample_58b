@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
     @firstimage = @item.images[0]
   end
 
-  def show_edit_delete
+  def set_item
     @item = Item.find(params[:id])
     @firstimage = @item.images[0]
   end

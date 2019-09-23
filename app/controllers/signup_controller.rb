@@ -76,7 +76,8 @@ class SignupController < ApplicationController
   private
     # 許可するキーを設定します
     def user_params
-      params.require(:user).permit(
+      # binding.pry
+      params.fetch(:user,{}).permit(
         :email,
         :password,
         :password_confirmation,

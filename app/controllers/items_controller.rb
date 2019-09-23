@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :login_check, only: [:buy, :shipping]
+  before_action :set_item, only: [:show, :show_edit_delete]
 
   def create
     @item = Item.create(item_params)
@@ -36,16 +37,11 @@ class ItemsController < ApplicationController
   def user_edit
   end
 
-
-  def show
-    @item = Item.find(params[:id])
-    @firstimage = @item.images[0]
-  end
-
   def set_item
     @item = Item.find(params[:id])
     @firstimage = @item.images[0]
   end
+
 
   def buycheck
   end
@@ -58,7 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-      item = Item.find(params[:id])
+    item = Item.find(params[:id])
     if item.user_id == current_user.id
       item.destroy
       redirect_to root_path, notice: '商品を削除しました'

@@ -26,7 +26,7 @@
 
         .mypage-item-list
           - @item.each do |item|
-            = link_to "/items/set_item/#{item.id}", class: "mypage-item-link" do
+            = link_to "/items/show_edit_delete/#{item.id}", class: "mypage-item-link" do
               - if item.images.attached?
                 - item.images.each do |image|
                   = image_tag image ,size: "64x55" ,class: "is-higher-width"

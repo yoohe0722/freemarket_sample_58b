@@ -15,4 +15,7 @@
     .notifications
       - flash.each do |key, value|
         = content_tag(:div, value, class: key)
+    .bread-container
+      .bread-container-in
+        %p= breadcrumbs separator: "&rsaquo;"
     = yield

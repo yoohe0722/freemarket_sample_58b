@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       post 'items' => 'items#create'
     end
   end
-  resources :users, only: [:index, :show, :new, :edit] do
+  resources :users, only: [:show, :index, :new, :edit] do
     collection do
       get 'profile'
       get 'logout'
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       get 'complete'
       get 'phone_authentication'
       get 'address_input'
+      get 'mypage_ship'
+      
     end
   end
 end

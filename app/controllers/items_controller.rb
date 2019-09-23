@@ -23,8 +23,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item. update(item_params)
-    redirect_to root_path, notice: '商品を編集しました'
+    item = Item.find(params[:id])
+      if item.user_id == current_user.id
+        item.update(item_params)
+        redirect_to root_path, notice: '商品を編集しました'
+      else
+        redirect_to root_path, alert: '商品編集に失敗しました'
+      end
   end
 
   def mypage

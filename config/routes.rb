@@ -4,13 +4,15 @@ Rails.application.routes.draw do
   resources :items, only: [:create, :index, :show] do
     collection do
       get 'buy'
-      get 'buycheck'
+      # get 'buycheck'
       get 'shipping'
       # get 'mypage'
       get 'credit'
       get 'user_edit'
       get 'identification'
       get 'signup_registration'
+      post 'pay/:id' => 'items#pay'
+      get 'buycheck/:id' => 'items#buycheck'
     end
   end
   resources :users, only: [:show, :index, :show, :new, :edit] do
@@ -22,5 +24,7 @@ Rails.application.routes.draw do
       get 'phone_authentication'
       get 'address_input'
     end
+  end
+  resources :payments do
   end
 end

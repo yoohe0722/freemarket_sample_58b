@@ -34,10 +34,10 @@
                 %td
                   %div
                     = link_to "https://www.mercari.com/jp/category/1/" do
-                      = @item.category.parent.parent.name
+                      -# = @item.category.parent.parent.name
                   %div
                     = link_to "https://www.mercari.com/jp/category/22/" do
-                      = @item.category.parent.name
+                      -# = @item.category.parent.name
                   %div
                     = link_to "https://www.mercari.com/jp/category/240/" do
                       = @item.category.name
@@ -80,7 +80,7 @@
       .item_box_text_center
         .sales_point_message
           残高 ¥3,250 をお持ちです
-      %a.item-buy-btn{href: "/items/buycheck"}
+      %a.item-buy-btn{href: "/items/buycheck/#{@item.id}"}
         購入画面に進む
       %p.item-description-inner
         = @item.description

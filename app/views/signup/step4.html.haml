@@ -5,7 +5,7 @@
     %h2.l-single-head.registration
       支払い方法
     .l-single-inner.registration-form
-      = form_with(model: @user, url: '/signup', method: :post, local: true) do |f|
+      = form_with(model: @user, url: signup_index_path, method: :post, local: true) do |f|
         %input{:name => "__csrf_value", :type => "hidden", :value => "#"}/
         .l-single-content
           .credit_form-group

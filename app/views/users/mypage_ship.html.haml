@@ -23,13 +23,17 @@
                 売却済
 
         .mypage-item-list
-          %a.mypage-item-link{:href => "https://www.mercari.com/jp/items/m49348093442/"}
-            = image_tag 'shoes.jpg' ,size: "64x55" ,class: "is-higher-width"
-            .mypage-item-body
-              .mypage-item-text
-                思い出の詰まったボールペン
-                .mypage-item-status.awaiting
-                  出品中
+          - @item.each do |item|
+            %a.mypage-item-link{:href => "https://www.mercari.com/jp/items/m49348093442/"}
+              - if item.images.attached?
+                - item.images.each do |image|
+                  = image_tag image ,size: "64x55" ,class: "is-higher-width"
+                  .mypage-item-body
+                    .mypage-item-text
+                      = item.name
+                      -# 思い出の詰まったボールペン
+                      .mypage-item-status.awaiting
+                        出品中
 
 
         -# .mypage-contaier__tab-content

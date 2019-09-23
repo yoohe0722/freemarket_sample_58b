@@ -257,12 +257,14 @@
 
 
 .mypage-item-list{
-  margin: 10px 0;
+  margin: 20px 0;
   a {
     text-decoration: none;
   }
   .mypage-item-link{
+    margin: 20px 0;
     display: flex;
+    border-bottom: 1px solid #ccc;
     .is-higher-width{
       margin: 0 20px 10px;
       .mypage-item-body{
@@ -285,7 +287,8 @@
   font-size: 12px;
   color: #fff;
   font-weight: 600;
-  width: 50px
+  width: 48px;
+  text-align: center;
 }
 
 

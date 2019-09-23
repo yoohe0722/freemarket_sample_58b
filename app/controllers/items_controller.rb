@@ -12,10 +12,15 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @item_category_1 = Item.where(category_id: "1").order('created_at DESC').limit(10)
-    @item_category_2 = Item.where(category_id: "2").order('created_at DESC').limit(10)
-    @item_category_3 = Item.where(category_id: "8").order('created_at DESC').limit(10)
-    @item_category_4 = Item.where(category_id: "6").order('created_at DESC').limit(10)
+    @item_category_1 = Item.where(category_id: "1", trading_condition: "1").order('created_at DESC').limit(10)
+    @item_category_2 = Item.where(category_id: "2", trading_condition: "1").order('created_at DESC').limit(10)
+    @item_category_3 = Item.where(category_id: "8", trading_condition: "1").order('created_at DESC').limit(10)
+    @item_category_4 = Item.where(category_id: "6", trading_condition: "1").order('created_at DESC').limit(10)
+  end
+
+  def credit
+    card = Payment.where(user_id: current_user.id).first
+    redirect_to "/payments" if card.present?
   end
 
   def mypage
@@ -48,15 +53,20 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
-    card = Payment.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    Payjp::Charge.create(
-      amount: @item.price,
-      customer: card.customer_id, 
-      currency: 'jpy',
-    )
-    redirect_to root_path, notice: '商品を購入しました'
+    @payment = Payment.where(user_id: current_user.id).first
+    if @payment.present?
+      @item = Item.find(params[:id])
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp::Charge.create(
+        amount: @item.price,
+        customer: @payment.customer_id, 
+        currency: 'jpy',
+      )
+      @item.update(buyer_id: current_user.id, trading_condition: 3)
+      redirect_to root_path, notice: '商品を購入しました'
+    else
+      redirect_to new_payment_path, alert: '購入にはクレジットカード登録が必要です'
+    end
   end
 
   private

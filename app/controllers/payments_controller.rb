@@ -2,30 +2,48 @@ class PaymentsController < ApplicationController
   require "payjp"
   before_action :set_card
 
-  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ。
-    card = Payment.where(user_id: current_user.id).first
-    # redirect_to action: "index" if card.present?
+  def index
+    if @payment.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(@payment.customer_id)
+      @customer_card = customer.cards.retrieve(@payment.card_id)
+    end
   end
 
-  def create #PayjpとCardのデータベースを作成
+  def new
+  end
+
+  def create
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
 
     if params['payjp-token'].blank?
-      redirect_to action: "new"
+      redirect_to action: "new", alert: '登録に失敗しました'
     else
-      # トークンが正常に発行されていたら、顧客情報をPAY.JPに登録します。
       customer = Payjp::Customer.create(card: params['payjp-token'])
       @payment = Payment.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @payment.save
-        redirect_to action: "/items/credit"
+        redirect_to controller: "items", action: "credit"
       else
-        redirect_to action: "new"
+        redirect_to new_payment_path, alert: '登録に失敗しました'
       end
     end
   end
 
-  private
+  def destroy
+    if @payment.blank?
+      redirect_to action: "new"
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(@payment.customer_id)
+      customer.delete
+      @payment.delete
+      redirect_to new_payment_path, notice: '削除しました' 
+    end
+  end
 
+  private
   def set_card
     @payment = Payment.where(user_id: current_user.id).first if Payment.where(user_id: current_user.id).present?
   end

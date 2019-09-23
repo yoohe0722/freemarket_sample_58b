@@ -44,6 +44,10 @@
 @import "users/mypage_ship";
 @import 'module/breadcrumbs';
 
+// payments
+@import "payments/new";
+@import "payments/index";
+
 .notifications {
   color: white;
   text-align: center;

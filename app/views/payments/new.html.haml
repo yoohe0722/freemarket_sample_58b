@@ -1,28 +1,46 @@
-.content__title
-  %h2 クレジットカード情報入力
-.content__credit-card
-  .content__credit-card__inner
-    = form_with url: payments_path, method: :post, html: { name: "inputForm" } do |f|
-      = f.label :カード番号, class: 'label'
-      %span 必須
-      = f.text_field :card_number, type: 'text', class: 'input-number', placeholder: '半角数字のみ', maxlength: "16"
-      .cards-expire
-        = f.label :有効期限, class: 'label'
-        %span 必須
-        %br
-        .cards-expire__wrap
-          = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'input-expire'
-          %span.expire-text 月
-          %br
-        .cards-expire__wrap
-          = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'input-expire'
-          %span.expire-text 年
-      .cards-expire
-        = f.label :セキュリティコード, class: 'label'
-        %span 必須
-        = f.text_field :cvc, type: 'text', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
-      .content-bottom#card_token
-        = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
+%header
+  = render 'module/header.html.haml'
+- breadcrumb :payments_new
+
+.mypage
+  %main.mypage__box
+    .maypage-sidebar
+      = render 'module/mypage-sidebar'
+    .mypage__box__content
+      .mypage__box__content__payments_new
+        %h2.mypage__box__content__payments_new-head
+          クレジットカード情報入力
+        .add-l-single-inner.registration-form
+          = form_with url: payments_path, method: :post, html: { name: "inputForm" } do |f|
+            .l-single-content
+              .add_credit_form-group
+                = f.label :カード番号, class: 'label'
+                %span.form-require 必須
+                = f.text_field :card_number, type: 'text', placeholder: '半角数字のみ', maxlength: "16", class: 'input-default'
+                %ul#card-no-error-wrapper.has-error-text
+                .signup-card-list
+                  = image_tag "card.png", alt: "test"
+              .add_credit_form-group.signup-form-expire
+                .add_credit_form-group_box1
+                  = f.label :有効期限, class: 'payment_card_expire'
+                  %span.form-require 必須
+                  .select-wrap_box.half#add-card
+                    = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: "select-default"
+                    %span 月
+                    = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: "select-default"
+                    %span 年
+                .add_credit_form-group_box1
+                  = f.label :セキュリティコード, class: 'label'
+                  %span.form-require 必須
+                  = f.text_field :cvc, type: 'text', class: 'input-default', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
+                  .signup-seqcode
+                    .signup-seqcode-text
+                      %span.form-question ?
+                      カード裏面の番号とは?
+                .content-bottom#card_token
+                  = f.submit '追加する', class: 'btn-red btn-default', id: 'token_submit'
+= render 'module/footer'
+= render 'module/sell-btn'
 
 :javascript
   document.addEventListener(

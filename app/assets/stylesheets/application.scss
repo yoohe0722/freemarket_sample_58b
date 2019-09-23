@@ -12,6 +12,7 @@
 @import "module/subfooter";
 @import "module/mypage-sidebar";
 @import "module/sell-btn";
+@import "module/breadcrumbs";
 
 
 // path__items
@@ -20,16 +21,17 @@
 @import "items/buycheck";
 @import "items/shipping";
 @import "details";
+@import "shipping";
 
 
 // path__users
-@import "items/mypage";
-@import "shipping";
-@import "items/logout";
-@import "items/credit";
-@import "items/user_edit";
-@import "items/logout";
+@import "users/mypage";
 @import "users/new";
+@import "users/logout";
+@import "items/credit";
+@import "users/user_edit";
+@import "users/mypage_ship";
+
 
 // path__signup
 @import "signup/step1";

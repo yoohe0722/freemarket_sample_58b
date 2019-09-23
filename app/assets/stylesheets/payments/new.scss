@@ -1,0 +1,37 @@
+.mypage__box__content__payments_new {
+  background: #fff;
+  &-head {
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 2px solid #f5f5f5;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.add_credit_form-group {
+font-weight: bold;
+  .input-default {
+    font-weight: normal;
+  }
+}
+
+.add_credit_form-group_box1 {
+  padding-bottom: 32px;
+}
+
+.add_credit_form-group {
+  padding-bottom: 32px;
+}
+
+.add-l-single-inner.registration-form {
+  padding: 40px 40px 64px;
+  max-width: 423px;
+  margin: 0 auto;
+}
+
+.select-wrap_box.half#add-card {
+  padding-top: 8px;
+  display: flex;
+  width: 100%;
+}

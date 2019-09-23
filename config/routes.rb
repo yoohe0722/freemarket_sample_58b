@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   resources :items, only: [:create, :index, :show, :edit, :update] do
     collection do
       get 'buy'
-      get 'buycheck'
+      # get 'buycheck'
       get 'shipping'
       get 'credit'
       get 'user_edit'
       get 'signup_registration'
+      post 'pay/:id' => 'items#pay'
+      get 'buycheck/:id' => 'items#buycheck'
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do
@@ -20,7 +22,8 @@ Rails.application.routes.draw do
       get 'mypage_ship'
     end
   end
-
+  resources :payments do
+  end
   resources :signup do
     collection do
       get 'step1'
@@ -30,5 +33,4 @@ Rails.application.routes.draw do
       get 'complete' # 登録完了後のページ
     end
   end
-
 end

@@ -18,6 +18,15 @@ class ItemsController < ApplicationController
     @item_category_4 = Item.where(category_id: "6").order('created_at DESC').limit(10)
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item. update(item_params)
+    redirect_to root_path, notice: '商品を編集しました'
+  end
+
   def mypage
   end
 

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items, only: [:index, :show, :create] do
+  resources :items, only: [:create, :index, :show, :edit, :update] do
     collection do
       get 'buy'
       get 'buycheck'
       get 'shipping'
-      # get 'mypage'
       get 'credit'
       get 'user_edit'
       get 'signup_registration'

@@ -2,7 +2,7 @@
   font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
   box-sizing: border-box;
 }
-.top-page__banner {
+.top-page__banners {
   background: image-url("top-banner-autumn-fes.jpg");
   height: 390px;
   width: 100vw;
@@ -22,7 +22,7 @@
   min-height: 100vh;
 }
 
-.categories__header{
+.section__header{
   padding: 56px 0px 30px;
   background-color: rgb(255, 255, 255);
   width: 100vw;
@@ -39,7 +39,7 @@
     text-align: center;
   }
 
-  .categories__link {
+  .section__links {
     display: flex;
     & ul {
       display: flex;
@@ -56,6 +56,11 @@
       font-weight: 600;
       border-radius: 15px;
       padding: 8px 16px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }
@@ -78,20 +83,21 @@
     }
     .view_more {
       font-size: 14px;
-      padding: 5px 16px 5px 5px;
-      color: rgb(0, 149, 238);
-      display: block;
+      padding: 5px 0px 0px 5px;
+      display: table-cell;
       font-weight: 600;
-      padding: 5px 14px 5px 5px;
+
+      a, i {
+        vertical-align: middle;
+        text-decoration: none;
+        color: rgb(0, 149, 238);
+      }
     }
   }
 
   .container__item-box {
-    display: flex;
-    justify-content: space-around;
-
     .item__grid {
-      // grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px 20px;
       display: grid;
     }

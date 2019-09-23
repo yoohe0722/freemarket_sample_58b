@@ -12,4 +12,10 @@
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
   %body
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
+    .bread-container
+      .bread-container-in
+        %p= breadcrumbs separator: "&rsaquo;"
     = yield

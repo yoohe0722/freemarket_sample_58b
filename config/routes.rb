@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'signup_registration'
     end
   end
-  resources :users, only: [:show, :index, :show, :new, :edit] do
+  resources :users, only: [:show, :index, :new, :edit] do
     collection do
       get 'profile'
       get 'logout'

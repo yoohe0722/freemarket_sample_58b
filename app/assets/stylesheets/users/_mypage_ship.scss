@@ -34,6 +34,7 @@
             width: 60px;
             height: 60px;
           }          
+          }
           .mypage-user-name {
             margin: 8px 0 0;
             font-size: 14px;
@@ -265,6 +266,7 @@
     margin: 20px 0;
     display: flex;
     border-bottom: 1px solid #ccc;
+    display: flex;
     .is-higher-width{
       margin: 0 20px 10px;
       .mypage-item-body{
@@ -280,7 +282,8 @@
   background: #0099e8;
 }
 .mypage-item-status {
-  // display: inline-block;
+  // display: inline-block
+  display: inline-block;
   margin: 8px 0 0 0;
   padding: 5px 6px;
   border-radius: 2px;

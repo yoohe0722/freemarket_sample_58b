@@ -4,7 +4,6 @@
 }
 .header{
   font-size: 14px;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   position: relative;
   z-index: 1000;
   background: #fff;
@@ -130,7 +129,7 @@
           align-items: center;
         }
         & li {
-          padding-left: 28px;
+          padding-left: 20px;
           display: inline-block;
         }
         a {
@@ -155,7 +154,7 @@
           display: inline-block;
         }
         ul > li > a{
-          padding: 5px 5px;
+          // padding: 5px 5px;
           display: block;
           text-transform: uppercase;
         }

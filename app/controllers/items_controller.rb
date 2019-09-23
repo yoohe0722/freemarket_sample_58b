@@ -18,6 +18,10 @@ class ItemsController < ApplicationController
     @item_category_4 = Item.where(category_id: "6").order('created_at DESC').limit(10)
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
   def mypage
   end
 

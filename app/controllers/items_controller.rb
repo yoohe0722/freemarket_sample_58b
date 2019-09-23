@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
     redirect_to "/users/sign_in" unless user_signed_in?
   end
 
+
   private
   def item_params
     params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)

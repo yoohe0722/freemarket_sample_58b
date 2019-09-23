@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  require "payjp"
   before_action :login_check, only: [:buy, :shipping]
 
   def create
@@ -36,6 +36,8 @@ class ItemsController < ApplicationController
   end
 
   def buycheck
+    @item = Item.find(params[:id])
+    @firstimage = @item.images[0]
   end
 
   def shipping
@@ -45,6 +47,17 @@ class ItemsController < ApplicationController
     redirect_to "/users/sign_in" unless user_signed_in?
   end
 
+  def pay
+    @item = Item.find(params[:id])
+    card = Payment.where(user_id: current_user.id).first
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp::Charge.create(
+      amount: @item.price,
+      customer: card.customer_id, 
+      currency: 'jpy',
+    )
+    redirect_to root_path, notice: '商品を購入しました'
+  end
 
   private
   def item_params

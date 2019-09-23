@@ -13,6 +13,10 @@ class SignupController < ApplicationController
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
     session[:birth_day] = user_params[:birth_day]
+    session[:family_name] = user_params[:family_name]
+    session[:family_kana] = user_params[:family_kana]
+    session[:first_name] = user_params[:first_name]
+    session[:first_kana] = user_params[:first_kana]
 
     @user = User.new # 新規インスタンス作成
   end
@@ -25,10 +29,6 @@ class SignupController < ApplicationController
 
   def step4
     # step3で入力された値をsessionに保存
-    session[:family_name] = user_params[:family_name]
-    session[:family_kana] = user_params[:family_kana]
-    session[:first_name] = user_params[:first_name]
-    session[:first_kana] = user_params[:first_kana]
     session[:zip] = user_params[:zip]
     session[:prefecture_id] = user_params[:prefecture_id]
     session[:city] = user_params[:city]

@@ -9,12 +9,6 @@ class UsersController < ApplicationController
   def complete
   end
 
-  def address_input
-  end
-
-  def phone_authentication
-  end
-
   def profile
   end
 

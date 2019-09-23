@@ -58,9 +58,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy if item.user_id == current_user.id
-    redirect_to root_path, notice: '商品を削除しました'
+      item = Item.find(params[:id])
+    if item.user_id == current_user.id
+      item.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      redirect_to root_path, alert: 'ログインユーザーでないため、商品の削除に失敗しました。'
+    end
   end
 
   private

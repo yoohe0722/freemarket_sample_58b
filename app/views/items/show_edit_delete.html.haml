@@ -79,7 +79,8 @@
           送料込み
 
       .listing-item-change-box
-        %a.btn-default.btn-red{:href => "https://www.mercari.com/jp/sell/edit/m49348093442/"} 商品の編集
+        = link_to '商品の編集', "edit_item_path", class: "btn-default btn-red"
+        -# %a.btn-default.btn-red{:href => "https://www.mercari.com/jp/sell/edit/m49348093442/"} 商品の編集
         %p.text-center or
         %form{:action => "/jp/items/deactivate/m49348093442/", :method => "POST", :novalidate => "novalidate"}
           %input{:name => "__csrf_value", :type => "hidden", :value => "f834660aefe34bf4fffc3bf2df7b816c84b48f9660456f36524b1858cd574d6f557b238c71986388d369e47bdc5e03e5eaf4182769b02e26fd704172914a87c90"}/

@@ -17,11 +17,26 @@
             = link_to ("#") do
               %h3
                 過去の取引
-        .mypage-contaier__tab-content
-          .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
-            %li
-              取引中の商品がありません
-      
+          %li.mypage-contaier__tabs__past-transactions
+            = link_to ("#") do
+              %h3
+                売却済
+
+        .mypage-item-list
+          %a.mypage-item-link{:href => "https://www.mercari.com/jp/items/m49348093442/"}
+            = image_tag 'shoes.jpg' ,size: "64x55" ,class: "is-higher-width"
+            .mypage-item-body
+              .mypage-item-text
+                思い出の詰まったボールペン
+                .mypage-item-status.awaiting
+                  出品中
+
+
+        -# .mypage-contaier__tab-content
+        -#   .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
+        -#     %li
+        -#       取引中の商品がありません
+
 %footer
   = render 'module/footer'
 = render 'module/sell-btn'

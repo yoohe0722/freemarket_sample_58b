@@ -1,0 +1,46 @@
+%header
+  = render 'module/header.html.haml'
+.mypage
+  %main.mypage__box
+    .maypage-sidebar
+      = render 'module/mypage-sidebar'
+    .mypage__box__content
+      %section.mypage-contaier
+        %h2.mypage-contaier__tab-head
+          出品した商品
+        %ul.mypage-contaier__tabs
+          %li.mypage-contaier__tabs__trading
+            = link_to ("#") do
+              %h3
+                取引中
+          %li.mypage-contaier__tabs__past-transactions
+            = link_to ("#") do
+              %h3
+                過去の取引
+          %li.mypage-contaier__tabs__past-transactions
+            = link_to ("#") do
+              %h3
+                売却済
+
+        .mypage-item-list
+          - @item.each do |item|
+            %a.mypage-item-link{:href => "https://www.mercari.com/jp/items/m49348093442/"}
+              - if item.images.attached?
+                - item.images.each do |image|
+                  = image_tag image ,size: "64x55" ,class: "is-higher-width"
+                  .mypage-item-body
+                    .mypage-item-text
+                      = item.name
+                      -# 思い出の詰まったボールペン
+                      .mypage-item-status.awaiting
+                        出品中
+
+
+        -# .mypage-contaier__tab-content
+        -#   .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
+        -#     %li
+        -#       取引中の商品がありません
+
+%footer
+  = render 'module/footer'
+= render 'module/sell-btn'

@@ -22,4 +22,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def mypage_ship
+    user = User.find(current_user.id)
+    @item = user.items.all
+  end
+
+
 end

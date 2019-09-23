@@ -33,6 +33,7 @@
           .mypage-figure img{
             width: 60px;
             height: 60px;
+          }          
           }
           .mypage-user-name {
             margin: 8px 0 0;
@@ -253,14 +254,18 @@
         }
     }
   }
-}
+
 
 
 .mypage-item-list{
+  margin: 20px 0;
   a {
     text-decoration: none;
   }
   .mypage-item-link{
+    margin: 20px 0;
+    display: flex;
+    border-bottom: 1px solid #ccc;
     display: flex;
     .is-higher-width{
       margin: 0 20px 10px;
@@ -277,6 +282,7 @@
   background: #0099e8;
 }
 .mypage-item-status {
+  // display: inline-block
   display: inline-block;
   margin: 8px 0 0 0;
   padding: 5px 6px;
@@ -284,6 +290,8 @@
   font-size: 12px;
   color: #fff;
   font-weight: 600;
+  width: 48px;
+  text-align: center;
 }
 
 

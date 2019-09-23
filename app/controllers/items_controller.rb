@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
       if item.user_id == current_user.id
-        item.update(item_params)
+        item.update(item_update_params)
         redirect_to root_path, notice: '商品を編集しました'
       else
         redirect_to root_path, alert: '商品編集に失敗しました'
@@ -60,6 +60,9 @@ class ItemsController < ApplicationController
 
   private
   def item_params
+    params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
+  end
+  def item_update_params
     params.require(:item).permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
 end

@@ -33,6 +33,10 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: '商品を編集しました'
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
   def mypage
   end
 

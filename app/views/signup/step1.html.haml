@@ -7,7 +7,7 @@
       %h2.signup-registration__main__container__head
         会員情報入力
       .signup-registration__main__container__form
-        = form_with(model: @user, local: true) do |f|
+        = form_with(model: @user, url: step2_signup_index_path,method: :get, local: true) do |f|
           .signup-registration__main__container__form__box
             .signup-registration-from-group-head
               = f.label :nick_name, 'ニックネーム', class: 'signup-registration-label'
@@ -56,17 +56,17 @@
                 .birthday-select-box
                   .birthday-select-box-block
                     %i.fa.fa-chevron-down
-                    = f.collection_select(:birth_year_id, Birth_year.all, :id, :name, {selected: 0}, {class: "signup-registration-from-input select"})
+                    = f.collection_select(:birth_year, Birth_year.all, :id, :name, {selected: 0}, {class: "signup-registration-from-input select"})
                   %span
                     年
                   .birthday-select-box-block
                     %i.fa.fa-chevron-down
-                    = f.collection_select(:birth_month_id, Birth_month.all, :id, :name, {selected: 0}, {class: "signup-registration-from-input select"})
+                    = f.collection_select(:birth_month, Birth_month.all, :id, :name, {selected: 0}, {class: "signup-registration-from-input select"})
                   %span
                     月
                   .birthday-select-box-block
                     %i.fa.fa-chevron-down
-                    = f.collection_select(:birth_day_id, Birth_day.all, :id, :name, {selected: 0}, {class: "signup-registration-from-input select"})
+                    = f.collection_select(:birth_day, Birth_day.all, :id, :name, {selected: 0}, {class: "signup-registration-from-input select"})
                   %span
                     日
             %p.form-info-box
@@ -81,11 +81,10 @@
                     利用規約
                   に同意したものとみなします
               .signup-registration-from-group
-                -# = link_to("次へ進む", phone_authentication_users_path, class: "signup-registration-btn")
-                = f.submit '次へ進む', class: 'signup-registration-btn'
+                = f.submit "次へ進む",class: "signup-registration-btn"
               .signup-registration-from-group-last
                 = link_to("#", class: 'right-text-link') do
                   本人情報の登録について
-                  %i.fa.fa-chevron-right
+                  %i.fa.fa-chevron-right"
 %footer
   = render 'module/subfooter'

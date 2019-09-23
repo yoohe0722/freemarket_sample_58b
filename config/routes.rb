@@ -8,19 +8,27 @@ Rails.application.routes.draw do
       get 'shipping'
       get 'credit'
       get 'user_edit'
-      get 'identification'
       get 'signup_registration'
     end
   end
-  resources :users, only: [:show, :index, :new, :edit] do
+  resources :users, only: [:index, :show, :new, :edit] do
     collection do
       get 'profile'
       get 'logout'
       get 'credit'
-      get 'complete'
-      get 'phone_authentication'
-      get 'address_input'
+      get 'identification'
       get 'mypage_ship'
     end
   end
+
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'step4' # ここで、入力の全てが終了する
+      get 'complete' # 登録完了後のページ
+    end
+  end
+
 end

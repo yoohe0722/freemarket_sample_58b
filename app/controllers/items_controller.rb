@@ -36,8 +36,6 @@ class ItemsController < ApplicationController
   def user_edit
   end
 
-  def identification
-  end
 
   def show
     @item = Item.find(params[:id])

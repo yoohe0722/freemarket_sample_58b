@@ -26,14 +26,13 @@
 
         .mypage-item-list
           - @item.each do |item|
-            %a.mypage-item-link{:href => "/items/set_item/#{item.id}"}
+            = link_to "/items/set_item/#{item.id}", class: "mypage-item-link" do
               - if item.images.attached?
                 - item.images.each do |image|
                   = image_tag image ,size: "64x55" ,class: "is-higher-width"
                   .mypage-item-body
                     .mypage-item-text
                       = item.name
-                      -# 思い出の詰まったボールペン
                       .mypage-item-status.awaiting
                         出品中
 

@@ -1,5 +1,7 @@
 %header
   = render 'module/header.html.haml'
+
+- breadcrumb :ship
 .mypage
   %main.mypage__box
     .maypage-sidebar
@@ -24,7 +26,7 @@
 
         .mypage-item-list
           - @item.each do |item|
-            %a.mypage-item-link{:href => "https://www.mercari.com/jp/items/m49348093442/"}
+            %a.mypage-item-link{:href => "/items/show_edit_delete/#{item.id}"}
               - if item.images.attached?
                 - item.images.each do |image|
                   = image_tag image ,size: "64x55" ,class: "is-higher-width"

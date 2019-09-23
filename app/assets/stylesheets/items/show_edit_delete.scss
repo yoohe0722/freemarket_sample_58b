@@ -370,6 +370,9 @@ table {
 
 
 .listing-item-change-box {
+  a {
+    text-decoration: none;
+  }
   margin: 24px 0 24px 0;
   background: #fff;
   padding: 8px 16px 8px 16px;

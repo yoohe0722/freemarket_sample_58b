@@ -57,6 +57,11 @@ class ItemsController < ApplicationController
     redirect_to "/users/sign_in" unless user_signed_in?
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy if item.user_id == current_user.id
+    redirect_to root_path, notice: '商品を削除しました'
+  end
 
   private
   def item_params

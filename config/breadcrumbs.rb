@@ -28,6 +28,17 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :ship do
+  link '出品した商品 - 出品中', mypage_ship_users_path
+  parent :mypage
+end
+
+crumb :ship_item do
+  link '出品商品画面'
+  parent :ship
+end
+
+
 
 # crumb :projects do
 #   link "Projects", projects_path

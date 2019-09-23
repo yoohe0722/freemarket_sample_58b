@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items, only: [:create, :index, :show, :edit] do
+  resources :items, only: [:create, :index, :show, :edit, :update] do
     collection do
       get 'buy'
       get 'buycheck'
@@ -21,7 +21,6 @@ Rails.application.routes.draw do
       get 'phone_authentication'
       get 'address_input'
       get 'mypage_ship'
-      
     end
   end
 end

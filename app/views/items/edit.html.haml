@@ -1,7 +1,7 @@
 %header
   = render 'module/subheader.html.haml'
 .item-edit-main
-  = form_with(model: @item, url: items_path, local: true) do |f|
+  = form_with(model: @item, url: item_path, method: :patch, local: true) do |f|
     %section.item-edit-container
       .item-edit-container
         .sell-container-inner
@@ -34,13 +34,13 @@
                   %span.form-require
                     必須
                 .item_subumit_form
-                  = f.text_field :name, placeholder: "商品名（必須 40文字まで)", value: "", class: 'input-default_shipping'
+                  = f.text_field :name, placeholder: @item.name, value: "", class: 'input-default_shipping'
               .form-group
                 %label
                   商品の説明
                   %span.form-require
                     必須
-                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）", value: "", class: 'textarea-default'
+                = f.text_area :description, placeholder: @item.description, value: "", class: 'textarea-default'
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -144,7 +144,7 @@
                       .l-right.sell-price-input
                         ¥
                         .input-default_box
-                          = f.text_field :price, placeholder: "例）300", value: "", class: 'input-default_price',  type:"tel"
+                          = f.text_field :price, placeholder: @item.price, value: "", class: 'input-default_price',  type:"tel"
 
               .sell-form-box_under_second
                 %p
@@ -154,8 +154,7 @@
                   販売利益
       .btn-container
         .btn-container_text
-        = f.submit '編集する', class: 'btn-default btn-red' do
-          編集する
+        = f.submit '編集する', class: 'btn-default btn-red'
         %a.btn-default.btn-gray
           キャンセル
 %footer

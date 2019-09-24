@@ -18,22 +18,24 @@
     &__mail {
       margin: 3px 0px 15px;
       position: relative;
-      .session-new-form__mail-in{
-        color: #fff;
-        background-color: #ea352d;
-        border-radius: 4px;
-        display: block;
-        width: 100%;
-        line-height: 48px;
-        font-size: 14px;
-        border: 1px solid transparent;
-        -webkit-transition: all ease-out .3s;
-        transition: all ease-out .3s;
-        cursor: pointer;
-        text-align: center;
+      background-color: #ea352d;
+      border-radius: 4px;
+      display: block;
+      width: 100%;
+      height: 50px;
+      line-height: 45px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+      & a {
         text-decoration: none;
+        color: #fff;
+        margin: 10
       }
-      .session-new-form__mail-icon {
+      &-icon {
         display: inline-block;
         font-size: 30px;
         position: absolute;

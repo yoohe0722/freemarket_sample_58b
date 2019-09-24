@@ -26,16 +26,7 @@
 
         .mypage-item-list
           - @item.each do |item|
-            = link_to edit_delete_items_path(item), class: "mypage-item-link" do
-              - if item.images.attached?
-                - item.images.each do |image|
-                  = image_tag image ,size: "64x55" ,class: "is-higher-width"
-                  .mypage-item-body
-                    .mypage-item-text
-                      = item.name
-                      .mypage-item-status.awaiting
-                        出品中
-
+            = render partial: "/module/mypage_ship", locals: { item: item }
 
         -# .mypage-contaier__tab-content
         -#   .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}

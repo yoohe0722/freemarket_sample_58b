@@ -85,3 +85,5 @@ gem "gretel"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'

@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require "payjp"
   before_action :login_check, only: [:buy, :shipping]
-  before_action :set_item, only: [:show, :show_edit_delete, :destroy]
+  before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
 
   def create
     @item = Item.create(item_params)
@@ -25,26 +25,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item. update(item_params)
-    redirect_to root_path, notice: '商品を編集しました'
-  end
-
-  def edit
-    @item = Item.find(params[:id])
-  end
-
-  def update
-    item = Item.find(params[:id])
-      if item.user_id == current_user.id
-        item.update(item_update_params)
-        redirect_to root_path, notice: '商品を編集しました'
-      else
-        redirect_to root_path, alert: '商品編集に失敗しました'
-      end
+    if item.user_id == current_user.id
+      item.update(item_update_params)
+      redirect_to root_path, notice: '商品を編集しました'
+    else
+      redirect_to root_path, alert: '商品編集に失敗しました'
+    end
   end
 
   def mypage
@@ -66,7 +55,6 @@ class ItemsController < ApplicationController
   end
 
   def buycheck
-    @item = Item.find(params[:id])
     @firstimage = @item.images[0]
   end
 

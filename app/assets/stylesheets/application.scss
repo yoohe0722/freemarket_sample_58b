@@ -23,6 +23,7 @@
 @import "items/edit";
 @import "details";
 @import "shipping";
+@import "items/show_edit_delete";
 
 
 // path__users
@@ -41,6 +42,10 @@
 @import "signup/step4";
 @import "signup/complete";
 
+
+// payments
+@import "payments/new";
+@import "payments/index";
 
 .notifications {
   color: white;

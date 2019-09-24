@@ -46,7 +46,6 @@ group :development, :test do
   gem 'better_errors'     # 開発中のエラー画面をリッチにする
   gem 'binding_of_caller' # 開発中のエラー画面にさらに変数の値を表示する
   gem 'pry-rails'
-  gem 'payjp'
 end
 
 group :development do
@@ -89,4 +88,5 @@ gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'payjp'
 

@@ -12,7 +12,6 @@ Rails.application.routes.draw do
       get 'show_edit_delete/:id', to: 'items#show_edit_delete', as: :edit_delete
       post 'pay/:id' => 'items#pay'
       get 'buycheck/:id' => 'items#buycheck'
-
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do

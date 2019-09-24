@@ -79,6 +79,9 @@ gem 'font-awesome-rails'
 gem 'active_hash'
 gem 'devise'
 gem 'ancestry'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 gem "aws-sdk-s3", require: false
 gem "gretel"
 gem 'dotenv-rails'
@@ -86,3 +89,4 @@ gem 'payjp'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+

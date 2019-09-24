@@ -37,11 +37,14 @@ class ItemsController < ApplicationController
   def user_edit
   end
 
-  def set_item
-    @item = Item.find(params[:id])
+
+  def show
     @firstimage = @item.images[0]
   end
 
+  def show_edit_delete
+    @firstimage = @item.images[0]
+  end
 
   def buycheck
   end
@@ -66,5 +69,9 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end

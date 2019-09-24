@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'credit'
       get 'user_edit'
       get 'signup_registration'
-      get 'show_edit_delete/:id' => 'items#show_edit_delete'
+      get 'show_edit_delete/:id', to: 'items#show_edit_delete', as: :edit_delete
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do

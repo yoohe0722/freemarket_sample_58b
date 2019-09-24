@@ -1,0 +1,100 @@
+= render 'module/header'
+- breadcrumb :ship_item
+.item_box_contents
+  .item-box-container
+    .item_box_contents_center_box
+      %h1.item_name
+        = @item.name
+      .item_box_contents_center_left_right
+        .item_photo_box
+          - if @item.images.attached?
+            = image_tag @firstimage, size: "300x300"
+          .item_photo_box_2
+            - @item.images.each do |image|
+              = image_tag image, size: "56x56", class: 'item_photo_box_images'
+        .item_details.box
+          %table.item-detail-table
+            %tbody
+              %tr
+                %th 出品者
+                %td
+                  = link_to "https://www.mercari.com/jp/u/348028699/" do
+                    = @item.user.nick_name
+                  .item-user-icon
+                    .item-user-ratings
+                      = image_tag "20080830175621.gif", alt: "test"
+                      %span 32
+                    .item-user-ratings
+                      = image_tag "20080830175618.gif", alt: "test"
+                      %span 64
+                    .item-user-ratings
+                      = image_tag "20080830175622.gif", alt: "test"
+                      %span 7
+              %tr
+                %th カテゴリー
+                %td
+                  %div
+                    = link_to "https://www.mercari.com/jp/category/1/" do
+                      -# = @item.category.parent.parent.name
+                  %div
+                    = link_to "https://www.mercari.com/jp/category/22/" do
+                      -# = @item.category.parent.name
+                  %div
+                    = link_to "https://www.mercari.com/jp/category/240/" do
+                      = @item.category.name
+              %tr
+                %th ブランド
+                - if @item.brand.present?
+                  %td
+                    = @item.brand.name
+                - else
+                  %td
+              %tr
+                %th 商品の状態
+                %td
+                  = @item.condition.name
+              %tr
+                %th 配送料の負担
+                %td
+                  = @item.shipfee.name
+              %tr
+                %th 配送の方法
+                %td
+                  = @item.shipmethod.name
+              %tr
+                %th 配送元地域
+                %td
+                  = link_to "https://www.mercari.com/jp/area/27/" do
+                    = @item.prefecture.name
+              %tr
+                %th 発送日の目安
+                %td
+                  = @item.shipdate.name
+      .item_price_box
+        %span.item_price_box_text
+          = "￥#{@item.price}"
+        %span.item-tax
+          (税込)
+        %span.item-shipping-fee
+          送料込み
+
+      .listing-item-change-box
+        = link_to '商品の編集', edit_item_path, class: "btn-default btn-red"
+        %p.text-center or
+        %form{action: "/jp/items/deactivate/m49348093442/", method: "POST", novalidate: "novalidate"}
+          %input{name: "__csrf_value", type: "hidden", value: "f834660aefe34bf4fffc3bf2df7b816c84b48f9660456f36524b1858cd574d6f557b238c71986388d369e47bdc5e03e5eaf4182769b02e26fd704172914a87c90"}/
+          %button.btn-default.btn-gray_sub{type: "submit"} 出品を一旦停止する
+          = link_to 'この商品を削除する', item_path, method: :delete, class:"btn-default btn-gray_sub"
+
+
+  .item_message_content
+    .item_message_form
+      .item_message_form_warning
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.textarea-default{name: "body", type: "text", value: ""}
+      %button.message-submit.btn-default.btn-gray{type: "submit"}
+        %span コメントする
+= render 'module/footer'
+
+
+

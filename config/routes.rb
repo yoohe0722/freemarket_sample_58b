@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items, only: [:create, :index, :show, :edit, :update] do
+  resources :items, only: [:create, :index, :show, :edit, :update,:destroy] do
     collection do
       get 'buy'
       # get 'buycheck'
@@ -9,8 +9,10 @@ Rails.application.routes.draw do
       get 'credit'
       get 'user_edit'
       get 'signup_registration'
+      get 'show_edit_delete/:id', to: 'items#show_edit_delete', as: :edit_delete
       post 'pay/:id' => 'items#pay'
       get 'buycheck/:id' => 'items#buycheck'
+
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do

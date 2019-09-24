@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   require "payjp"
   before_action :login_check, only: [:buy, :shipping]
+  before_action :set_item, only: [:show, :show_edit_delete, :destroy]
 
   def create
     @item = Item.create(item_params)
@@ -43,7 +44,10 @@ class ItemsController < ApplicationController
 
 
   def show
-    @item = Item.find(params[:id])
+    @firstimage = @item.images[0]
+  end
+
+  def show_edit_delete
     @firstimage = @item.images[0]
   end
 
@@ -59,6 +63,13 @@ class ItemsController < ApplicationController
     redirect_to "/users/sign_in" unless user_signed_in?
   end
 
+  def destroy
+    if @item.user_id == current_user.id
+      @item.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      redirect_to root_path, alert: 'ログインユーザーでないため、商品の削除に失敗しました。'
+
   def pay
     @payment = Payment.where(user_id: current_user.id).first
     if @payment.present?
@@ -73,6 +84,7 @@ class ItemsController < ApplicationController
       redirect_to root_path, notice: '商品を購入しました'
     else
       redirect_to new_payment_path, alert: '購入にはクレジットカード登録が必要です'
+
     end
   end
 
@@ -80,4 +92,10 @@ class ItemsController < ApplicationController
   def item_params
     params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
+
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
+

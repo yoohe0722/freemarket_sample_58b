@@ -69,6 +69,8 @@ class ItemsController < ApplicationController
       redirect_to root_path, notice: '商品を削除しました'
     else
       redirect_to root_path, alert: 'ログインユーザーでないため、商品の削除に失敗しました。'
+    end
+  end
 
   def pay
     @payment = Payment.where(user_id: current_user.id).first
@@ -77,7 +79,7 @@ class ItemsController < ApplicationController
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       Payjp::Charge.create(
         amount: @item.price,
-        customer: @payment.customer_id, 
+        customer: @payment.customer_id,
         currency: 'jpy',
       )
       @item.update(buyer_id: current_user.id, trading_condition: 3)
@@ -93,9 +95,7 @@ class ItemsController < ApplicationController
     params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
 
-
   def set_item
     @item = Item.find(params[:id])
   end
 end
-

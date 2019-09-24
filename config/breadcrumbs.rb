@@ -19,7 +19,7 @@ crumb :identification do
 end
 # マイページ-クレジット
 crumb :credit do
-  link 'クレジット'
+  link '支払い方法', credit_items_path
   parent :mypage
 end
 # マイページ-ログアウト
@@ -27,6 +27,7 @@ crumb :logout do
   link 'ログアウト'
   parent :mypage
 end
+
 
 crumb :ship do
   link '出品した商品 - 出品中', mypage_ship_users_path
@@ -38,6 +39,12 @@ crumb :ship_item do
   parent :ship
 end
 
+
+# マイページ-クレジットカード情報入力
+crumb :payments_new do
+  link 'クレジットカード情報入力', new_payment_path
+  parent :credit
+end
 
 
 # crumb :projects do

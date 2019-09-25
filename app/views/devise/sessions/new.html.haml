@@ -1,3 +1,4 @@
+-# ログインページ
 = render 'module/subheader'
 .sessions-main
   .sessions-main-in
@@ -6,7 +7,7 @@
       = link_to '新規会員登録', 'step1_signup_index_path'
     .session-form
       .session-form__facebook
-        = button_to 'Facebookでログイン', '#',class: 'session-form__facebook'
+        = button_to 'Facebookでログイン', user_facebook_omniauth_authorize_path,class: 'session-form__facebook'
         .session-form__facebook-icon
           %i.fa.fa-facebook-square
       .session-form__google

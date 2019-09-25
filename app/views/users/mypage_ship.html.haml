@@ -23,7 +23,7 @@
             = link_to ("#") do
               %h3
                 売却済
-        - if @item.ids != nil
+        - if @item.count != 0
           .mypage-item-list
             - @item.each do |item|
               = render partial: "/module/mypage_ship", locals: { item: item }
@@ -32,7 +32,6 @@
             .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
               %li
                 取引中の商品がありません
-          
 
 
 %footer

@@ -23,15 +23,17 @@
             = link_to ("#") do
               %h3
                 売却済
+        - if @item.ids != nil
+          .mypage-item-list
+            - @item.each do |item|
+              = render partial: "/module/mypage_ship", locals: { item: item }
+        - else
+          .mypage-contaier__tab-content
+            .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
+              %li
+                取引中の商品がありません
+          
 
-        .mypage-item-list
-          - @item.each do |item|
-            = render partial: "/module/mypage_ship", locals: { item: item }
-
-        -# .mypage-contaier__tab-content
-        -#   .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
-        -#     %li
-        -#       取引中の商品がありません
 
 %footer
   = render 'module/footer'

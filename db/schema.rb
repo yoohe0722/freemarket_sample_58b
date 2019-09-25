@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_054720) do
+ActiveRecord::Schema.define(version: 2019_09_24_105217) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,9 +44,16 @@ ActiveRecord::Schema.define(version: 2019_09_23_054720) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "authorizations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "brand_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.integer "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -108,7 +115,6 @@ ActiveRecord::Schema.define(version: 2019_09_23_054720) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.string "nick_name"
     t.string "family_name"
     t.string "first_name"
     t.string "family_kana"
@@ -116,6 +122,7 @@ ActiveRecord::Schema.define(version: 2019_09_23_054720) do
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_day"
+    t.string "nick_name"
     t.string "phone_number"
     t.integer "zip"
     t.integer "prefecture_id"

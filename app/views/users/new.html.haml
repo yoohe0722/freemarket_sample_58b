@@ -1,3 +1,4 @@
+-# 新規登録ページ
 = render 'module/subheader'
 .sessions-main
   .sessions-main-new
@@ -9,10 +10,10 @@
         .session-new-form__mail-icon
           %i.fa.fa-envelope-o
       .session-new-form__facebook
-        = button_to 'Facebookで登録する', '#',class: 'session-new-form__facebook'
+        = button_to 'Facebookで登録する', user_facebook_omniauth_authorize_path, class: 'session-new-form__facebook'
         .session-new-form__facebook-icon
           %i.fa.fa-facebook-square
       .session-new-form__google
-        = button_to 'Googleで登録する', '#',class: 'session-new-form__google-in'
+        = button_to 'Googleで登録する', user_google_oauth2_omniauth_authorize_path, class: 'session-new-form__google-in'
 
 = render 'module/subfooter'

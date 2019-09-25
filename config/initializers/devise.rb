@@ -281,6 +281,14 @@ Devise.setup do |config|
   # config.router_name = :my_engine
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
+  config.omniauth :google_oauth2,
+    Rails.application.credentials.google_key,
+    Rails.application.credentials.google_secret
+
+  config.omniauth :facebook,
+    Rails.application.credentials.facebook_key,
+    Rails.application.credentials.facebook_secret
+
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
@@ -296,4 +304,5 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
 end

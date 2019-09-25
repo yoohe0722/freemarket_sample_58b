@@ -27,7 +27,7 @@ class User < ApplicationRecord
           nick_name: auth.info.name,
           email:    auth.info.email,
           password: Devise.friendly_token[0, 20],
-          telephone: "08000000000"
+          phone_number: "08000000000"
           )
           Authorization.create(
           uid: uid,

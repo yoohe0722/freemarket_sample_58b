@@ -34,13 +34,13 @@
                   %span.form-require
                     必須
                 .item_subumit_form
-                  = f.text_field :name, placeholder: @item.name, value: "", class: 'input-default_shipping'
+                  = f.text_field :name, value: @item.name, class: 'input-default_shipping'
               .form-group
                 %label
                   商品の説明
                   %span.form-require
                     必須
-                = f.text_area :description, placeholder: @item.description, value: "", class: 'textarea-default'
+                = f.text_area :description, value: @item.description, class: 'textarea-default'
 
             .sell-content_secoud
               %h3.sell-sub-head
@@ -144,7 +144,7 @@
                       .l-right.sell-price-input
                         ¥
                         .input-default_box
-                          = f.text_field :price, placeholder: @item.price, value: "", class: 'input-default_price',  type:"tel"
+                          = f.text_field :price, value: @item.price, class: 'input-default_price',  type:"tel"
 
               .sell-form-box_under_second
                 %p

@@ -92,17 +92,9 @@
                     = image_tag "user-bg.jpg", size: "350x90",class: 'sublink-maypage-img'
                   %li
                     = image_tag current_user.image ,size: "75x75", alt: "", class: "sublink-maypagemember_photo"
-                  %li.sublink-maypage__name
-                    %span にっくねーむ
                   %li
                     = link_to user_path(current_user.id),class: "sublink-maypage-link" do
-                      %span いいね！一覧
-                  %li
-                    = link_to user_path(current_user.id),class: "sublink-maypage-link" do
-                      %span 出品した商品
-                  %li
-                    = link_to user_path(current_user.id),class: "sublink-maypage-link" do
-                      %span 購入した商品
+                      ユーザー名：#{current_user.nick_name}
           - else
             .new-registration-btn
               = link_to '新規会員登録', new_user_path

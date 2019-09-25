@@ -7,11 +7,11 @@
       = link_to '新規会員登録', 'step1_signup_index_path'
     .session-form
       .session-form__facebook
-        = button_to 'Facebookでログイン', user_facebook_omniauth_authorize_path,class: 'session-form__facebook'
+        = button_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, class: 'session-form__facebook'
         .session-form__facebook-icon
           %i.fa.fa-facebook-square
       .session-form__google
-        = button_to 'Googleでログイン', '#',class: 'session-form__google-in'
+        = button_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, class: 'session-form__google-in'
     .session-bottom
       .session-bottom__form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

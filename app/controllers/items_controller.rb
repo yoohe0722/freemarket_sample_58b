@@ -28,8 +28,8 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if item.user_id == current_user.id
-      item.update(item_update_params)
+    if @item.user_id == current_user.id
+      @item.update(item_update_params)
       redirect_to root_path, notice: '商品を編集しました'
     else
       redirect_to root_path, alert: '商品編集に失敗しました'

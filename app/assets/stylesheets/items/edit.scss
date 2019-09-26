@@ -11,4 +11,13 @@
   width: 700px;
   margin: 0 auto;
   background: white;
+  .item-edit-images__lists-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 700px;
+    .image-box {
+      padding: 0 2px;
+    }
+  }
 }

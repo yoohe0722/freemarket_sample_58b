@@ -64,7 +64,7 @@ class SignupController < ApplicationController
       building: session[:building],
       payment_id: session[:payment_id],
     )
-    # binding.pry
+    binding.pry
     if @user.save
       session[:id] = @user.id
       redirect_to complete_signup_index_path

@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :user do
-    # nick_name             {"ナルト"}
+    nick_name             {"ナルト"}
     family_name           {"うずまき"}
     family_kana           {"うずまき"}
     first_name            {"ナルト"}
@@ -15,10 +15,7 @@ FactoryBot.define do
     city                  {"大阪市"}
     block                 {"浪速区〇〇町"}
     building              {"1-2-3"}
-    # user_id               {""}
     profile               {"まっすぐ自分の言葉は曲げねェ...それが俺の忍道だってばよ"}
-    # payment_id            {""}
-    # image                 {""}
     email                 {"hokage@gmail.com"}
     password              {"12345678"}
     password_confirmation {"12345678"}

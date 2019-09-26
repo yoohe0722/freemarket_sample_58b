@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require "payjp"
-  before_action :login_check, only: [:buy, :shipping]
+  before_action :login_check, only: [:buy, :shipping, :show]
   before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
 
   def create
@@ -100,7 +100,6 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
 
- 
   def set_item
     @item = Item.find(params[:id])
   end

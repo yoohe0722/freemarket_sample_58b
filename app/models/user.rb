@@ -31,7 +31,7 @@ class User < ApplicationRecord
           password: password,
           password_confirmation: password
           )
-          Authorization.create(
+        Authorization.create(
           uid: uid,
           provider: provider,
           )

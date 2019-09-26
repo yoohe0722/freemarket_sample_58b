@@ -172,6 +172,6 @@
             に同意したことになります。
         = f.submit '出品する', class: 'btn-default btn-red' do
           出品する
-        %a.btn-default.btn-gray
-          もどる
+        = link_to 'もどる', root_path, class: 'btn-default btn-gray'
+
 = render 'module/subfooter'

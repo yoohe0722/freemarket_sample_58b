@@ -17,7 +17,7 @@
               %tr
                 %th 出品者
                 %td
-                  = link_to "https://www.mercari.com/jp/u/348028699/" do
+                  = link_to "#" do
                     = @item.user.nick_name
                   .item-user-icon
                     .item-user-ratings
@@ -33,13 +33,13 @@
                 %th カテゴリー
                 %td
                   %div
-                    = link_to "https://www.mercari.com/jp/category/1/" do
+                    = link_to "#" do
                       -# = @item.category.parent.parent.name
                   %div
-                    = link_to "https://www.mercari.com/jp/category/22/" do
+                    = link_to "#" do
                       -# = @item.category.parent.name
                   %div
-                    = link_to "https://www.mercari.com/jp/category/240/" do
+                    = link_to "#" do
                       -# = @item.category.name
               %tr
                 %th ブランド
@@ -64,7 +64,7 @@
                 %th 配送元地域
                 %td
                   = link_to ""
-                  %a{:href => "https://www.mercari.com/jp/area/27/"}
+                  %a{:href => "#"}
                     = @item.prefecture.name
               %tr
                 %th 発送日の目安
@@ -78,7 +78,7 @@
         %span.item-shipping-fee
           送料込み
       .item_box_text_center
-        - if @item.user_id != current_user.id 
+        - if @item.user_id != current_user.id
           .sales_point_message
             残高 ¥3,250 をお持ちです
           %a.item-buy-btn{href: "/items/buycheck/#{@item.id}"}
@@ -95,7 +95,7 @@
             %i.icon-flag
             %span 🏳 不適切な商品の報告
         .item-button-right
-          %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
+          %a{:href => "#", :target => "_blank"}
           %i.material-icons lock
           %span あんしん・あんぜんへの取り組み
 
@@ -110,10 +110,10 @@
       .nav-item-link-prev_leftbox
         %i.material-icons navigate_before
         %li.nav-item-link-prev_left
-          = link_to "【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計","https://item.mercari.com/jp/m72616905145/"
+          = link_to "【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計","#"
       .nav-item-link-prev_rightbox
         %li.nav-item-link-next
-          = link_to "chanmi様専用","https://item.mercari.com/jp/m21980231717/"
+          = link_to "chanmi様専用","#"
           %i.material-icons navigate_next
     .item-social-media-box
       .item-social-media-box-in
@@ -121,7 +121,7 @@
           = image_tag "スクリーンショット 2019-09-10 15.10.56.png", size: "154x49", alt: "test"
 
     %h2.items-box-head
-      = link_to "https://www.mercari.com/jp/u/711116191/" do
+      = link_to "#" do
         = "#{@item.user.nick_name}さんのその他の出品"
     = render 'module/buy_image_box'
     = render 'module/buy_image_box'

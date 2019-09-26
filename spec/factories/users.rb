@@ -17,8 +17,8 @@ FactoryBot.define do
     building              {"1-2-3"}
     profile               {"まっすぐ自分の言葉は曲げねェ...それが俺の忍道だってばよ"}
     email                 {"hokage@gmail.com"}
-    password              {"12345678"}
-    password_confirmation {"12345678"}
+    password              {"123456a"}
+    password_confirmation {"123456a"}
   end
 
 end

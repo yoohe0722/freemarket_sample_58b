@@ -1,0 +1,39 @@
+%header
+  = render 'module/header.html.haml'
+
+- breadcrumb :ship
+.mypage
+  %main.mypage__box
+    .maypage-sidebar
+      = render 'module/mypage-sidebar'
+    .mypage__box__content
+      %section.mypage-contaier
+        %h2.mypage-contaier__tab-head
+          出品した商品
+        %ul.mypage-contaier__tabs1
+          %li.mypage-contaier__tabs1__trading
+            = link_to ("#") do
+              %h3
+                出品中
+          %li.mypage-contaier__tabs1__past-transactions
+            = link_to ("#") do
+              %h3
+                取引中
+          %li.mypage-contaier__tabs1__past-transactions
+            = link_to ("#") do
+              %h3
+                売却済
+        - if @item.count != 0
+          .mypage-item-list
+            - @item.each do |item|
+              = render partial: "/module/mypage_ship", locals: { item: item }
+        - else
+          .mypage-contaier__tab-content
+            .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
+              %li
+                取引中の商品がありません
+
+
+%footer
+  = render 'module/footer'
+= render 'module/sell-btn'

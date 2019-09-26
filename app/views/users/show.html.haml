@@ -1,0 +1,123 @@
+%header
+  = render 'module/header.html.haml'
+- breadcrumb :mypage
+.mypage
+  %main.mypage__box
+    .maypage-sidebar
+      = render 'module/mypage-sidebar'
+    .mypage__box__content
+      %section.mypage-user{style: "background-image:url(#{asset_path "user-bg.jpg"})"}
+        = link_to ("#") do
+          .mypage-figure
+            = image_tag @user.image
+          %h2.mypage-user-name
+            = @user.nick_name
+          .mypage-user-number
+            .div
+              評価
+              .mypage-rate-number
+                0
+            .div
+              出品数
+              .mypage-number-of-exhibits
+                0
+      %section.notification-todo
+        %ul.notification-todo__tabs
+          %li.notification-tabs
+            = link_to ("#") do
+              %h3
+                お知らせ
+          %li.todo-tabs
+            = link_to ("#") do
+              %h3
+                やることリスト
+        .notification-todo__tab-content
+          %ul.content-notification
+            %li
+              = link_to("#", class: 'notification_list') do
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    《招待コード「HAJIKIN」を入力してメルペイをはじめるとP1,000が必ずもらえる！》今だけの特別企画！
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          ６時間前
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              = link_to("#", class: 'notification_list') do
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    【実は高く売れる！】遊び終わったゲームもバーコードで10秒出品♪
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          ８時間前
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              = link_to("#", class: 'notification_list') do
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    事務局から個別メッセージ「ログイン通知」
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          １日前
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              = link_to("#", class: 'notification_list') do
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    事務局から個別メッセージ「ログイン通知」
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          １日前
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              = link_to("#", class: 'notification_list') do
+                .mercari-logo
+                  = image_tag 'mercari_profile.png'
+                .mypage-item-body
+                  .mypage-item-text
+                    《CM放送中》参加したら10円分ポイント必ずもらえる！秋フェス開催中♪
+                    .time
+                      .mypage-item-time
+                        %i.fa.fa-clock
+                        %span.time-number
+                          １日前
+                %i.fa.fa-chevron-right.notification-chevron-right
+            %li
+              .mypage-go-list
+                = link_to ("#") do
+                  一覧を見る
+      %section.mypage-contaier
+        %h2.mypage-contaier__tab-head
+          購入した商品
+        %ul.mypage-contaier__tabs
+          %li.mypage-contaier__tabs__trading
+            = link_to ("#") do
+              %h3
+                取引中
+          %li.mypage-contaier__tabs__past-transactions
+            = link_to ("#") do
+              %h3
+                過去の取引
+        .mypage-contaier__tab-content
+          .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}
+            %li
+              取引中の商品がありません
+%footer
+  = render 'module/footer'
+= render 'module/sell-btn'

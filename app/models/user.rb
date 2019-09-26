@@ -1,8 +1,50 @@
 class User < ApplicationRecord
+  before_save { self.email = email.downcase }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-
+         :recoverable, :rememberable, :validatable,
+         :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
+  has_many :payments
   has_many :items
+  has_many :authorizations
+
+  def self.find_oauth(auth)
+    uid = auth.uid
+    provider = auth.provider
+    authorization = Authorization.where(uid: uid, provider: provider).first
+    if authorization.present?
+      user = User.where(id: authorization.user_id).first
+    else
+      user = User.where(email: auth.info.email).first
+      if user.present?
+        Authorization.create(
+          uid: uid,
+          provider: provider,
+          user_id: user.id
+          )
+      else
+        user = User.create(
+          nick_name: auth.info.name,
+          email:    auth.info.email,
+          password: Devise.friendly_token[0, 20],
+          phone_number: "08000000000"
+          )
+          Authorization.create(
+          uid: uid,
+          provider: provider,
+          user_id: user.id
+          )
+      end
+    end
+    return user
+  end
+  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  # VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
+  validates :nick_name, presence: true, length: { maximum: 20}
+  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }, confirmation: true
+  validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
+  validates :family_name, :first_name, :family_kana, :first_kana, :birth_year, :birth_month, :birth_day, :phone_number, :zip, :prefecture_id, :city, :block, presence: true
 end

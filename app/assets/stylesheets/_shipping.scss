@@ -13,8 +13,8 @@
 
 
 .sell_container{
-  background-color:white;
-  height: 1800px
+  background-color:　white;
+  height: 100%;
 }
 
 .l-single-head {
@@ -320,6 +320,9 @@ li.form-group_under_first{
   border-top: 1px solid #eee;
   // height:250px;
   background-color: white;
+  a {
+    text-decoration: none;
+  }
 }
 
 .btn-container_text{

@@ -9,12 +9,13 @@
       .content__item
         .item-box
           %h3.item-image
-            = image_tag "shoes.jpg"
+            = image_tag @firstimage, size: "64x64"
           .item-name
-            %p ぴかぴかシューズ（新品だよー）
+            %p
+              = @item.name
           .price-box
             %p.buy-price
-              ¥2,000
+              = "¥#{@item.price}"
               %span.ship-fee 送料込み
             %ul.user-point
               %li.have-point
@@ -25,10 +26,12 @@
               .payment
                 %p 支払い金額
               .pay-price
-                %p ¥2,000
+                %p
+                  = "¥#{@item.price}"
             .error-text
               %p 配送先と支払い方法の入力を完了してください。
-            %button.buy-btn.btn-gray.btn-red{disabled: "disabled", type: "submit"} 購入する
+            = form_tag(action: :pay, method: :post) do
+              %button.buy-btn.btn-gray.btn-red 購入する
       .content__ship
         .ship-in
           %h3 配送先

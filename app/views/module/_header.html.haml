@@ -5,8 +5,8 @@
         = link_to("/") do
           = image_tag "logo.svg", size: "134x36", alt: "mercari",class: "logo"
       .header__form
-        = form_with(model: @item, local: true) do |f|
-          %input.header__input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+        = form_with(model: @items, local: true) do |f|
+          = f.text_field :keyword, placeholder: "何かお探しですか？", type: "search", value: "", class: "header__input-default"
           %i.fa.fa-search.icon-search
 
     .header__container__bottom.clearfix
@@ -32,16 +32,69 @@
             %li
               = link_to('#', class: 'link') do
                 %i.icon.fa.fa-bell-o
-                  .nav-count 4
+                  .nav-count 5
                 %span お知らせ
+              %ul
+                %li
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 3日後、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                      %i.fa.fa-chevron-right
+                %li
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 【あと2日】参加ボタンを押すだけでポイントがもらえる！総額1億円相当還元！詳しくはこちら
+                      %i.fa.fa-chevron-right
+                %li
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 事務局から個別メッセージ「ログイン通知」
+                      %i.fa.fa-chevron-right
+                %li
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 《ご登録記念》¥1,000の商品を「実質1円」でご購入いただけます！
+                      %i.fa.fa-chevron-right
+                %li
+                  = link_to user_path(current_user.id),class: "sublink" do
+                    .sublink-content-logo
+                      =image_tag "mercari_profile.png", size: "40x40", alt: "mercari"
+                    .sublink-content-text
+                      %span 【スマホを売ろう！】メルカリなら下取りよりも高く売れる♪いますぐ相場チェック！
+                      %i.fa.fa-chevron-right
             %li
               = link_to('#', class: 'link') do
                 %i.icon.fa.fa-check
                 %span やることリスト
+              %ul
+                %li
+                  = link_to (''),class: "sublink-todo" do
+                    .sublink-content-todo
+                      .sublink-content-todo-logo
+                        = image_tag "logo-gray-icon.svg" ,size: "80x80"
+                      .sublink-content-todo-text
+                        %span 現在、やることリストはありません
             %li.list-mypage
-              = link_to('/items/mypage', class:'link') do
-                = image_tag "member_photo.png" ,width: "32", alt: "", class: "member_photo"
+              = link_to user_path(current_user.id) do
+                = image_tag current_user.image ,size: "32x32", alt: "", class: "member_photo"
                 %span マイページ
+              %ul
+                .sublink-mypage
+                  %li
+                    = image_tag "user-bg.jpg", size: "350x90",class: 'sublink-maypage-img'
+                  %li
+                    = image_tag current_user.image ,size: "75x75", alt: "", class: "sublink-maypagemember_photo"
+                  %li
+                    = link_to user_path(current_user.id),class: "sublink-maypage-link" do
+                      ユーザー名：#{current_user.nick_name}
           - else
             .new-registration-btn
               = link_to '新規会員登録', new_user_path

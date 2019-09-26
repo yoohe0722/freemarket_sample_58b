@@ -50,7 +50,7 @@
             }
             .btn-text {
               display: inline-block;
-              a {
+              .payments_link {
                 text-decoration: none;
                 color: #fff;
               }
@@ -82,4 +82,9 @@
       }
     }
   }
+}
+
+.payments_link {
+  text-decoration: none;
+  color: #fff;
 }

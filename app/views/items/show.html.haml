@@ -1,0 +1,132 @@
+= render 'module/header'
+.item_box_contents
+  .item-box-container
+    .item_box_contents_center
+      %h1.item_name
+        = @item.name
+      .item_box_contents_center_left_right
+        .item_photo_box
+          - if @item.images.attached?
+            = image_tag @firstimage, size: "300x300"
+          .item_photo_box_2
+            - @item.images.each do |image|
+              = image_tag image, size: "56x56", class: 'item_photo_box_images'
+        .item_details.box
+          %table.item-detail-table
+            %tbody
+              %tr
+                %th 出品者
+                %td
+                  = link_to "#" do
+                    = @item.user.nick_name
+                  .item-user-icon
+                    .item-user-ratings
+                      = image_tag "20080830175621.gif", alt: "test"
+                      %span 32
+                    .item-user-ratings
+                      = image_tag "20080830175618.gif", alt: "test"
+                      %span 64
+                    .item-user-ratings
+                      = image_tag "20080830175622.gif", alt: "test"
+                      %span 7
+              %tr
+                %th カテゴリー
+                %td
+                  %div
+                    = link_to "#" do
+                      -# = @item.category.parent.parent.name
+                  %div
+                    = link_to "#" do
+                      -# = @item.category.parent.name
+                  %div
+                    = link_to "#" do
+                      -# = @item.category.name
+              %tr
+                %th ブランド
+                - if @item.brand.present?
+                  %td
+                    = @item.brand.name
+                - else
+                  %td
+              %tr
+                %th 商品の状態
+                %td
+                  = @item.condition.name
+              %tr
+                %th 配送料の負担
+                %td
+                  = @item.shipfee.name
+              %tr
+                %th 配送の方法
+                %td
+                  = @item.shipmethod.name
+              %tr
+                %th 配送元地域
+                %td
+                  = link_to ""
+                  %a{:href => "#"}
+                    = @item.prefecture.name
+              %tr
+                %th 発送日の目安
+                %td
+                  = @item.shipdate.name
+      .item_price_box
+        %span.item_price_box_text
+          = "￥#{@item.price}"
+        %span.item-tax
+          (税込)
+        %span.item-shipping-fee
+          送料込み
+      .item_box_text_center
+        - if @item.user_id != current_user.id
+          .sales_point_message
+            残高 ¥3,250 をお持ちです
+          %a.item-buy-btn{href: "/items/buycheck/#{@item.id}"}
+            購入画面に進む
+      %p.item-description-inner
+        = @item.description
+      .item-button-container
+        .item-button-left
+          %button.item-button.item-button-like{"data-toggle" => "like", :name => "like!", :type => "button"}
+            %i.icon-like-border
+            %span ♡ いいね!
+            %span.fade-in-down 0
+          %a.item-button.item-button-report{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
+            %i.icon-flag
+            %span 🏳 不適切な商品の報告
+        .item-button-right
+          %a{:href => "#", :target => "_blank"}
+          %i.material-icons lock
+          %span あんしん・あんぜんへの取り組み
+
+  .item_message_content
+    .item_message_form
+      .item_message_form_warning
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+      %button.message-submit.btn-default.btn-gray{:type => "submit"}
+        %span コメントする
+    %ul.nav-item-link-prev-next.clearfix
+      .nav-item-link-prev_leftbox
+        %i.material-icons navigate_before
+        %li.nav-item-link-prev_left
+          = link_to "【OMEGA】オメガ シーマスター オールドクォーツ OH済 アンティーク腕時計","#"
+      .nav-item-link-prev_rightbox
+        %li.nav-item-link-next
+          = link_to "chanmi様専用","#"
+          %i.material-icons navigate_next
+    .item-social-media-box
+      .item-social-media-box-in
+        .icon_facebook_etc
+          = image_tag "スクリーンショット 2019-09-10 15.10.56.png", size: "154x49", alt: "test"
+
+    %h2.items-box-head
+      = link_to "#" do
+        = "#{@item.user.nick_name}さんのその他の出品"
+    = render 'module/buy_image_box'
+    = render 'module/buy_image_box'
+    = render 'module/buy_image_box'
+= render 'module/footer'
+
+
+

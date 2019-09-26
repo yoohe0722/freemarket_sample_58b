@@ -1,6 +1,6 @@
 $(function() {
-  $('.delete').on('click', function(e) {
-    e.preventDefault();  // submitによるフォームの送信を中止
+  $('.delete').on('click', function() {
+    $(this).parent().parent().removeData();
     $(this).parent().parent().remove();
   });
 });

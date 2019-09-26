@@ -13,8 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication #after_sign_in_path_forと同じパス
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else
-      # session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
-      render step1_signup_index_path
+      render '/signup/step1'
     end
   end
 

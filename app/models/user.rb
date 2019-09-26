@@ -33,7 +33,7 @@ class User < ApplicationRecord
           )
           Authorization.create(
           uid: uid,
-          provider: provider,
+          provider: provider
           )
       end
     end

@@ -24,27 +24,24 @@ class User < ApplicationRecord
           user_id: user.id
           )
       else
-        user = User.create(
+        password = Devise.friendly_token[0, 20]
+        user = User.new(
           nick_name: auth.info.name,
           email:    auth.info.email,
-          password: Devise.friendly_token[0, 20],
-          phone_number: "08000000000"
+          password: password,
+          password_confirmation: password
           )
           Authorization.create(
           uid: uid,
           provider: provider,
-          user_id: user.id
           )
       end
     end
     return user
   end
-  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  # VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
   validates :nick_name, presence: true, length: { maximum: 20}
-  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }, confirmation: true
+  validates :password, presence: true, confirmation: true
   validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
   validates :family_name, :first_name, :family_kana, :first_kana, :birth_year, :birth_month, :birth_day, :phone_number, :zip, :prefecture_id, :city, :block, presence: true
 end

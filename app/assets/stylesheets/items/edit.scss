@@ -19,5 +19,10 @@
     .image-box {
       padding: 0 2px;
     }
+    .button {
+      a:hover {
+        cursor: pointer;
+      }
+    }
   }
 }

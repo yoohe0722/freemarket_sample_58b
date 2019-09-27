@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :payments
   has_many :items
   has_many :authorizations
-
+  # mount_uploader :image, ImageUploader
   def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider

@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.id == current_user.id
-      @user.update(user_update_params)
+      binding.pry
+      @user.update_columns(user_update_params)
       redirect_to user_path, notice: 'ユーザー情報を更新しました'
     else
       render user_path, notice: 'ユーザー情報の更新に失敗しました'
@@ -32,10 +33,12 @@ class UsersController < ApplicationController
   private
   def user_update_params
     # binding.pry
-    params.fetch(:user,{}).permit(:nick_name, :image, :profile)
+    params.permit(:nick_name, :image, :profile)
+    # binding.pry
   end
 
   def set_user
     @user = User.find(params[:id])
   end
+  
 end

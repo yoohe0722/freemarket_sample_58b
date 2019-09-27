@@ -15,7 +15,7 @@
             = f.label :image, class: 'form__mask__image' do
               = image_tag current_user.image
               = f.file_field(:image, class: "hidden")
-            = f.text_field :nick_name, name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: current_user.nick_name, class: "input-user-edit-nickname"
+            = f.text_field :nick_name, name: "nick_name", placeholder: "例)AYA☆セール中", type: "text", value: current_user.nick_name, class: "input-user-edit-nickname"
           .mypage__box__editbox__form__edit-profilebox
             = f.text_area :profile, name: "profile", value: current_user.profile, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",class: "input-user-edit-profile"
             = f.submit "変更する", class: "mypage__box__editbox__form__btn"

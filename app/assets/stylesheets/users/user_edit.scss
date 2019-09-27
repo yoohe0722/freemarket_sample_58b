@@ -22,7 +22,11 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      vertical-align: middle;  
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    & .hidden {
+      display: none;
     }
     .input-user-edit-nickname {
       width: 220px;
@@ -51,6 +55,7 @@
       font-size: 16px;
       line-height: 1.5;
       box-sizing: border-box;
+      word-break: normal;
     }
   }
   &__form__btn {

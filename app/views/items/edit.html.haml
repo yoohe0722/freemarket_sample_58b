@@ -21,7 +21,7 @@
                     -@item.images.all.order(id: "ASC").each do |image|
                       %ul.listing-image-container
                         %li.image-box
-                          = image_tag image, size: '120x120'
+                          = image_tag image, size: '120x120', class: 'edit-image'
                           .button
                             %a 編集
                             %a.delete 削除

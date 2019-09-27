@@ -20,6 +20,12 @@
     &:hover{
       background-color: #fafafa;
       cursor: pointer;
+      .fa-chevron-right {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      color: #333;
+      }
     }
     .fa-chevron-right {
       position: absolute;

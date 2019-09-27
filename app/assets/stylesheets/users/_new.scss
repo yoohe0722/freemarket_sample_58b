@@ -23,17 +23,17 @@
       display: block;
       width: 100%;
       height: 50px;
-      line-height: 45px;
+      line-height: 48px;
       font-size: 14px;
       border: 1px solid transparent;
       -webkit-transition: all ease-out .3s;
       transition: all ease-out .3s;
       cursor: pointer;
       text-align: center;
-      & a {
+      a {
         text-decoration: none;
         color: #fff;
-        margin: 10
+        margin: 0 auto;
       }
       &-icon {
         display: inline-block;
@@ -74,7 +74,7 @@
       margin-top: 15px;
       position: relative;
       .session-new-form__google-in {
-      background: #fff url('google.svg') 3px;
+      background: #fff image-url('google.svg') 3px;
       background-repeat: no-repeat;
       border: #979797 solid 1px;
       color: #333;

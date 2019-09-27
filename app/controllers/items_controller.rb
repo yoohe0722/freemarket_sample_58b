@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   require "payjp"
   before_action :login_check, only: [:buy, :shipping, :show]
   before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
+  before_action :set_first_image, only: [:show, :show_edit_delete, :buycheck]
 
   def create
     @item = Item.create(item_params)
@@ -45,17 +46,13 @@ class ItemsController < ApplicationController
   def user_edit
   end
 
-
   def show
-    @firstimage = @item.images[0]
   end
 
   def show_edit_delete
-    @firstimage = @item.images[0]
   end
 
   def buycheck
-    @firstimage = @item.images[0]
   end
 
   def shipping
@@ -88,7 +85,6 @@ class ItemsController < ApplicationController
       redirect_to root_path, notice: '商品を購入しました'
     else
       redirect_to new_payment_path, alert: '購入にはクレジットカード登録が必要です'
-
     end
   end
 
@@ -96,11 +92,16 @@ class ItemsController < ApplicationController
   def item_params
     params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
+
   def item_update_params
     params.require(:item).permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_first_image
+    @firstimage = @item.images[0]
   end
 end

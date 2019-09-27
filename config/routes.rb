@@ -17,9 +17,8 @@ Rails.application.routes.draw do
       get 'buycheck/:id' => 'items#buycheck'
     end
   end
-  resources :users, only: [:index, :show, :new, :edit] do
+  resources :users, only: [:index, :show, :new, :edit, :update] do
     collection do
-      get 'profile'
       get 'logout'
       get 'credit'
       get 'identification'

@@ -39,8 +39,8 @@ class SignupController < ApplicationController
 
 
   def complete
-    session[:payment_id] = user_params[:payment_id]
-    @user = User.new # 新規インスタンス作成
+    sign_in User.find(session[:id]) unless user_signed_in?
+    render :complete
   end
 
   def create
@@ -71,6 +71,7 @@ class SignupController < ApplicationController
       render '/signup/step1'
     end
   end
+
 
   private
     # 許可するキーを設定します

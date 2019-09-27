@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:new,:edit,:update,:show,:mypage_ship]
   def new
   end
 
@@ -6,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.id == current_user.id
       @user.update(user_update_params)
       redirect_to user_path, notice: 'ユーザー情報を更新しました'
@@ -22,21 +22,20 @@ class UsersController < ApplicationController
   def complete
   end
 
-  def profile
-  end
-
   def show
-    @user = User.find(params[:id])
   end
 
   def mypage_ship
-    user = User.find(current_user.id)
     @item = user.items.all
   end
 
   private
   def user_update_params
     # binding.pry
-    params.fetch(:user,{}).permit(:nick_name, :image, :profile).merge(current_user.id)
+    params.fetch(:user,{}).permit(:nick_name, :image, :profile)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

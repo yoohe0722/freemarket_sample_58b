@@ -15,21 +15,33 @@
               %span.signup-registration-form-require
                 必須
               = f.text_field :nick_name, placeholder: "例) メルカリ太郎", class: 'signup-registration-from-input'
-              .signup-registration-from-group
-              = f.label :email, 'メールアドレス', class: 'signup-registration-label'
+            .signup-registration-from-group
+              = f.label :email, 'メールアドレス', class: 'signup-registration-label email'
               %span.signup-registration-form-require
                 必須
               = f.text_field :email, placeholder: "PC・携帯どちらでも可", class:'signup-registration-from-input'
-              .signup-registration-from-group
-              = f.label :password, 'パスワード', class: 'signup-registration-label'
-              %span.signup-registration-form-require
-                必須
-              = f.password_field :password, placeholder: "7文字以上", autocomplete: "new-password", class: 'signup-registration-from-input'
-            .signup-registration-from-group
-              = f.label :password_confirmation, 'パスワード(確認)', class: 'signup-registration-label'
-              %span.signup-registration-form-require
-                必須
-              = f.password_field :password_confirmation, placeholder: "7文字以上", autocomplete: "new-password", class: 'signup-registration-from-input'
+            - unless @user.email
+              .signup-registration-from-group.reg-pass
+                = f.label :password, 'パスワード', class: 'signup-registration-label'
+                %span.signup-registration-form-require
+                  必須
+                = f.password_field :password, placeholder: "7文字以上", autocomplete: "new-password", class: 'signup-registration-from-input'
+              .signup-registration-from-group.reg-pass-conf
+                = f.label :password_confirmation, 'パスワード(確認)', class: 'signup-registration-label'
+                %span.signup-registration-form-require
+                  必須
+                = f.password_field :password_confirmation, placeholder: "7文字以上", autocomplete: "new-password", class: 'signup-registration-from-input'
+            - else
+              .signup-registration-from-group.reg-pass{ style: "display:none" }
+                = f.label :password, 'パスワード', class: 'signup-registration-label'
+                %span.signup-registration-form-require
+                  必須
+                = f.password_field :password, placeholder: "7文字以上", autocomplete: "new-password", class: 'signup-registration-from-input',value: "#{@user.password}"
+              .signup-registration-from-group.reg-pass-conf{ style: "display:none" }
+                = f.label :password_confirmation, 'パスワード(確認)', class: 'signup-registration-label'
+                %span.signup-registration-form-require
+                  必須
+                = f.password_field :password_confirmation, placeholder: "7文字以上", autocomplete: "new-password", class: 'signup-registration-from-input',value: "#{@user.password_confirmation}"
             .signup-registration-from-group
               %h3.signup-registration-sub-head
                 本人確認

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require "payjp"
-  before_action :login_check, only: [:buy, :shipping]
+  before_action :login_check, only: [:buy, :shipping, :show]
   before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
   before_action :set_first_image, only: [:show, :show_edit_delete, :buycheck]
 

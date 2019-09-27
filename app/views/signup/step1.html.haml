@@ -15,8 +15,8 @@
               %span.signup-registration-form-require
                 必須
               = f.text_field :nick_name, placeholder: "例) メルカリ太郎", class: 'signup-registration-from-input'
-              .signup-registration-from-group
-              = f.label :email, 'メールアドレス', class: 'signup-registration-label'
+            .signup-registration-from-group
+              = f.label :email, 'メールアドレス', class: 'signup-registration-label email'
               %span.signup-registration-form-require
                 必須
               = f.text_field :email, placeholder: "PC・携帯どちらでも可", class:'signup-registration-from-input'

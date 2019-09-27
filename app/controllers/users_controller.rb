@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def mypage_ship
     user = User.find(current_user.id)
-    @item = user.items.all
+    @item = user.items.where(trading_condition: 1)
   end
 
 

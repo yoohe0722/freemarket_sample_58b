@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require "payjp"
   before_action :login_check, only: [:buy, :shipping, :show]
-  before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
+  before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck, :pay]
   before_action :set_first_image, only: [:show, :show_edit_delete, :buycheck]
 
   def create
@@ -53,6 +53,8 @@ class ItemsController < ApplicationController
   end
 
   def buycheck
+    redirect_to item_path(@item.id) if @item.user_id == current_user.id
+    redirect_to root_path(@item.id) if @item.trading_condition == 3
   end
 
   def shipping
@@ -72,19 +74,23 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @payment = Payment.where(user_id: current_user.id).first
-    if @payment.present?
-      @item = Item.find(params[:id])
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-      Payjp::Charge.create(
-        amount: @item.price,
-        customer: @payment.customer_id,
-        currency: 'jpy',
-      )
-      @item.update(buyer_id: current_user.id, trading_condition: 3)
-      redirect_to root_path, notice: '商品を購入しました'
+    if @item.user_id == current_user.id or @item.trading_condition == 3
+      redirect_to root_path(@item.id), alert: 'その商品は購入できません'
     else
-      redirect_to new_payment_path, alert: '購入にはクレジットカード登録が必要です'
+      @payment = Payment.where(user_id: current_user.id).first
+      if @payment.present?
+        @item = Item.find(params[:id])
+        Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+        Payjp::Charge.create(
+          amount: @item.price,
+          customer: @payment.customer_id,
+          currency: 'jpy',
+        )
+        @item.update(buyer_id: current_user.id, trading_condition: 3)
+        redirect_to root_path, notice: '商品を購入しました'
+      else
+        redirect_to new_payment_path, alert: '購入にはクレジットカード登録が必要です'
+      end
     end
   end
 

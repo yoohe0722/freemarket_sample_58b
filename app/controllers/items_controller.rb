@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.user_id == current_user.id
+      
       @item.update(item_update_params)
       redirect_to root_path, notice: '商品を編集しました'
     else

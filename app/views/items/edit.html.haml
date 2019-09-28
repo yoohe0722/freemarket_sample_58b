@@ -16,16 +16,20 @@
               %p
                 最大10枚までアップロードできます
               .item-edit-images
-                -if @item.images.attached?
-                  .item-edit-images__lists-box
-                    -@item.images.all.order(id: "ASC").each do |image|
-                      %ul.listing-image-container
-                        %li.image-box
-                          = image_tag image, size: '120x120', class: 'edit-image'
-                          .button
-                            %a 編集
-                            = link_to '削除', item_path, method: :delete, class: "delete"
-                            -# %a.delete 削除
+                -# -if @item.images.attached?
+                -#   .item-edit-images__lists-box
+                -#     -@item.images.all.order(id: "ASC").each do |image|
+                -#       %ul.listing-image-container
+                -#         %li.image-box
+                -#           = image_tag image, size: '120x120', class: 'edit-image'
+                -#           .button
+                -#             %a 編集
+                -#             = link_to '削除', item_path, method: :delete, class: "delete"
+                -#             -# %a.delete 削除
+              %p 現在登録されている画像（削除するものはチェックしてください）
+              - @item.images.each do |image|
+                = f.check_box :image_ids, {:multiple => true}, image.id, false
+                = image_tag image, :size=>"120x120"
               .sell-dropbox-container.clearfix
                 .sell-upload-items-container
                   .sell-upload-items

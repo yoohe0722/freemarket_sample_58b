@@ -30,9 +30,11 @@ class ItemsController < ApplicationController
 
   def update
     if @item.user_id == current_user.id
-      params[:item][:image_ids].each do |image_id|
-        image = @item.images.find(image_id)
-        image.purge
+      if params[:item][:image_ids].present?
+        params[:item][:image_ids].each do |image_id|
+          image = @item.images.find(image_id)
+          image.purge
+        end
       end
       @item.update(item_update_params)
       redirect_to root_path, notice: '商品を編集しました'

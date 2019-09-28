@@ -24,7 +24,8 @@
                           = image_tag image, size: '120x120', class: 'edit-image'
                           .button
                             %a 編集
-                            %a.delete 削除
+                            = link_to '削除', item_path, method: :delete, class: "delete"
+                            -# %a.delete 削除
               .sell-dropbox-container.clearfix
                 .sell-upload-items-container
                   .sell-upload-items

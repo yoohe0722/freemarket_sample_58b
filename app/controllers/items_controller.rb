@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
   def update
     if @item.user_id == current_user.id
       unless params[:images].present?
-        redirect_to root_path, alert: '画像がありません'
+        redirect_to edit_item_path, alert: '画像がありません'
         return
       end
       if params[:item][:image_ids].present?

@@ -5,11 +5,16 @@ class ItemsController < ApplicationController
   before_action :set_first_image, only: [:show, :show_edit_delete, :buycheck]
 
   def create
-    @item = Item.create(item_params)
-    if @item.save
-      redirect_to root_path, notice: '商品を出品しました'
+    @item = Item.new(item_params)
+    if params[:images].present?
+      if @item.save
+        redirect_to root_path, notice: '商品を出品しました'
+      else
+        redirect_to ({action: 'shipping'}), alert: '商品出品に失敗しました'
+      end
     else
-      redirect_to ({action: 'shipping'}), alert: '商品出品に失敗しました'
+      flash.now[:alert] = '商品画像を最低1枚添付してください'
+      render :shipping
     end
   end
 
@@ -33,6 +38,10 @@ class ItemsController < ApplicationController
 
   def update
     if @item.user_id == current_user.id
+      unless params[:images].present?
+        redirect_to root_path, alert: '画像がありません'
+        return
+      end
       if params[:item][:image_ids].present?
         params[:item][:image_ids].each do |image_id|
           image = @item.images.find(image_id)
@@ -46,15 +55,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def mypage
-  end
-
-  def logout
-  end
-
-  def user_edit
-  end
-
   def show
   end
 
@@ -65,10 +65,6 @@ class ItemsController < ApplicationController
   end
 
   def shipping
-  end
-
-  def login_check
-    redirect_to "/users/sign_in" unless user_signed_in?
   end
 
   def destroy
@@ -113,4 +109,9 @@ class ItemsController < ApplicationController
   def set_first_image
     @firstimage = @item.images[0]
   end
+
+  def login_check
+    redirect_to "/users/sign_in" unless user_signed_in?
+  end
+
 end

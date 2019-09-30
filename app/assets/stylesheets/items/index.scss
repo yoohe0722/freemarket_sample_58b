@@ -9,12 +9,6 @@
     background: image-url("top-banner-autumn-fes.jpg");
     height: 390px;
     width: 100vw;
-    position: relative;
-    top: 0px;
-    left: 50%;
-    right: 50%;
-    margin: 0 auto;
-    margin-left: -50vw;
     background-position: center center;
   }
 
@@ -22,27 +16,15 @@
     background: image-url("top-banner-camp.jpg");
     height: 390px;
     width: 100vw;
-    position: relative;
-    top: 0px;
-    left: 50%;
-    right: 50%;
-    margin: 0 auto;
-    margin-left: -50vw;
     background-position: center center;
   }
 
-  .banner-3 {
-    background: image-url("top-banner-main.jpg");
-    height: 390px;
-    width: 100vw;
-    position: relative;
-    top: 0px;
-    left: 50%;
-    right: 50%;
-    margin: 0 auto;
-    margin-left: -50vw;
-    background-position: center center;
-  }
+  // .banner-3 {
+  //   background: image-url("top-banner-main.jpg");
+  //   height: 390px;
+  //   width: 100vw;
+  //   background-position: center center;
+  // }
 }
 
 .wrapper__top-page {

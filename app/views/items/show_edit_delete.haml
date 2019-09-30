@@ -12,9 +12,12 @@
         .item_photo_box
           - if @item.images.attached?
             = image_tag @firstimage, size: "300x300"
-          .item_photo_box_2
-            - @item.images.each do |image|
-              = image_tag image, size: "56x56", class: 'item_photo_box_images'
+            -if @item.trading_condition == 3
+              .items-box_photo__sold
+                .items-box_photo__sold__inner SOLD
+            .item_photo_box_3
+              - @item.images.each do |image|
+                = image_tag image, size: "56x56", class: 'item_photo_box_images'
         .item_details.box
           %table.item-detail-table
             %tbody

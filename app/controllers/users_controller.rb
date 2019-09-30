@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     user = User.find(current_user.id)
     @item = user.items.where(trading_condition: 1)
   end
+  def sold
+    user = User.find(current_user.id)
+    @item = user.items.where(trading_condition: 3)
+  end
 
 
 end

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get 'credit'
       get 'identification'
       get 'mypage_ship'
+      get 'sold'
     end
   end
   resources :payments do

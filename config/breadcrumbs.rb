@@ -39,6 +39,23 @@ crumb :ship_item do
   parent :ship
 end
 
+crumb :sold do
+  link '出品した商品 - 売却済み'
+  parent :mypage
+end
+
+crumb :items_show do
+  @item = Item.find_by(id:params[:id])
+  link "#{@item.name}"
+  parent :root
+end
+
+# crumb :show_title do |show_title|
+#   show_title = Post.find_by(id: params[:id])
+#   link show_title.title
+#   parent :tag
+# end
+
 
 # マイページ-クレジットカード情報入力
 crumb :payments_new do

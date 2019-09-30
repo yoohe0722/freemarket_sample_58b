@@ -98,6 +98,9 @@
           height: 44px;
           line-height: 38px;
           text-decoration: none;
+          :hover{
+          color: rgb(0, 149, 238);
+          }
         }
         &a {
           font-weight: 700;
@@ -123,6 +126,9 @@
         }
       }
       .container__bottom-right {
+          :hover{
+          color: rgb(0, 149, 238);
+          }
 
         & ul {
           display: flex;

@@ -280,11 +280,8 @@
 
 
 
-.mypage-item-status.awaiting {
-  background: #0099e8;
-}
-.mypage-item-status {
-  // display: inline-block
+.mypage-item-status_box {
+  background: #888;
   display: inline-block;
   margin: 8px 0 0 0;
   padding: 5px 6px;
@@ -515,7 +512,7 @@
             background-color: #fff;
             width: 700px;
             height: 74px;
-            .mypage-contaier__tabs1__trading {
+            .mypage-contaier__tabs1__past-transactions-box {
               border-top: 2px solid #ea352d;
               background: #fff;
             }
@@ -562,6 +559,5 @@
     }
   }
 
-.mypage-contaier_1{
-  background-color: #fff;
-}
+
+

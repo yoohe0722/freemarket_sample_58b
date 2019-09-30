@@ -78,22 +78,26 @@
         %span.item-shipping-fee
           送料込み
 
-      .listing-item-change-box
-        = link_to '商品の編集', edit_item_path, class: "btn-default btn-red"
-        %p.text-center or
-        %form{action: "/jp/items/deactivate/m49348093442/", method: "POST", novalidate: "novalidate"}
-          %input{name: "__csrf_value", type: "hidden", value: "f834660aefe34bf4fffc3bf2df7b816c84b48f9660456f36524b1858cd574d6f557b238c71986388d369e47bdc5e03e5eaf4182769b02e26fd704172914a87c90"}/
-          %button.btn-default.btn-gray_sub{type: "submit"} 出品を一旦停止する
-          = link_to 'この商品を削除する', item_path, method: :delete, class:"btn-default btn-gray_sub"
+      -if @item.trading_condition == 3
+        .sold_out_text
+          この商品はすでに売却済みです。
+      -else
+        .listing-item-change-box
+          = link_to '商品の編集', edit_item_path, class: "btn-default btn-red"
+          %p.text-center or
+          %form{action: "/jp/items/deactivate/m49348093442/", method: "POST", novalidate: "novalidate"}
+            %input{name: "__csrf_value", type: "hidden", value: "f834660aefe34bf4fffc3bf2df7b816c84b48f9660456f36524b1858cd574d6f557b238c71986388d369e47bdc5e03e5eaf4182769b02e26fd704172914a87c90"}/
+            %button.btn-default.btn-gray_sub{type: "submit"} 出品を一旦停止する
+            = link_to 'この商品を削除する', item_path, method: :delete, class:"btn-default btn-gray_sub"
 
-
-  .item_message_content
-    .item_message_form
-      .item_message_form_warning
-        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %textarea.textarea-default{name: "body", type: "text", value: ""}
-      %button.message-submit.btn-default.btn-gray{type: "submit"}
-        %span コメントする
+  -if @item.trading_condition == 1
+    .item_message_content
+      .item_message_form
+        .item_message_form_warning
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.textarea-default{name: "body", type: "text", value: ""}
+        %button.message-submit.btn-default.btn-gray{type: "submit"}
+          %span コメントする
 = render 'module/footer'
 
 

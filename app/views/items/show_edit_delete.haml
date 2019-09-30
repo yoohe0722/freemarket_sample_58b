@@ -24,7 +24,7 @@
               %tr
                 %th 出品者
                 %td
-                  = link_to "https://www.mercari.com/jp/u/348028699/" do
+                  = link_to "#" do
                     = @item.user.nick_name
                   .item-user-icon
                     .item-user-ratings
@@ -40,13 +40,13 @@
                 %th カテゴリー
                 %td
                   %div
-                    = link_to "https://www.mercari.com/jp/category/1/" do
+                    = link_to "#" do
                       -# = @item.category.parent.parent.name
                   %div
-                    = link_to "https://www.mercari.com/jp/category/22/" do
+                    = link_to "#" do
                       -# = @item.category.parent.name
                   %div
-                    = link_to "https://www.mercari.com/jp/category/240/" do
+                    = link_to "#" do
                       = @item.category.name
               %tr
                 %th ブランド
@@ -70,7 +70,7 @@
               %tr
                 %th 配送元地域
                 %td
-                  = link_to "https://www.mercari.com/jp/area/27/" do
+                  = link_to "#" do
                     = @item.prefecture.name
               %tr
                 %th 発送日の目安

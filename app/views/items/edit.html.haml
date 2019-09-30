@@ -27,10 +27,11 @@
                 -#             = link_to '削除', item_path, method: :delete, class: "delete"
                 -#             -# %a.delete 削除
                 .item-edit-images__lists-box
-                  - @item.images.each do |image|
+                  - @item.images.each_with_index do |image, i|
                     .image-box
                       = image_tag image, size: "120x120", class: 'edit-image'
                       .button
+                        = f.label "削除", {for: "image_ids"}
                         = f.check_box :image_ids, {multiple: true}, image.id, false
               .sell-dropbox-container.clearfix
                 .sell-upload-items-container

@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.user_id == current_user.id
-      unless params[:images].present?
+      if params[:item][:images].blank? && params[:item][:image_ids].length == @item.images.length
         redirect_to edit_item_path, alert: '画像がありません'
         return
       end

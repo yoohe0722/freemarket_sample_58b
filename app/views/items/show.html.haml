@@ -83,6 +83,15 @@
             残高 ¥3,250 をお持ちです
           %a.item-buy-btn{href: "/items/buycheck/#{@item.id}"}
             購入画面に進む
+        - if @item.user_id == current_user.id
+          .listing-item-change-box
+            = link_to '商品の編集', edit_item_path, class: "btn-default btn-red"
+            %p.text-center or
+            %form{action: "/jp/items/deactivate/m49348093442/", method: "POST", novalidate: "novalidate"}
+              %input{name: "__csrf_value", type: "hidden", value: "f834660aefe34bf4fffc3bf2df7b816c84b48f9660456f36524b1858cd574d6f557b238c71986388d369e47bdc5e03e5eaf4182769b02e26fd704172914a87c90"}/
+              %button.btn-default.btn-gray_sub{type: "submit"} 出品を一旦停止する
+              = link_to 'この商品を削除する', item_path, method: :delete, class:"btn-default btn-gray_sub"
+
       %p.item-description-inner
         = @item.description
       .item-button-container

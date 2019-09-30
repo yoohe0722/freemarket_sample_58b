@@ -99,7 +99,7 @@
           line-height: 38px;
           text-decoration: none;
           :hover{
-          color: rgb(0, 149, 238);
+          // color: rgb(0, 149, 238);
           }
         }
         &a {
@@ -127,7 +127,7 @@
       }
       .container__bottom-right {
           :hover{
-          color: rgb(0, 149, 238);
+          // color: rgb(0, 149, 238);
           }
 
         & ul {
@@ -138,6 +138,9 @@
         & li {
           padding-left: 20px;
           display: inline-block;
+          :hover{
+            // color: rgb(0, 149, 238);
+            }
         }
         a {
           text-decoration: none;
@@ -166,7 +169,7 @@
           text-transform: uppercase;
         }
         ul > li:hover > a{
-          color:  rgb(0, 149, 238);
+          // color:  rgb(0, 149, 238);
         }
         ul li ul{
           position: absolute;

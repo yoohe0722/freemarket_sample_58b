@@ -276,8 +276,8 @@ table {
   border-bottom: 60px solid transparent;
   border-left: 60px solid #ea352d ;
   z-index:100;
-  position: relative;
-  top:-305px;
+  position: absolute;
+  top:238px;
   &__inner{
     transform: rotate(-45deg);
     font-size: 28px;

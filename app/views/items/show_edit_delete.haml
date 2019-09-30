@@ -1,5 +1,8 @@
 = render 'module/header'
-- breadcrumb :ship_item
+- if @item.trading_condition == 1
+  - breadcrumb :ship_item
+- else
+  - breadcrumb :sold_show
 .item_box_contents
   .item-box-container
     .item_box_contents_center_box

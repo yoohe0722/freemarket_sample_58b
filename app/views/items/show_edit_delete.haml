@@ -29,22 +29,22 @@
                   .item-user-icon
                     .item-user-ratings
                       = image_tag "20080830175621.gif", alt: "test"
-                      %span 32
+                      %span 9999
                     .item-user-ratings
                       = image_tag "20080830175618.gif", alt: "test"
-                      %span 64
+                      %span 17
                     .item-user-ratings
                       = image_tag "20080830175622.gif", alt: "test"
-                      %span 7
+                      %span 3
               %tr
                 %th カテゴリー
                 %td
                   %div
-                    = link_to "#" do
-                      -# = @item.category.parent.parent.name
+                    = link_to "https://www.mercari.com/jp/category/1/" do
+                      = @item.category.parent.parent.name
                   %div
-                    = link_to "#" do
-                      -# = @item.category.parent.name
+                    = link_to "https://www.mercari.com/jp/category/22/" do
+                      = @item.category.parent.name
                   %div
                     = link_to "#" do
                       = @item.category.name

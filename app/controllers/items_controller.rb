@@ -73,6 +73,26 @@ class ItemsController < ApplicationController
   end
 
   def shipping
+    @parents = Category.where(ancestry: nil).order("id ASC")
+  end
+
+  def search_children
+    respond_to do |format|
+      format.html
+      format.json do
+       @children = Category.find(params[:parent_id]).children
+       #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
+      end
+    end
+  end
+
+  def search_grand_children
+    respond_to do |format|
+      format.html
+      format.json do
+       @grand_children = Category.find(params[:parent_id]).children
+      end
+    end
   end
 
   def destroy
@@ -110,7 +130,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.permit(:name, :description, :buyer_id, :size_id, :brand_id, :price, :condition_id, :category_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
+    params.permit(:name, :description, :buyer_id, :size_id, :category_id, :brand_id, :price, :condition_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
 
   def item_update_params

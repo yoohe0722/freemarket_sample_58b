@@ -34,9 +34,15 @@ class ItemsController < ApplicationController
     if @item.user_id != current_user.id
       redirect_to root_path
     end
+    if @item.trading_condition == 3
+      redirect_to edit_delete_items_path, alert: 'この商品はすでに売却済みです'
+    end
   end
 
   def update
+    if @item.trading_condition == 3
+      redirect_to root_path, alert: 'この商品はすでに売却済みです'
+    end
     if @item.user_id == current_user.id
       if params[:item][:image_ids].present?
         if params[:item][:images].blank? && params[:item][:image_ids].length == @item.images.length
@@ -70,6 +76,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if @item.trading_condition == 3
+      redirect_to root_path, alert: 'この商品はすでに売却済みです'
+    end
     if @item.user_id == current_user.id
       @item.destroy
       redirect_to root_path, notice: '商品を削除しました'

@@ -38,11 +38,11 @@ class ItemsController < ApplicationController
 
   def update
     if @item.user_id == current_user.id
-      if params[:item][:images].blank? && params[:item][:image_ids].length == @item.images.length
-        redirect_to edit_item_path, alert: '画像がありません'
-        return
-      end
       if params[:item][:image_ids].present?
+        if params[:item][:images].blank? && params[:item][:image_ids].length == @item.images.length
+          redirect_to edit_item_path, alert: '画像がありません'
+          return
+        end
         params[:item][:image_ids].each do |image_id|
           image = @item.images.find(image_id)
           image.purge

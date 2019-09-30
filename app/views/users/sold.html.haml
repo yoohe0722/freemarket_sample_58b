@@ -9,9 +9,9 @@
     .mypage__box__content
       %section.mypage-contaier
         %h2.mypage-contaier__tab-head
-          出品した商品
+          売却した商品
         %ul.mypage-contaier__tabs1
-          %li.mypage-contaier__tabs1__trading
+          %li.mypage-contaier__tabs1__trading_1
             = link_to ("/users/mypage_ship") do
               %h3
                 出品中
@@ -19,14 +19,14 @@
             = link_to ("#") do
               %h3
                 取引中
-          %li.mypage-contaier__tabs1__past-transactions
+          %li.mypage-contaier__tabs1__past-transactions-box
             = link_to ("/users/sold") do
               %h3
                 売却済
         - if @item.count != 0
           .mypage-item-list
             - @item.each do |item|
-              = render partial: "/module/mypage_ship", locals: { item: item }
+              = render partial: "/module/sold", locals: { item: item }
         - else
           .mypage-contaier__tab-content
             .mypage-contaier__tab-content__trading{style: "background-image:url(#{asset_path "logo-gray-icon.svg"})"}

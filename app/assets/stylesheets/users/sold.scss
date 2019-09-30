@@ -1,0 +1,563 @@
+.mypage {
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: "游ゴシック体", YuGothic;
+  font-size: 14px;
+  color: #333;
+  overflow:auto;
+  box-sizing: border-box;
+  &__box {
+    margin: 40px auto 0;
+    width: 1020px;
+    overflow: auto;
+    padding: 0 0 40px;
+    &__content {
+      width: 700px;
+      height: 1200px;
+      float: right;
+        .mypage-user {
+          position: relative;
+          height: 200px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          padding: 20px;
+          box-sizing: border-box;
+          .mypage-figure {
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            border-radius: 50%;
+          }
+          .mypage-figure img{
+            width: 60px;
+            height: 60px;
+          }          
+          }
+          .mypage-user-name {
+            margin: 8px 0 0;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.4;
+          }
+          .mypage-user-number {
+            margin: 8px 0 0;
+            font-size: 0;
+            .mypage-rate-number {
+              margin: 0 0 0 8px;
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .mypage-number-of-exhibits {
+              margin: 0 0 0 8px;
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+          .mypage-user-number div {
+            display: inline-block;
+            font-size: 14px;
+          }
+          .mypage-user-number div + div {
+            margin: 0 0 0 16px;
+          }
+        }
+        .mypage-user a{
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          color: #333;
+          text-decoration: none;
+          &:hover{
+            opacity: 0.5 ;
+            text-decoration: underline;
+          }
+        }
+        .notification-todo {
+          margin: 0;
+          background: #fff;
+          &__tabs{
+            font-size: 0px;
+            border: 0;
+            background: #eee;
+            .notification-tabs {
+              background: #fff;
+              border-top: 2px solid #ea352d;
+            }
+            }
+
+          &__tabs li {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            vertical-align: top;
+          }
+          &__tabs h3 {
+            font-weight: bold;
+          }
+          &__tabs a {
+            text-decoration: none;
+            display: block;
+            position: relative;
+            color: #333;
+            font-size: 16px;
+            line-height: 72px;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+          .notification_list {
+            display: block;
+            min-height: 80px;
+            padding: 16px;
+            color: #333;
+            box-sizing: border-box;
+            text-decoration: none;
+            border-bottom: 1.2px solid #eee;
+            position: relative;
+            &:hover{
+              background-color: #fafafa;
+              cursor: pointer;
+            }
+            .mercari-logo {
+              position: relative;
+              overflow: hidden;
+              float: left;
+              width: 48px;
+              height: 48px;
+            }
+            
+            .mercari-logo img {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 1;
+              width: 100%;
+            }
+            .mypage-item-body{
+              margin: 0 40px 0 68px;
+              .mypage-item-text{
+                overflow: hidden;
+                display: block;
+                display: -webkit-box;
+                max-height: 4.4em;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                line-height: 1.5;
+                .time {
+                  color: #888;
+                  .mypage-item-time .fa {
+                    font-weight: 100;
+                    font-size: 1.2em;
+                    .time-number{
+                      font-size: 0.9em;
+                    }
+                  }
+                }
+              }
+            }
+            .notification-chevron-right {
+              font-size: 1.1em;
+              color: #333;
+            }
+            .fa-chevron-right {
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              color: #ccc;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+              -webkit-transition: all ease-out .2s;
+              transition: all ease-out .2s;
+            }
+          }
+        .mypage-go-list {
+          border: 0;
+          padding: 16px;
+          box-sizing: border-box;
+        }
+        .mypage-go-list a {
+          display: block;
+          height: 56px;
+          margin: 0 auto;
+          background: #eee;
+          color: #333;
+          line-height: 56px;
+          text-align: center;
+          text-decoration: none;
+        }
+        .mypage-contaier {
+          margin: 40px 0 0;
+          background-color: #fff;
+          &__tab-head {
+            height: 72px;
+            padding: 0 16px;
+            background: #fafafa;
+            font-size: 16px;
+            line-height: 72px;
+            font-weight: bold;
+          }
+          &__tabs {
+            background-color: #fff;
+            width: 700px;
+            height: 74px;
+            .mypage-contaier__tabs__trading {
+              border-top: 2px solid #ea352d;
+              background: #fff;
+            }
+          }
+          &__tabs a{
+            text-decoration: none;
+            display: block;
+            position: relative;
+            color: #333;
+            font-size: 16px;
+            line-height: 72px;
+            text-decoration: none;
+            font-weight: bold;
+          }
+          &__tabs {
+            font-size: 0px;
+            border: 0;
+            background: #eee;
+          }
+          &__tabs li {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            vertical-align: top;
+          }
+          &__tabs h3 {
+            font-weight: bold;
+          }
+          &__tab-content {
+            background-color: #fff;
+            &__trading {
+              padding: 160px 0 60px;
+              background-repeat: no-repeat;
+              background-position: center 40px;
+              background-size: 78px 85px;
+              text-align: center;
+              font-size: 16px;
+              color: #ccc;
+              list-style: none;
+              font-weight: bold;
+            }
+          }
+        }
+    }
+  }
+
+
+
+.mypage-item-list{
+  margin: 20px 0;
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  .mypage-item-link{
+    margin: 20px 0;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    .is-higher-width{
+      margin: 0 20px 10px;
+      .mypage-item-body{
+        width:100%;
+      }
+    }
+  }
+}
+
+
+
+.mypage-item-status_box {
+  background: #888;
+  display: inline-block;
+  margin: 8px 0 0 0;
+  padding: 5px 6px;
+  border-radius: 2px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+  width: 48px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.mypage {
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: "游ゴシック体", YuGothic;
+  font-size: 14px;
+  color: #333;
+  overflow:auto;
+  box-sizing: border-box;
+  &__box {
+    margin: 40px auto 0;
+    width: 1020px;
+    overflow: auto;
+    padding: 0 0 40px;
+    &__content {
+      width: 700px;
+      height: 1200px;
+      float: right;
+        .mypage-user {
+          position: relative;
+          height: 200px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          padding: 20px;
+          box-sizing: border-box;
+          .mypage-figure {
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            border-radius: 50%;
+          }
+          .mypage-figure img{
+            width: 60px;
+            height: 60px;
+          }          
+          }
+          .mypage-user-name {
+            margin: 8px 0 0;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.4;
+          }
+          .mypage-user-number {
+            margin: 8px 0 0;
+            font-size: 0;
+            .mypage-rate-number {
+              margin: 0 0 0 8px;
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .mypage-number-of-exhibits {
+              margin: 0 0 0 8px;
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+          .mypage-user-number div {
+            display: inline-block;
+            font-size: 14px;
+          }
+          .mypage-user-number div + div {
+            margin: 0 0 0 16px;
+          }
+        }
+        .mypage-user a{
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          color: #333;
+          text-decoration: none;
+          &:hover{
+            opacity: 0.5 ;
+            text-decoration: underline;
+          }
+        }
+        .notification-todo {
+          margin: 0;
+          background: #fff;
+          &__tabs{
+            font-size: 0px;
+            border: 0;
+            background: #eee;
+            .notification-tabs {
+              background: #fff;
+              border-top: 2px solid #ea352d;
+            }
+            }
+
+          &__tabs li {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            vertical-align: top;
+          }
+          &__tabs h3 {
+            font-weight: bold;
+          }
+          &__tabs a {
+            text-decoration: none;
+            display: block;
+            position: relative;
+            color: #333;
+            font-size: 16px;
+            line-height: 72px;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+          .notification_list {
+            display: block;
+            min-height: 80px;
+            padding: 16px;
+            color: #333;
+            box-sizing: border-box;
+            text-decoration: none;
+            border-bottom: 1.2px solid #eee;
+            position: relative;
+            &:hover{
+              background-color: #fafafa;
+              cursor: pointer;
+            }
+            .mercari-logo {
+              position: relative;
+              overflow: hidden;
+              float: left;
+              width: 48px;
+              height: 48px;
+            }
+            
+            .mercari-logo img {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 1;
+              width: 100%;
+            }
+            .mypage-item-body{
+              margin: 0 40px 0 68px;
+              .mypage-item-text{
+                overflow: hidden;
+                display: block;
+                display: -webkit-box;
+                max-height: 4.4em;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                line-height: 1.5;
+                .time {
+                  color: #888;
+                  .mypage-item-time .fa {
+                    font-weight: 100;
+                    font-size: 1.2em;
+                    .time-number{
+                      font-size: 0.9em;
+                    }
+                  }
+                }
+              }
+            }
+            .notification-chevron-right {
+              font-size: 1.1em;
+              color: #333;
+            }
+            .fa-chevron-right {
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              color: #ccc;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+              -webkit-transition: all ease-out .2s;
+              transition: all ease-out .2s;
+            }
+          }
+        .mypage-go-list {
+          border: 0;
+          padding: 16px;
+          box-sizing: border-box;
+        }
+        .mypage-go-list a {
+          display: block;
+          height: 56px;
+          margin: 0 auto;
+          background: #eee;
+          color: #333;
+          line-height: 56px;
+          text-align: center;
+          text-decoration: none;
+        }
+        .mypage-contaier {
+          margin: 40px 0 0;
+          background-color: #fff;
+          &__tab-head {
+            height: 72px;
+            padding: 0 16px;
+            background: #fafafa;
+            font-size: 16px;
+            line-height: 72px;
+            font-weight: bold;
+          }
+          &__tabs1 {
+            background-color: #fff;
+            width: 700px;
+            height: 74px;
+            .mypage-contaier__tabs1__past-transactions-box {
+              border-top: 2px solid #ea352d;
+              background: #fff;
+            }
+          }
+          &__tabs1 a{
+            text-decoration: none;
+            display: block;
+            position: relative;
+            color: #333;
+            font-size: 16px;
+            line-height: 72px;
+            text-decoration: none;
+            font-weight: bold;
+          }
+          &__tabs1 {
+            font-size: 0px;
+            border: 0;
+            background: #eee;
+          }
+          &__tabs1 li {
+            display: inline-block;
+            width: 33.3%;
+            text-align: center;
+            vertical-align: top;
+          }
+          &__tabs1 h3 {
+            font-weight: bold;
+          }
+          &__tab-content {
+            background-color: #fff;
+            &__trading {
+              padding: 160px 0 60px;
+              background-repeat: no-repeat;
+              background-position: center 40px;
+              background-size: 78px 85px;
+              text-align: center;
+              font-size: 16px;
+              color: #ccc;
+              list-style: none;
+              font-weight: bold;
+            }
+          }
+        }
+    }
+  }
+
+
+

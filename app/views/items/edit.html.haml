@@ -31,8 +31,8 @@
                     .image-box
                       = image_tag image, size: "120x120", class: 'edit-image'
                       .button
-                        = f.label "削除", {for: "image_ids"}
                         = f.check_box :image_ids, {multiple: true}, image.id, false
+                        = f.label "削除", {for: "item_image_ids_#{image.id}", class: 'delete'}
               .sell-dropbox-container.clearfix
                 .sell-upload-items-container
                   .sell-upload-items

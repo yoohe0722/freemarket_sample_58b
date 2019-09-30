@@ -28,7 +28,6 @@ crumb :logout do
   parent :mypage
 end
 
-
 crumb :ship do
   link '出品した商品 - 出品中', mypage_ship_users_path
   parent :mypage
@@ -40,8 +39,13 @@ crumb :ship_item do
 end
 
 crumb :sold do
-  link '出品した商品 - 売却済み'
+  link '出品した商品 - 売却済み', sold_users_path
   parent :mypage
+end
+
+crumb :sold_show do
+  link '売却済み商品', sold_users_path
+  parent :sold
 end
 
 crumb :items_show do

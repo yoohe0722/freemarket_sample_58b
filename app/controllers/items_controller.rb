@@ -34,18 +34,24 @@ class ItemsController < ApplicationController
     if @item.user_id != current_user.id
       redirect_to root_path
     end
+    if @item.trading_condition == 3
+      redirect_to edit_delete_items_path, alert: 'この商品はすでに売却済みです'
+    end
   end
 
   def update
+    if @item.trading_condition == 3
+      redirect_to root_path, alert: 'この商品はすでに売却済みです'
+    end
     if @item.user_id == current_user.id
       if params[:item][:image_ids].present?
         if params[:item][:images].blank? && params[:item][:image_ids].length == @item.images.length
           redirect_to edit_item_path, alert: '画像がありません'
           return
         end
-          params[:item][:image_ids].each do |image_id|
-            image = @item.images.find(image_id)
-            image.purge
+        params[:item][:image_ids].each do |image_id|
+          image = @item.images.find(image_id)
+          image.purge
         end
       end
       @item.update(item_update_params)
@@ -62,6 +68,8 @@ class ItemsController < ApplicationController
   end
 
   def buycheck
+    redirect_to item_path(@item.id) if @item.user_id == current_user.id
+    redirect_to root_path(@item.id) if @item.trading_condition == 3
   end
 
   def shipping
@@ -88,6 +96,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if @item.trading_condition == 3
+      redirect_to root_path, alert: 'この商品はすでに売却済みです'
+    end
     if @item.user_id == current_user.id
       @item.destroy
       redirect_to root_path, notice: '商品を削除しました'

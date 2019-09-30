@@ -47,7 +47,6 @@
   .item-detail-table {
     width: 100%;
     max-width: 360px;
-    margin: 8px auto 0;
     border-collapse: collapse;
     border: 1px solid #f5f5f5;
   }
@@ -117,7 +116,6 @@
   max-width: 300px;
   height: 420px;
   margin: 0 auto;
-  margin: 8px auto 0;
   border-collapse: collapse;
   border: 1px solid #f5f5f5;
 }
@@ -267,3 +265,27 @@ table {
   color: red;
   font-weight: bold;
 }
+
+.items-box_photo__sold{
+  width: 0;
+  height: 0;
+  border-top: 60px solid #ea352d ;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid #ea352d ;
+  z-index:100;
+  position: absolute;
+  top:238px;
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 28px;
+    margin:-28px 0px 0px -55px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+}
+
+// .item_photo_box_3{
+//   margin-top: -124px;
+// }

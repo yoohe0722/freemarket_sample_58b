@@ -1,5 +1,8 @@
 = render 'module/header'
-- breadcrumb :ship_item
+- if @item.trading_condition == 1
+  - breadcrumb :ship_item
+- else
+  - breadcrumb :sold_show
 .item_box_contents
   .item-box-container
     .item_box_contents_center_box
@@ -9,27 +12,30 @@
         .item_photo_box
           - if @item.images.attached?
             = image_tag @firstimage, size: "300x300"
-          .item_photo_box_2
-            - @item.images.each do |image|
-              = image_tag image, size: "56x56", class: 'item_photo_box_images'
+            -if @item.trading_condition == 3
+              .items-box_photo__sold
+                .items-box_photo__sold__inner SOLD
+            .item_photo_box_3
+              - @item.images.each do |image|
+                = image_tag image, size: "56x56", class: 'item_photo_box_images'
         .item_details.box
           %table.item-detail-table
             %tbody
               %tr
                 %th 出品者
                 %td
-                  = link_to "https://www.mercari.com/jp/u/348028699/" do
+                  = link_to "#" do
                     = @item.user.nick_name
                   .item-user-icon
                     .item-user-ratings
                       = image_tag "20080830175621.gif", alt: "test"
-                      %span 32
+                      %span 9999
                     .item-user-ratings
                       = image_tag "20080830175618.gif", alt: "test"
-                      %span 64
+                      %span 17
                     .item-user-ratings
                       = image_tag "20080830175622.gif", alt: "test"
-                      %span 7
+                      %span 3
               %tr
                 %th カテゴリー
                 %td
@@ -40,7 +46,7 @@
                     = link_to "https://www.mercari.com/jp/category/22/" do
                       = @item.category.parent.name
                   %div
-                    = link_to "https://www.mercari.com/jp/category/240/" do
+                    = link_to "#" do
                       = @item.category.name
               %tr
                 %th ブランド
@@ -64,7 +70,7 @@
               %tr
                 %th 配送元地域
                 %td
-                  = link_to "https://www.mercari.com/jp/area/27/" do
+                  = link_to "#" do
                     = @item.prefecture.name
               %tr
                 %th 発送日の目安

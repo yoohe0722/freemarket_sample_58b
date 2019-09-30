@@ -39,6 +39,12 @@ crumb :ship_item do
   parent :ship
 end
 
+crumb :sold do
+  link '出品した商品 - 売却済み'
+  parent :mypage
+end
+
+
 
 # マイページ-クレジットカード情報入力
 crumb :payments_new do

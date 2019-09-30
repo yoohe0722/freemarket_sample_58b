@@ -44,6 +44,17 @@ crumb :sold do
   parent :mypage
 end
 
+crumb :items_show do
+  @item = Item.find_by(id:params[:id])
+  link "#{@item.name}"
+  parent :root
+end
+
+# crumb :show_title do |show_title|
+#   show_title = Post.find_by(id: params[:id])
+#   link show_title.title
+#   parent :tag
+# end
 
 
 # マイページ-クレジットカード情報入力

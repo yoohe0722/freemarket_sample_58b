@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :items, only: [:create, :index, :show, :edit, :update,:destroy] do
     collection do
       get 'buy'
+      get 'search_children'
+      get 'search_grand_children'
       # get 'buycheck'
       get 'shipping'
       get 'credit'

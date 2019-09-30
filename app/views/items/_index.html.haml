@@ -9,5 +9,4 @@
           .p￥
           = item.price
         - if item.images.attached?
-          - item.images.each do |image|
-            = image_tag image, size: '188x188' ,alt: 'Thumbnail of \"hoge\"'
+          = image_tag item.images[0], size: '188x188' ,alt: 'Thumbnail of \"hoge\"'

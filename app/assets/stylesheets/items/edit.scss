@@ -5,6 +5,14 @@
   color: #333;
   height: 100%;
   width: 100%;
+  input[type=checkbox] {
+    display:none;
+  }
+  label:hover {
+    cursor: pointer;
+    color:#0099e8;
+    
+  }
 }
 
 .item-edit-container {

@@ -46,7 +46,7 @@
               %h3.sell-sub-head
                 商品の詳細
               .sell-form-box
-                .form-group_first
+                .form-group_category
                   %label
                     カテゴリー
                   %span.form-require 必須
@@ -55,7 +55,7 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :category_id, Categoryhash.all, :id, :name
+                        = f.collection_select :root_category_id, @parents, :id, :name, {prompt: "---"}, class: "select-default", id: "parent-form"
 
                 .form-group
                   %label

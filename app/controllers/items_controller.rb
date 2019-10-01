@@ -21,10 +21,10 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @item_category_1 = Item.where(category_id: "1", trading_condition: "1").order('created_at DESC').limit(10)
-    @item_category_2 = Item.where(category_id: "2", trading_condition: "1").order('created_at DESC').limit(10)
-    @item_category_3 = Item.where(category_id: "8", trading_condition: "1").order('created_at DESC').limit(10)
-    @item_category_4 = Item.where(category_id: "625", trading_condition: "1").order('created_at DESC').limit(10)
+    @item_category_1 = Item.where(category_id:[3..200], trading_condition: "1").order('created_at DESC').limit(10)
+    @item_category_2 = Item.where(category_id: [201..344], trading_condition: "1").order('created_at DESC').limit(10)
+    @item_category_3 = Item.where(category_id: [893..979], trading_condition: "1").order('created_at DESC').limit(10)
+    @item_category_4 = Item.where(category_id: [681..793], trading_condition: "1").order('created_at DESC').limit(10)
   end
 
   def credit

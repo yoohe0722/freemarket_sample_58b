@@ -19,10 +19,17 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @item_category_1 = Item.where(category_id: "1", trading_condition: "1").order('created_at DESC').limit(10)
-    @item_category_2 = Item.where(category_id: "2", trading_condition: "1").order('created_at DESC').limit(10)
-    @item_category_3 = Item.where(category_id: "8", trading_condition: "1").order('created_at DESC').limit(10)
-    @item_category_4 = Item.where(category_id: "6", trading_condition: "1").order('created_at DESC').limit(10)
+    category_1 = Category.find_by(name: "レディース").subtree
+    @item_category_1 = Item.where(category_id: category_1, trading_condition: "1").order('created_at DESC').limit(10)
+
+    category_2 = Category.find_by(name: "メンズ").subtree
+    @item_category_2 = Item.where(category_id: category_2, trading_condition: "1").order('created_at DESC').limit(10)
+
+    category_3 = Category.find_by(name: "家電・スマホ・カメラ").subtree
+    @item_category_3 = Item.where(category_id: category_3, trading_condition: "1").order('created_at DESC').limit(10)
+
+    category_4 = Category.find_by(name: "おもちゃ・ホビー・グッズ").subtree
+    @item_category_4 = Item.where(category_id: category_4, trading_condition: "1").order('created_at DESC').limit(10)
   end
 
   def credit

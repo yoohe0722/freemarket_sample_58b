@@ -16,16 +16,6 @@
               %p
                 最大10枚までアップロードできます
               .item-edit-images
-                -# -if @item.images.attached?
-                -#   .item-edit-images__lists-box
-                -#     -@item.images.all.order(id: "ASC").each do |image|
-                -#       %ul.listing-image-container
-                -#         %li.image-box
-                -#           = image_tag image, size: '120x120', class: 'edit-image'
-                -#           .button
-                -#             %a 編集
-                -#             = link_to '削除', item_path, method: :delete, class: "delete"
-                -#             -# %a.delete 削除
                 .item-edit-images__lists-box
                   - @item.images.each_with_index do |image, i|
                     .image-box
@@ -64,7 +54,7 @@
               %h3.sell-sub-head
                 商品の詳細
               .sell-form-box
-                .form-group_first
+                .form-group_category
                   %label
                     カテゴリー
                   %span.form-require 必須
@@ -73,7 +63,19 @@
                       %pseudo:before
                     .select-wrap-box_prefecture
                       .select-wrap
-                        = f.collection_select :category_id, Categoryhash.all, :id, :name
+                        = f.collection_select :parent_category_id, @parents, :id, :name, {selected: "#{@item.category.parent.parent.id}"}, class: "select-default", id: "parent-form"
+                  .select-wrap-box#chilren-select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :child_category_id, @initial_children, :id, :name, {selected: "#{@item.category.parent.id}"}, class: "select-default", id: "children-form"
+                  .select-wrap-box#grand_children-select-wrap-box
+                    %i.fa.fa-angle-down
+                      %pseudo:before
+                    .select-wrap-box_prefecture
+                      .select-wrap
+                        = f.collection_select :category_id, @initial_grandchildren, :id, :name, class: "select-default", id: "grand_children-form"
 
                 .form-group
                   %label

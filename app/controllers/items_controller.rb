@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
   before_action :login_check, only: [:buy, :shipping, :show]
   before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
   before_action :set_first_image, only: [:show, :show_edit_delete, :buycheck]
+  before_action :set_category_parents, only: [:shipping, :edit]
+  before_action :set_initial_category, only: [:edit]
 
   def create
     @item = Item.new(item_params)
@@ -73,7 +75,6 @@ class ItemsController < ApplicationController
   end
 
   def shipping
-    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def search_children
@@ -81,7 +82,6 @@ class ItemsController < ApplicationController
       format.html
       format.json do
        @children = Category.find(params[:parent_id]).children
-       #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
       end
     end
   end
@@ -139,6 +139,15 @@ class ItemsController < ApplicationController
 
   def set_first_image
     @firstimage = @item.images[0]
+  end
+
+  def set_category_parents
+    @parents = Category.where(ancestry: nil).order("id ASC")
+  end
+
+  def set_initial_category
+    @initial_children = Category.where(ancestry: "#{@item.category.parent.parent.id}").order("id ASC")
+    @initial_grandchildren = Category.where(ancestry: "#{@item.category.parent.parent.id}/#{@item.category.parent.id}").order("id ASC")
   end
 
   def login_check

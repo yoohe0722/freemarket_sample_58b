@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
     if @payment.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(@payment.customer_id)
       @customer_card = customer.cards.retrieve(@payment.card_id)
     end
@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
 
     if params['payjp-token'].blank?
       redirect_to action: "new", alert: '登録に失敗しました'
@@ -35,7 +35,7 @@ class PaymentsController < ApplicationController
     if @payment.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(@payment.customer_id)
       customer.delete
       @payment.delete

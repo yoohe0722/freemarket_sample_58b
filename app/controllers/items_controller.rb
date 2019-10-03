@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require "payjp"
   before_action :login_check, only: [:buy, :shipping, :buycheck]
-  before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
+  before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck, :pay]
   before_action :set_first_image, only: [:show, :show_edit_delete, :buycheck]
   before_action :set_category_parents, only: [:shipping, :edit]
   before_action :set_initial_category, only: [:edit]
@@ -120,7 +120,6 @@ class ItemsController < ApplicationController
     else
       @payment = Payment.where(user_id: current_user.id).first
       if @payment.present?
-        @item = Item.find(params[:id])
         Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
         Payjp::Charge.create(
           amount: @item.price,

@@ -63,7 +63,7 @@ $(function(){
                   <select class="select-default" id="grand_children-form", name=category_id>
                   <option value label="---"></option>
                   ${option}
-                 </select>
+                </select>
                 </div>
                 </div>`
 

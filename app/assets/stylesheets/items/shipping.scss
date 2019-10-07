@@ -13,7 +13,8 @@
 
 
 .sell_container{
-  background-color:white;
+  background-color:　white;
+  height: 100%;
 }
 
 .l-single-head {
@@ -29,7 +30,7 @@
 }
 
 .sell-upload-box {
-  width: 620px;
+  width: 700px;
   padding: 40px;
   & .clearfix:after {
     display: block;
@@ -64,6 +65,7 @@
   display: block;
   width: 620px;
   margin: 16px auto 0;
+  display: inline;
 }
 
 .sell-upload-items-container {
@@ -115,7 +117,7 @@
   border-top: 1px solid #eee;
 }
 
-.form-group_first {
+.form-group_first .form-group_category{
   margin: 0;
   & label {
     font-weight: 600;
@@ -125,6 +127,18 @@
 
 .form-group {
   margin: 40px 0 0;
+  .textarea-default{
+    margin: 8px 0 0;
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    min-height: 104px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+  }
   & label {
     font-weight: 600;
     display: inline-block;
@@ -142,7 +156,7 @@
 }
 
 .input-default_shipping {
-  width: 94%;
+  width: 100%;
   margin: 8px 0 0 0 ;
   height: 48px;
   padding: 10px 16px 8px;
@@ -178,6 +192,19 @@
   margin: 8px 0 0;
   position: relative;
   background: #fff;
+  & select {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
 }
 
 .select-default {
@@ -192,24 +219,61 @@
   font-size: 16px;
   line-height: 1.5;
   cursor: pointer;
-  & select {
-    width: 100%;
+    & select {
+      width: 100%;
+    }
   }
-}
 
-.fas.fa-angle-down {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  z-index: 2;
-  color: #888;
-  font-size: 20px;
-  transform: translate(0, -50%);
-  & :before {
-    border-style: solid;
-    border-width: 0;
+  .select-wrap-box{
+    position: relative;
+    .fa.fa-angle-down {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      z-index: 2;
+      color: #888;
+      font-size: 20px;
+      transform: translate(0, -50%);
+      & :before {
+        border-style: solid;
+        border-width: 0;
+      }
+    }
   }
-}
+
+  .form-group_first {
+    .fa.fa-angle-down {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      z-index: 2;
+      color: #888;
+      font-size: 20px;
+      transform: translate(0, -50%);
+      & :before {
+        border-style: solid;
+        border-width: 0;
+      }
+    }
+  }
+
+  .fas.fa-angle-down {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    z-index: 2;
+    color: #888;
+    font-size: 20px;
+    transform: translate(0, -50%);
+    & :before {
+      border-style: solid;
+      border-width: 0;
+    }
+  }
+  
+
+
+
 
 .sell-content_secoud{
   padding: 40px;
@@ -263,9 +327,7 @@ li.form-group_under_first{
   float: right;
 }
 
-.sell-price-input{
 
-}
 .input-default_box{
   display: inline-block;
   width: 80%;
@@ -291,20 +353,23 @@ li.form-group_under_first{
   font-weight: bold;
 }
 
-.sell-btn-box{
+.btn-container{
   padding: 40px;
   border-top: 1px solid #eee;
-  height:250px;
   background-color: white;
-}
-
-.sell-btn-box_text{
   a {
     text-decoration: none;
   }
 }
 
-.sell-btn-box .btn-red {
+.btn-container_text{
+  a {
+    text-decoration: none;
+    color: #0099e8;
+  }
+}
+
+.btn-container .btn-red {
   margin: 40px 0 0;
   background: #ea352d;
   border: 1px solid #ea352d;
@@ -332,7 +397,7 @@ li.form-group_under_first{
 }
 
 .input-default_price {
-  width: 91%;
+  width: 111%;
   margin: 8px 0 0 0 ;
   height: 40px;
   padding: 10px 16px 8px;
@@ -353,6 +418,27 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+
+.sell-btn-box{
+  padding: 40px;
+  border-top: 1px solid #eee;
+  height:250px;
+  background-color: white;
+}
+
+.sell-btn-box_text{
+  a {
+    text-decoration: none;
+  }
+}
+
+.sell-btn-box .btn-red {
+  margin: 40px 0 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
 
 .btn-container{
   clear: both;

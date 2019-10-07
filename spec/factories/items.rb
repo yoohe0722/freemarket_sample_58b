@@ -14,6 +14,5 @@ FactoryBot.define do
     shipmethod_id          {1}
     shipdate_id            {1}
     trading_condition      {1}
-    # category               {"レディース"}
   end
 end

@@ -1,24 +1,12 @@
 class ItemsController < ApplicationController
   require "payjp"
-  before_action :login_check, only: [:buy, :shipping, :buycheck]
-  before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buycheck]
-  before_action :set_first_image, only: [:show, :show_edit_delete, :buycheck]
-  before_action :set_category_parents, only: [:shipping, :edit]
+  before_action :login_check, except: [:index, :show]
+  before_action :set_item, only: [:show, :users_items_show, :destroy, :edit, :update, :buy]
+  before_action :set_first_image, only: [:show, :users_items_show, :buy]
+  before_action :set_category_parents, only: [:new, :edit]
   before_action :set_initial_category, only: [:edit]
+  before_action :set_trading_condition, only: [:edit, :update, :destroy]
 
-  def create
-    @item = Item.new(item_params)
-    if params[:images].present?
-      if @item.save
-        redirect_to root_path, notice: '商品を出品しました'
-      else
-        redirect_to ({action: 'shipping'}), alert: '商品出品に失敗しました'
-      end
-    else
-      flash.now[:alert] = '商品画像を最低1枚添付してください'
-      render :shipping
-    end
-  end
 
   def index
     category_1 = Category.find_by(name: "レディース").subtree
@@ -34,24 +22,31 @@ class ItemsController < ApplicationController
     @item_category_4 = Item.where(category_id: category_4, trading_condition: "1").order('created_at DESC').limit(10)
   end
 
-  def credit
-    card = Payment.where(user_id: current_user.id).first
-    redirect_to "/payments" if card.present?
+  def new
+
+  end
+  
+  def create
+    @item = Item.new(item_params)
+    if params[:images].present?
+      if @item.save
+        redirect_to root_path, notice: '商品を出品しました'
+      else
+        redirect_to ({action: 'new'}), alert: '商品出品に失敗しました'
+      end
+    else
+      flash.now[:alert] = '商品画像を最低1枚添付してください'
+      render :new
+    end
   end
 
   def edit
     if @item.user_id != current_user.id
-      redirect_to root_path
-    end
-    if @item.trading_condition == 3
-      redirect_to edit_delete_items_path, alert: 'この商品はすでに売却済みです'
+      redirect_to root_path, alert: 'ログインユーザーでないため、この商品を編集できません。'
     end
   end
 
   def update
-    if @item.trading_condition == 3
-      redirect_to root_path, alert: 'この商品はすでに売却済みです'
-    end
     if @item.user_id == current_user.id
       if params[:item][:image_ids].present?
         if params[:item][:images].blank? && params[:item][:image_ids].length == @item.images.length
@@ -73,22 +68,33 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def show_edit_delete
+  def destroy
+    if @item.user_id == current_user.id
+      @item.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      redirect_to root_path, alert: 'ログインユーザーでないため、商品の削除に失敗しました。'
+    end
   end
 
-  def buycheck
+  def credit
+    card = Payment.where(user_id: current_user.id).first
+    redirect_to "/payments" if card.present?
+  end
+
+  def users_items_show
+  end
+
+  def buy
     redirect_to item_path(@item.id) if @item.user_id == current_user.id
     redirect_to root_path(@item.id) if @item.trading_condition == 3
-  end
-
-  def shipping
   end
 
   def search_children
     respond_to do |format|
       format.html
       format.json do
-       @children = Category.find(params[:parent_id]).children
+        @children = Category.find(params[:parent_id]).children
       end
     end
   end
@@ -97,20 +103,8 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-       @grand_children = Category.find(params[:parent_id]).children
+        @grand_children = Category.find(params[:parent_id]).children
       end
-    end
-  end
-
-  def destroy
-    if @item.trading_condition == 3
-      redirect_to root_path, alert: 'この商品はすでに売却済みです'
-    end
-    if @item.user_id == current_user.id
-      @item.destroy
-      redirect_to root_path, notice: '商品を削除しました'
-    else
-      redirect_to root_path, alert: 'ログインユーザーでないため、商品の削除に失敗しました。'
     end
   end
 
@@ -132,6 +126,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.permit(:name, :description, :buyer_id, :size_id, :category_id, :brand_id, :price, :condition_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end
@@ -159,6 +154,12 @@ class ItemsController < ApplicationController
 
   def login_check
     redirect_to "/users/sign_in" unless user_signed_in?
+  end
+
+  def set_trading_condition
+      if @item.trading_condition == 3
+      redirect_to edit_delete_items_path, alert: 'この商品はすでに売却済みです'
+    end
   end
 
 end

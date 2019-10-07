@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def new
   end
 
-
   def credit
   end
 
@@ -24,6 +23,4 @@ class UsersController < ApplicationController
     user = User.find(current_user.id)
     @item = user.items.where(trading_condition: 3)
   end
-
-
 end

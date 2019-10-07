@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :login_check, except: [:index, :show]
   before_action :set_item, only: [:show, :show_edit_delete, :destroy, :edit, :update, :buy]
   before_action :set_first_image, only: [:show, :show_edit_delete, :buy]
-  before_action :set_category_parents, only: [:shipping, :edit]
+  before_action :set_category_parents, only: [:new, :edit]
   before_action :set_initial_category, only: [:edit]
   before_action :set_trading_condition, only: [:edit, :update, :destroy]
 
@@ -22,20 +22,21 @@ class ItemsController < ApplicationController
     @item_category_4 = Item.where(category_id: category_4, trading_condition: "1").order('created_at DESC').limit(10)
   end
 
-  def shipping
-  end
+  def new
 
+  end
+  
   def create
     @item = Item.new(item_params)
     if params[:images].present?
       if @item.save
         redirect_to root_path, notice: '商品を出品しました'
       else
-        redirect_to ({action: 'shipping'}), alert: '商品出品に失敗しました'
+        redirect_to ({action: 'new'}), alert: '商品出品に失敗しました'
       end
     else
       flash.now[:alert] = '商品画像を最低1枚添付してください'
-      render :shipping
+      render :new
     end
   end
 

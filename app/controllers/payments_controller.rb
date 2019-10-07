@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
 
   def index
     if @payment.blank?
-      redirect_to action: "new" 
+      redirect_to action: "new"
     else
       Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(@payment.customer_id)
@@ -39,7 +39,7 @@ class PaymentsController < ApplicationController
       customer = Payjp::Customer.retrieve(@payment.customer_id)
       customer.delete
       @payment.delete
-      redirect_to new_payment_path, notice: '削除しました' 
+      redirect_to new_payment_path, notice: '削除しました'
     end
   end
 

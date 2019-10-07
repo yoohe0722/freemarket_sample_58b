@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get 'credit'
       get 'user_edit'
       get 'signup_registration'
-      get 'show_edit_delete/:id', to: 'items#show_edit_delete', as: :edit_delete
+      get 'users_items_show/:id', to: 'items#users_items_show', as: :items_show
       post 'pay/:id' => 'items#pay'
       get 'buy/:id' => 'items#buy'
     end

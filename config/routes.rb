@@ -4,19 +4,16 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   root 'items#index'
-  resources :items, only: [:create, :index, :show, :edit, :update,:destroy] do
+  resources :items, only: [:new, :create, :index, :show, :edit, :update,:destroy] do
     collection do
-      get 'buy'
       get 'search_children'
       get 'search_grand_children'
-      # get 'buycheck'
-      get 'shipping'
       get 'credit'
       get 'user_edit'
       get 'signup_registration'
-      get 'show_edit_delete/:id', to: 'items#show_edit_delete', as: :edit_delete
+      get 'users_items_show/:id', to: 'items#users_items_show', as: :items_show
       post 'pay/:id' => 'items#pay'
-      get 'buycheck/:id' => 'items#buycheck'
+      get 'buy/:id' => 'items#buy'
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do

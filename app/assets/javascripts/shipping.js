@@ -28,17 +28,14 @@ $(function(){
   })
 
   $("#parent-form").on("change",function(){
-    // 親ボックスのidを取得してそのidをAjax通信でコントローラーへ送る
     var parentValue = document.getElementById("parent-form").value;
-  //　("parent-form")は親ボックスのid属性
     $.ajax({
       url: '/items/search_children',
       type: "GET",
       data: {
-        parent_id: parentValue // 親ボックスの値をparent_idという変数にする。
+        parent_id: parentValue
       },
       dataType: 'json'
-      //json形式を指定
     })
     .done(function(data){
       var html = buildHTML(data);
@@ -66,7 +63,7 @@ $(function(){
                   <select class="select-default" id="grand_children-form", name=category_id>
                   <option value label="---"></option>
                   ${option}
-                 </select>
+                </select>
                 </div>
                 </div>`
 

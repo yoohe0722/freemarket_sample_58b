@@ -18,7 +18,7 @@
                 .sell-upload-items
                   %ul
             .sell-upload-drop-box
-              %label 
+              %label
                 = f.file_field :images, multiple: true, class: "image_file_select"
                 %pre.visible-pc
                   ドラッグアンドドロップ
@@ -66,8 +66,6 @@
                     .select-wrap
                       = f.collection_select :size_id, Size.all, :id, :name
 
-
-
               .form-group
                 %label
                   商品の状態
@@ -95,7 +93,6 @@
                     .select-wrap
                       = f.collection_select :shipfee_id, Shipfee.all, :id, :name
 
-              -# - if 
               .form-group
                 %label
                   配送の方法
@@ -106,7 +103,6 @@
                   .select-wrap-box_prefecture
                     .select-wrap
                       = f.collection_select :shipmethod_id, Shipmethod.all, :id, :name
-
 
               .form-group
                 %label

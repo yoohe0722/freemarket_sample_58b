@@ -6,17 +6,15 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items, only: [:create, :index, :show, :edit, :update,:destroy] do
     collection do
-      get 'buy'
       get 'search_children'
       get 'search_grand_children'
-      # get 'buycheck'
       get 'shipping'
       get 'credit'
       get 'user_edit'
       get 'signup_registration'
       get 'show_edit_delete/:id', to: 'items#show_edit_delete', as: :edit_delete
       post 'pay/:id' => 'items#pay'
-      get 'buycheck/:id' => 'items#buycheck'
+      get 'buy/:id' => 'items#buy'
     end
   end
   resources :users, only: [:index, :show, :new, :edit] do

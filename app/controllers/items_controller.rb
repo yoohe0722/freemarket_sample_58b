@@ -39,7 +39,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def edit
     if @item.user_id != current_user.id
       redirect_to root_path, alert: 'ログインユーザーでないため、この商品を編集できません。'
@@ -126,6 +125,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.permit(:name, :description, :buyer_id, :size_id, :category_id, :brand_id, :price, :condition_id, :shipfee_id, :shipmethod_id, :prefecture_id, :shipdate_id, :trading_condition, images:[]).merge(user_id: current_user.id)
   end

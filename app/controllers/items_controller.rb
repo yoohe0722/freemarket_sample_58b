@@ -108,7 +108,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def pay
     @payment = Payment.where(user_id: current_user.id).first
     if @payment.present?

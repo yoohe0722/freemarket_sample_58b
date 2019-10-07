@@ -28,7 +28,7 @@
         .container__item-box
           .item__grid.clearfix
             - @item_category_1.each do |item|
-              = render partial: "index", locals: { item: item }
+              = render partial: "item", locals: { item: item }
 
     #category_2
       .categories__container
@@ -40,7 +40,7 @@
         .container__item-box
           .item__grid.clearfix
             - @item_category_2.each do |item|
-              = render partial: "index", locals: { item: item }
+              = render partial: "item", locals: { item: item }
 
     #category_3
       .categories__container
@@ -52,7 +52,7 @@
         .container__item-box
           .item__grid.clearfix
             - @item_category_3.each do |item|
-              = render partial: "index", locals: { item: item }
+              = render partial: "item", locals: { item: item }
 
     #category_4
       .categories__container
@@ -64,7 +64,7 @@
         .container__item-box
           .item__grid.clearfix
             - @item_category_4.each do |item|
-              = render partial: "index", locals: { item: item }
+              = render partial: "item", locals: { item: item }
 
 = render 'module/footer'
 = render 'module/sell-btn'

@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   require "payjp"
   before_action :login_check, except: [:index, :show]
-  before_action :set_item, only: [:show, :users_items_show, :destroy, :edit, :update, :buy]
+  before_action :set_item, only: [:show, :users_items_show, :destroy, :edit, :update, :buy, :pay]
   before_action :set_first_image, only: [:show, :users_items_show, :buy]
   before_action :set_category_parents, only: [:new, :edit]
   before_action :set_initial_category, only: [:edit]

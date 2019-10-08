@@ -177,5 +177,6 @@
         = f.submit '編集する', class: 'btn-default btn-red'
         %a.btn-default.btn-gray
           キャンセル
+      = f.hidden_field :edit_flag, value: 1, class: 'edit_flag'
 %footer
   = render 'module/subfooter.html.haml'

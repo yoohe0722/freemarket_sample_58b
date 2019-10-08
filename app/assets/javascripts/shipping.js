@@ -49,8 +49,11 @@ $(function(){
 
 
 $(function(){
-
   function buildHTML(grand_children){
+    var name = `category_id`
+    if($(".edit_flag").val()=="1"){
+      name = `item[category_id]`
+    }
     var option = ``
     grand_children.forEach(function(grand_child){
       option += `<option value="${grand_child.id}">${grand_child.name}</option>`
@@ -60,7 +63,7 @@ $(function(){
                 <i class="fa fa-angle-down"></i>
                 <div class="select-wrap-box_prefecture">
                   <div class="select-wrap">
-                  <select class="select-default" id="grand_children-form", name=category_id>
+                  <select class="select-default" id="grand_children-form", name=`+name+`>
                   <option value label="---"></option>
                   ${option}
                 </select>

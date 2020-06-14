@@ -6,7 +6,7 @@ lock '~> 3.11.1'
 set :application, 'freemarket_sample_58b'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:Apple-cake/freemarket_sample_58b.git'
+set :repo_url,  'git@github.com:yoohe0722/freemarket_sample_58b.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
@@ -16,7 +16,7 @@ set :rbenv_ruby, '2.5.1'
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/osaka58b.pem']
+                  keys: ['~/.ssh/mercari_keypair.pem']
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
@@ -25,13 +25,6 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-
-set :default_env, {
-  rbenv_root: "/usr/local/rbenv",
-  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
-}
 
 # secrets.yml用のシンボリックリンクを追加
 set :linked_files, %w{ config/master.key }
